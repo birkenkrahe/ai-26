@@ -1,0 +1,132 @@
+#+title: Coding in an AI World – When Coding Becomes Conversation
+#+subtitle: Syllabus (Beginner-Friendly, Agentic Workflows Focus)
+#+author: Marcus Birkenkrahe
+#+options: toc:2 num:1
+#+STARTUP: overview hideblocks indent entitiespretty:
+#+OPTIONS: toc:nil num:nil ^:nil: 
+* General Course Information
+
+- Meeting Times: Tuesday + Thursday 14:30-15:45 hrs
+- Meeting place: Derby Science Center Room 209 (computer lab)
+- Professor: Dr. Marcus Birkenkrahe
+- Office: Derby Science Building 210
+- Phone: (870) 307-7254
+- Office Hours: Mon-Wed-Fri 1500-1550 hrs, Tue-Thu 1600-1700 hrs
+- Textbooks (optional): Mollick, "Co-Intelligence - Living and Working
+  with AI" (Penguin, 2024); Lanham, "AI Agents in Action" (Manning,
+  2025); Lelek/Skowronski, "Vibe Engineering" (Manning, 2026);
+  Kim/Yegge, "Vibe Coding"; Kneusel, "How AI Works" (NoStarch, 2025).
+  #+attr_html: :width 200px :float nil:
+  [[../img/mollick.png]]
+
+* Course Description
+
+This course teaches beginners how to use modern AI systems as *agents*
+capable of planning, acting, automating, and collaborating. Students
+learn to transform their own real-world workflows into agentic
+automations through structured conversation, without requiring prior
+programming experience.
+
+The course ends with a practical capstone project that automates a
+genuine workflow drawn from a student’s work or academic environment.
+
+* Learning Outcomes
+
+Students will be able to:
+1. Describe a workflow clearly using natural language.
+2. Collaborate with an AI agent to break workflows into steps.
+3. Use conversational prompting to create simple automations or scripts.
+4. Build repeatable agentic workflows with verification and guardrails.
+5. Recognize limitations and failure modes of agentic tools.
+6. Deliver a functional workflow automation in a capstone project.
+
+* Prerequisites
+
+None. This may sound weird for a 400-level course. What it means is
+that you can come to this course with any previous knowledge (or lack
+thereof) and learn something useful, as long as you're curious and not
+resilient to learning, or hostile to AI or computers in general.
+
+* Required Materials
+
+- A laptop (any OS), though browser access will suffice for viewering,
+  you may need to install apps locally on your PC.
+- Access to modern AI tools (ChatGPT or similar) - a free subscription
+  to ChatGPT Team will be provided for the duration of the course.
+
+* Grading System
+
+You should be able to see your current grade at any time using the
+Canvas gradebook for the course.
+
+| WHEN    | DESCRIPTION             | IMPACT |
+|---------+-------------------------+--------|
+| Weekly  | Programming Assignments |    25% |
+| Weekly  | Multiple choice tests   |    25% |
+| Monthly | Project sprint reviews  |    25% |
+| TBD     | Final exam (optional)   |    25% |
+
+Notes:
+- *To pass:* 60% of all available points.
+- *Tests:* weekly online quizzes based on classroom lectures and
+  practice.
+- *Final exam:* random selection of the known test questions in the form
+  of an oral exam. *Note:* You only have to attempt the final exam if
+  you want to improve your grade at the end of the course. If the
+  final exam result is below your final grade average up to this
+  point, it will be ignored.
+
+* Rubric
+
+| Component                  | Weight | Excellent                       | Good                         | Satisfactory                | Needs Improvement          | Unsatisfactory               |
+|----------------------------+--------+---------------------------------+------------------------------+-----------------------------+----------------------------+------------------------------|
+| Participation & Attendance |     0% | Consistent, active, prepared    | Regular, engaged             | Present, minimal engagement | Infrequent, passive        | Rare or absent               |
+| Programming Assignments    |    25% | Correct, clear, well-documented | Mostly correct, minor issues | Partially correct           | Frequent errors            | Incomplete or missing        |
+| Project                    |    25% | Insightful, justified, polished | Solid analysis, minor gaps   | Adequate, superficial       | Weak analysis or execution | Incoherent or minimal effort |
+| Tests                      |    25% | Conceptual mastery              | Good understanding           | Basic understanding         | Significant gaps           | Minimal understanding        |
+| Final Exam                 |    25% | Integrative, precise reasoning  | Mostly correct               | Partial integration         | Fragmented understanding   | Little or no mastery         |
+
+* Grading Table
+
+|------------------+------------------|
+| Percentage       | LETTER GRADE     |
+|------------------+------------------|
+| 100% to 89.5%    | A (very good)    |
+|------------------+------------------|
+| < 89.5% to 79.5% | B (good)         |
+|------------------+------------------|
+| < 79.5% to 69.5% | C (satisfactory) |
+|------------------+------------------|
+| < 69.5% to 59.5% | D (passed)       |
+|------------------+------------------|
+| < 59.5% to 0%    | F (FAILED)       |
+  
+* Meeting Structure (75 minutes)
+
+Typical session plan:
+- *Mini-lecture* (15–20 minutes): concept, demonstration, context
+- *Hands-on workshop* (45–50 minutes): guided agentic workflow building
+- *Reflection + verification* (5–10 minutes): checking reliability,
+  summarizing lessons
+
+* Weekly Schedule
+
+| Week | Theme                                    | In-class focus (beginner-first)                                                                  | Weekly deliverable (builds the capstone)                                              |
+|------+------------------------------------------+--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------|
+|    1 | AI as collaborator, not oracle           | What AI can/can’t do; “agent” idea; failure modes; course workflow; baseline mini-task           | 1-page workflow description of a real personal task (inputs/outputs/steps)            |
+|    2 | Decomposition + prompt templates         | Turning goals into steps; constraints; checklists; reusable prompt “contracts”                   | A saved prompt template + 2 test runs + brief notes on what broke                     |
+|    3 | Agentic workflows with files (no code)   | “State” via files; read→plan→act→update loop; operating on local text/CSV/PDF uploads            | First agent: maintains a log + TODO from weekly notes (file-based)                    |
+|    4 | Verification, trust, and evaluation      | Spotting hallucinations; validation tactics; cite/quote discipline; acceptance tests for outputs | Add a verification checklist + test cases to your agent (before/after)                |
+|    5 | Agents with everyday tools (free)        | Docs/Sheets as interfaces; CSV/TSV pipelines; structured tables; exporting/importing data        | A spreadsheet-backed workflow (e.g., tracker) + agent that updates it                 |
+|    6 | Conversational coding basics (Python)    | Code as *output* of dialogue; reading code safely; minimal Python for file transforms              | A simple script generated via dialogue that transforms one dataset/file               |
+|    7 | Iteration + error recovery               | Debugging by conversation; logging; “explain then change”; versioning prompts and outputs        | v2 of your script/agent with change log + rollback plan                               |
+|    8 | Data wrangling agents                    | PDFs→tables; messy text cleanup; CSV hygiene; naming conventions; reproducible transformations   | A small data-cleaning pipeline with explicit steps + verification                     |
+|    9 | Personal productivity automations        | Planning agents; study systems; email/text drafting protocols; meeting notes → actions           | A personal automation you actually use for 1 week + usage reflection                  |
+|   10 | Research + writing agents                | Summaries, memos, outlines; source-grounded writing; structure control; avoiding fabrication     | A short memo/report produced with a constrained prompt + citations/quotes             |
+|   11 | Tool use and lightweight “APIs” (opt-in) | What APIs are; where cost/risk lives; optional OpenAI API demo; simple request/response thinking | Design doc: if using API, outline budget + safeguards; otherwise deepen tool workflow |
+|   12 | Multi-step / multi-agent pipelines       | Collect→Transform→Analyze→Report; role separation; handoffs; audits; “agent manager” pattern     | A 2-stage pipeline (two prompts/roles) with a shared state file                       |
+|   13 | Guardrails + responsible deployment      | Privacy; consent; data handling; bias; safe prompting; policy for student projects               | Capstone proposal: goal, users, data types, risks, guardrails, tests                  |
+|   14 | Capstone design studio                   | Build sprint planning; milestones; testing; documentation; demo narrative                        | Working capstone prototype + README + test checklist                                  |
+|   15 | Capstone presentations                   | Demos; peer review; reliability discussion; “next steps” roadmap                                 | Final demo + reflection (what’s reliable, what isn’t, and why)                        |
+
+
