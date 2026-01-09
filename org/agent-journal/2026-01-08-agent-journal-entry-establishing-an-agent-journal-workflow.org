@@ -1,0 +1,49 @@
+* Agent Journal Entry — 2026-01-08 — Establishing an Agent Journal Workflow :export:
+** Context
+
+I am preparing an instructor-led case study for a course on Coding
+with AI (agentic AI). The goal is to make my own agentic workflow
+visible to students, while keeping a clear separation between private
+reasoning and public artifacts.
+
+In particular, I want to continue writing freely in Emacs using
+Org-mode, while publishing selected, curated entries to the course
+repository as an "agent journal" that documents decisions, failures,
+and judgments rather than polished results.
+
+** Agent Setup
+
+At this stage there is no autonomous agent.
+
+The workflow consists of:
+- a private administrative repository containing my working journal
+- Emacs Org-mode as the primary writing environment
+- a Python script that extracts export-tagged Org subtrees
+- manual copying of exported entries into the public course repository
+
+The use of tags (e.g. ~:export:~) marks the boundary between private
+reasoning and material intended for students.
+
+** What Happened
+
+I created an ~org/agent-journal/~ directory in the public course
+repository and committed it as the destination for curated journal
+entries. I also created a private ~journal.org~ file in my
+administrative repository to serve as the canonical source of truth.
+
+After considering alternatives (such as direct publication or
+automated synchronization), I decided to keep a manual copy step
+between repositories.  This preserves a deliberate pause for review
+before anything becomes public.
+
+** Judgment
+
+Maintaining a hard boundary between private work and published
+artifacts aligns with the central theme of the course: agentic AI
+systems should assist human work, not bypass human judgment.
+
+The manual publishing step introduces intentional friction, which is
+desirable at this stage. It reinforces the idea that agents and
+automation operate under explicit supervision and that responsibility
+for what is published remains with the human.
+
