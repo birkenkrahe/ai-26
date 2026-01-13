@@ -3,7 +3,9 @@
 #+author: Marcus Birkenkrahe
 #+options: toc:2 num:1
 #+STARTUP: overview hideblocks indent entitiespretty:
-#+OPTIONS: toc:nil num:nil ^:nil: 
+#+OPTIONS: toc:nil num:nil ^:nil:
+#+attr_html: :width 400px :float nil:
+[[../img/cover.png]]
 * General Course Information
 
 - Meeting Times: Tuesday + Thursday 14:30-15:45 hrs
@@ -54,6 +56,15 @@ resilient to learning, or hostile to AI or computers in general.
 - Access to modern AI tools (ChatGPT or similar) - a free subscription
   to ChatGPT Team will be provided for the duration of the course.
 
+* Course Tools
+
+The course uses conversational AI systems (primarily ChatGPT) as the
+agent runtime, with plain-text files (TXT, CSV, PDF) serving as state,
+memory, and verification artifacts. Agent workflows are visualized
+using Mermaid, a free text-based diagram language rendered with tools
+such as Obsidian, VS Code, or a web browser, emphasizing transferable
+reasoning skills rather than platform-specific automation tools.
+
 * Grading System
 
 You should be able to see your current grade at any time using the
@@ -70,6 +81,8 @@ Notes:
 - *To pass:* 60% of all available points.
 - *Tests:* weekly online quizzes based on classroom lectures and
   practice.
+- When *AI tools* are used, students must be able to explain, modify,
+  and defend the resulting code and conclusions.
 - *Final exam:* random selection of the known test questions in the form
   of an oral exam. *Note:* You only have to attempt the final exam if
   you want to improve your grade at the end of the course. If the
