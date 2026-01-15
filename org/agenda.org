@@ -1,0 +1,8 @@
+#+TITLE:Coding in an AI World - Agenda notebook
+#+AUTHOR:Marcus Birkenkrahe (pledged)
+#+SUBTITLE:DSC 482 - Lyon College - Spring 2026
+#+STARTUP: overview hideblocks indent entitiespretty: 
+#+OPTIONS: toc:nil num:nil ^:nil: 
+#+attr_html: :width 400px :float nil:
+[[../img/cover.png]]
+

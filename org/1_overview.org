@@ -1,0 +1,254 @@
+#+TITLE:Course overview 
+#+AUTHOR:Marcus Birkenkrahe (pledged)
+#+SUBTITLE:Coding in an AI world (Lyon College, Spring 2026)
+#+STARTUP: overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+#+PROPERTY: header-args:R :session *R* :results output :exports both :noweb yes
+#+PROPERTY: header-args:python :session *Python* :results output :exports both :noweb yes
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both :noweb yes
+#+PROPERTY: header-args:C++ :main yes :includes <iostream> :results output :exports both :noweb yes
+* Objectives
+
+- [ ] How to follow the course (zooming in)
+- [ ] The hook: New tools, old problems (a story)
+- [ ] How this course was designed (more or less)
+- [ ] What we're going to do (flexible)
+- [ ] Which tools we will work with (probably)
+- [ ] Where to find stuff (for certain)
+- [ ] Warm-up exercise (too easy? Think again)
+
+* How to follow the course
+
+- Open Zoom from Canvas or at zoom.us
+- Join meeting (same ID 898 9989 7866)
+- Meeting will be recorded ("Cloud recordings")
+- If you miss a class, make sure you watch it before the next class!
+
+* Hook: New Tools, Old Problems
+
+Source: [[https://www.oneusefulthing.org/p/claude-code-and-what-comes-next][Claude Code and What Comes Next]] by Ethan Mollick, 7-Jan-2026.
+
+** The Problem - Making money
+
+#+begin_quote
+“Develop a web-based or software-based startup idea that will make me
+$1000 a month where you do all the work by generating the idea and
+implementing it. I shouldn’t have to do anything at all except run
+some program you give me once. it shouldn’t require any coding
+knowledge on my part, so make sure everything works well.”
+#+end_quote
+
+** The Solution - Vibe coded website
+
+#+begin_quote
+"The AI asked me three multiple choice questions and decided that I
+should be selling sets of 500 prompts for professional users for
+$39. Without any further input, it then worked independently… FOR AN
+HOUR AND FOURTEEN MINUTES creating hundreds of code files and
+prompts. And then it gave me a single file to run that created and
+deployed a working website (filled with very sketchy fake marketing
+claims) that sold the promised 500 prompt set. You can actually see
+the site it launched here, though I removed the sales link, which did
+actually work and would have collected money. I strongly suspect that
+if I ignored my conscience and actually sold these prompt packs, I
+would make the promised $1,000."
+#+end_quote
+
+** The New Problem - You can't vibe all the way to the money
+
+#+begin_quote
+"Unfortunately for most of us who want to experiment with AI, these
+new tools are built for programmers. And I mean they are really built
+for programmers: they assume that you understand Python commands and
+programming best practices and they are wrapped in interfaces that
+look like something from a 1980s computer lab. They are also
+explicitly designed to help analyze, troubleshoot, and write code
+using approaches that fit into existing programmer workflows."
+#+end_quote
+
+** What to do - Begin by changing your approach to tasks
+
+#+begin_quote
+"What does all this mean? If you're a programmer, you should already
+be exploring these tools. If you're programming-adjacent (an academic
+who works with data, a designer who wants to experiment with code,
+anyone who wants to try building a thing they are imagining) this is
+your moment to experiment. But there's a deeper point here: with the
+right harness, today's AIs are capable of real, sustained work that
+actually matters, and that, in turn, is starting to change how we
+approach tasks."
+#+end_quote
+
+* How complicated is this technology really? Python isn't hard!
+
+This diagram below describes the encoder, a foundational piece of the
+LLM architecture, and still only 5% of the total stack.
+
+#+attr_html: :width 400px :float nil:
+[[../img/ML_transformer.jpeg]]
+
+Source: [[https://drive.google.com/file/d/1b84WTGnDH_m5wFfu1xIIKL4Z5PiL41v5/view?usp=sharing][databites.tech]]
+
+What people call GenAI includes:
+- Tokenization
+- Embeddings
+- Attention blocks
+- Decoding
+- Sampling strategies
+- Reinforcement Learning from Human Feedback (RLHF)
+- Tool calling
+- Memory
+- Guardrails
+- User interface
+- Retrieval Augmented Memory
+- Infrastructure
+
+This is an insanely complex technology that few people understand from
+top to bottom, and even fewer are able to work with it professionally.
+
+A typical journal paper title therefore looks like this:
+#+attr_html: :width 400px :float nil:
+[[../img/journal.png]]
+
+Source: [[https://link.springer.com/article/10.1007/s44163-025-00757-0][Springer Nature Discover Artificial Intelligence]] (open access)
+
+* How This Course Was Designed
+
+1. *Beginner-friendly by design*: No prior programming experience is
+   required. Curiosity and willingness to experiment matter more than
+   technical background.
+
+2. *Conversation before configuration*: You will work with AI systems
+   primarily through dialogue—explaining goals, refining instructions,
+   and iterating—rather than setting up complex tools or platforms.
+
+3. *Agents must be understandable*: You are expected to explain what
+   your AI agent does, why it does it, and where it can
+   fail. Black-box behavior is not sufficient.
+
+4. *Files are memory*: Plain-text files (such as notes, CSVs, logs, and
+   PDFs) act as shared state and checkpoints so workflows can be
+   inspected and verified.
+
+5. *Visualize your workflow*: You will use simple diagrams (Mermaid) to
+   map agent workflows. The diagrams describe your reasoning and are
+   portable across tools.
+
+6. *Failure is part of learning*: Mistakes, hallucinations, and
+   breakdowns are expected and analyzed, not hidden or penalized.
+
+7. *Low cost, transferable skills*: All required tools are free or
+   provided for the course. The focus is on skills that transfer
+   beyond any single AI platform.
+
+8. *One capstone, built iteratively*: Throughout the term, you will
+   develop a single capstone project using short, Scrum-style sprints,
+   with regular sprint reviews leading up to the final presentation.
+
+* What we're going to do (flexible)
+#+attr_html: :width 400px :float nil:
+[[../img/title_slide.png]]
+
+- See [[https://drive.google.com/file/d/1-4KI-sMSBOe3sug87lyfwhczaDGtk4-5/view?usp=sharing][presentation]] based only on the syllabus ([[https://notebooklm.google.com][notebooklm.google.com]]).
+- Schedule is likely to change (ups and downs).
+- Platforms are likely to change.
+- Grading and deliverables are not going to change.
+
+* Understanding vs. delegating
+
+- [[../img/chatgpt_answer.png][ChatGPT's answer]]
+- [[../img/gemini_answer.png][Gemini's answer]]
+- [[../img/claude_answer.png][Claude's answer]]
+- [[../img/grok_answer.png][Grok's answer]]
+
+* Which AI tools we will work with (probably)
+
+- *ChatGPT* because we have it at Lyon (you've been added to the Team).
+- *NotebookLM* (already used) & you should create your own notebook.
+- *Codex* in *ChatGPT* and *GPTs*.
+- *Gemini* because we have Pro (at Lyon) with *Gems*.
+- *opencode.ai* because I just discovered it and like it.
+- *Replit.com* (perhaps) because it's pricy and has lock-in.
+- *Lovable* (because) it was recommended.
+- *Claude* (perhaps) if I can get my head around it.
+- *Notion* (perhaps) agent specific.
+- *n8n* (perhaps) as a graphic agent-design tool.
+
+* Where to find stuff (for certain)
+
+- The links to these locations are in =Canvas > Pages > Course links=
+- You can find all tests, assignments, grades, recordings on *Canvas*.
+- You can find all lectures, assignments, PDFs on *GitHub*.
+- You can share insights, comments, questions on *Google Chat*.
+- You must upload your project files to *GDrive*.
+
+* What you have to do next
+
+- Register with DataCamp using your lyon.edu account.
+- Go to Canvas > Pages > Course links and activate the invitation.
+- Let's take a look at DataCamp together.
+- Complete these on a weekly basis. 
+
+* Next assignment - DataCamp
+#+attr_html: :width 400px :float nil:
+[[../img/datacamp.png]]
+
+- We're working with the online learning platform DataCamp.
+- As a course participant, you have free access to all courses.
+- There are several courses on offer, we'll only certainly do the
+  first two:
+  1) [[https://app.datacamp.com/learn/courses/understanding-artificial-intelligence][Understanding Artificial Intelligence]] (foundational)
+  2) [[https://app.datacamp.com/learn/courses/understanding-chatgpt][Understanding ChatGPT]] (very short)
+  3) [[https://app.datacamp.com/learn/courses/practical-ai-with-google-gemini-and-notebooklm][Practical AI with Google Gemini and NotebookLM]] (useful)
+  4) [[https://app.datacamp.com/learn/courses/understanding-prompt-engineering][Understanding Prompt Engineering]] (maybe)
+  5) [[https://app.datacamp.com/learn/courses/vibe-coding-with-replit?cf-exp=comm--ai-native-cdp-layout%3Aon][Vibe Coding with Replit]] (probably not)
+
+- Completing these short courses will increase your AI literacy
+- Many examples will show you many different AI use cases
+- You can share your certificate of completion on LinkedIn
+
+* Project & Scrum
+#+attr_html: :width 400px :float nil:
+[[../img/scrum.jpg]]
+
+Scrum glossary:
+- Agile
+- Sprint
+- Sprint review
+- Prototype
+- Scrum master
+- Product owner
+- Scrum team
+
+#+attr_html: :width 400px :float nil:
+[[../img/scrum.png]]  
+
+* First assignment
+
+- Complete the first chapter of "[[https://app.datacamp.com/learn/courses/understanding-artificial-intelligence][Understanding AI]]" by next Tuesday.
+- Complete the second chapter by next Thursday.
+- Think about a workflow that you would like to automate.
+- Think about a project (perhaps related to it) to pursue.
+
+* Warm-up exercise (too easy? Think again)
+
+- Pick one task you personally do at least once a week.
+- Pair up and explain the task to each other.
+- Whoever listens may only ask clarifying questions.
+- Switch roles after a while.
+
+Questions:
+#+begin_quote
+1. At what point did the explanation break down?
+2. What did you assume the other person already knew?
+3. Would an AI have made the same assumptions?
+#+end_quote
+
+* TODO Review (Tue 20 Jan)
+
+1. Do you remember any of the course's design principles?
+   #+begin_quote
+   The course design is: *reasoning-first*, *artifact-centered*,
+   *failure-aware*, *tool-light*, and *iteration-driven*.
+   #+end_quote
+2. 
