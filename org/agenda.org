@@ -6,3 +6,8 @@
 #+attr_html: :width 400px :float nil:
 [[../img/cover.png]]
 
+* Week 1
+
+- [X] Introduction to the lecturer
+- [X] Introduction to the course
+- [ ] Short warm-up exercise
