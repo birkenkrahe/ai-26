@@ -100,7 +100,7 @@ What people call GenAI includes:
 - Memory
 - Guardrails
 - User interface
-- Retrieval Augmented Memory
+- Retrieval Augmented Memory (RAG)
 - Infrastructure
 
 This is an insanely complex technology that few people understand from
@@ -156,7 +156,15 @@ Source: [[https://link.springer.com/article/10.1007/s44163-025-00757-0][Springer
 
 * Understanding vs. delegating
 
-- [[../img/chatgpt_answer.png][ChatGPT's answer]]
+I gave this question from my presentaiton to four models:
+#+begin_quote
+If an AI gives you a useful result, but you don't understand how it
+got there, did you actually solve the problem?
+#+end_quote
+
+
+These are excerpts from their answers:
+- [[../img/chatgpt_answer.png][ChatGPT's answer]] 
 - [[../img/gemini_answer.png][Gemini's answer]]
 - [[../img/claude_answer.png][Claude's answer]]
 - [[../img/grok_answer.png][Grok's answer]]
@@ -225,10 +233,10 @@ Scrum glossary:
 
 * First assignment
 
-- Complete the first chapter of "[[https://app.datacamp.com/learn/courses/understanding-artificial-intelligence][Understanding AI]]" by next Tuesday.
-- Complete the second chapter by next Thursday.
-- Think about a workflow that you would like to automate.
-- Think about a project (perhaps related to it) to pursue.
+- Complete the first chapter of "[[https://app.datacamp.com/learn/courses/understanding-artificial-intelligence][Understanding AI]]" by next *Tuesday*.
+- Complete the second chapter by next *Thursday*.
+- Think about a *workflow* that you would like to automate.
+- Think about a *project* (perhaps related to it) to pursue.
 
 * Warm-up exercise (too easy? Think again)
 
@@ -244,11 +252,3 @@ Questions:
 3. Would an AI have made the same assumptions?
 #+end_quote
 
-* TODO Review (Tue 20 Jan)
-
-1. Do you remember any of the course's design principles?
-   #+begin_quote
-   The course design is: *reasoning-first*, *artifact-centered*,
-   *failure-aware*, *tool-light*, and *iteration-driven*.
-   #+end_quote
-2. 
