@@ -1,0 +1,47 @@
+#+OPTIONS: toc:nil num:nil ^:nil:
+#+STARTUP: overview hideblocks indent entitiespretty: 
+* Generative AI Deep-Dive Project Ideas (Option 2)
+
+Each project focuses on *understanding, analysis, and explanation* rather
+than building an agent. The final deliverable is expected to be a
+structured written artifact (report, comparison, or analytical memo).
+
+1. *How large language models generate text*  
+   An exploration of tokens, probabilities, and sampling, explaining how
+   models turn prompts into sequences of words and why outputs vary.
+
+2. *Hallucinations in generative AI*  
+   An investigation into what hallucinations are, why they occur, and
+   which techniques (prompting, verification, constraints) reduce them.
+
+3. *Prompting versus understanding*  
+   A critical analysis of whether prompting constitutes understanding,
+   delegation, or something else entirely, with concrete examples.
+
+4. *Single-agent vs multi-agent systems*  
+   A comparative study of architectural differences, benefits, risks,
+   and failure modes of single-agent and multi-agent AI systems.
+
+5. *Trust and verification in AI-assisted work*  
+   An examination of how humans decide when to trust AI outputs and what
+   verification strategies are effective in practice.
+
+6. *Bias and representation in generative AI*  
+   An analysis of how training data shapes model behavior and where bias
+   can appear in outputs, even without explicit intent.
+
+7. *AI as collaborator vs authority*  
+   A conceptual study of different roles AI can play in human work and
+   the risks of treating AI as an authority rather than a tool.
+
+8. *Limits of generative AI in academic settings*  
+   A discussion of where AI tools help learning and where they undermine
+   understanding, with concrete academic examples.
+
+9. *Data dependence and training limitations*  
+   An exploration of how the scope, quality, and age of training data
+   constrain what generative AI systems can reliably do.
+
+10. *Ethical risks of delegating decisions to AI*  
+    A focused analysis of the ethical and practical consequences of
+    delegating judgment, responsibility, or authority to AI systems.

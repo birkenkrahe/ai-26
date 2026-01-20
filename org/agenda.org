@@ -1,13 +1,535 @@
 #+TITLE:Coding in an AI World - Agenda notebook
 #+AUTHOR:Marcus Birkenkrahe (pledged)
 #+SUBTITLE:DSC 482 - Lyon College - Spring 2026
-#+STARTUP: overview hideblocks indent entitiespretty: 
-#+OPTIONS: toc:nil num:nil ^:nil: 
+#+STARTUP: overview hideblocks indent entitiespretty:
+#+OPTIONS: toc:nil num:nil ^:nil:
 #+attr_html: :width 400px :float nil:
 [[../img/cover.png]]
 
-* Week 1
+* Week 1 - Overview
 
 - [X] Introduction to the lecturer
 - [X] Introduction to the course
-- [ ] Short warm-up exercise
+  
+** Entry Survey Summary — What This Class Looks Like (Week 1)
+
+*** Background & Experience
+- The class has a *very mixed technical background*.
+- Several students report *no prior programming experience*.
+- Many have *light exposure* (Excel, one CS course, scripting, or
+  tutorials).
+- A small number have stronger technical backgrounds, but they are *not
+  the majority*.
+
+*Takeaway:* This course cannot assume shared technical foundations — and
+it does not need to.
+
+*** Prior Use of Generative AI
+- Almost everyone has already used *ChatGPT* or a similar tool.
+- Typical uses include:
+  - Writing assistance
+  - Homework support
+  - Brainstorming ideas
+  - Summarization
+- Very few students have used AI for:
+  - Automation
+  - Multi-step workflows
+  - File-based or repeatable tasks
+
+*Takeaway:* Students are experienced *users* of AI, but not yet *designers*
+of AI workflows.
+
+*** Confidence vs. Understanding
+- Many students feel AI is *useful*.
+- Far fewer feel confident explaining:
+  - *How* AI arrives at an answer
+  - *Why* it sometimes fails
+  - *When* its output should not be trusted
+
+*Takeaway:* There is a gap between *getting answers* and *understanding
+processes*.
+
+*** Motivation for Taking the Course
+- Common motivations include:
+  - Wanting practical, real-world skills
+  - Curiosity about AI beyond hype
+  - Improving productivity and efficiency
+  - Preparing for future jobs or graduate study
+- Very few students cited theory or math as a primary motivation.
+
+*Takeaway:* This group values *usefulness*, *transferable skills*, and
+*hands-on work*.
+
+*** What This Means for the Course
+- We will:
+  - Start from *conversation and reasoning*, not code
+  - Treat AI as a *collaborator*, not an oracle
+  - Focus on *workflows*, not one-off prompts
+  - Expect everyone to explain what their AI system is doing
+- Prior programming experience is *not required* to succeed here.
+
+*Bottom line:* This course is about learning how to *work with* AI
+ responsibly and deliberately — not just how to get answers from it.
+
+* Week 2 - Term project / What is AI
+
+- [ ] Tue Review: Course overview (for Quiz 1, due Fri 23-Jan)
+- [ ] Short warm-up exercise: task analysis (the way of the agent)
+- [ ] Term project: Instructions, ideas, examples
+
+- [ ] Thu Review: What is AI (for Quiz 2, due Mon 26-Jan)
+- [ ] Thu Discussion: Do bad data lead to bad AI?
+
+* Google Chat review:
+#+attr_html: :width 200px :float nil:
+[[../img/guardian.png]]
+
+What you may have missed:
+
+* NEXT Review (First session) - Course overview (Tue)
+#+attr_html: :width 300px :float nil:
+[[../img/turk.png]]
+
+*Input:* [[file:1_overview.org][Lecture script]], [[https://drive.google.com/drive/folders/13TC3LMOB7uT6ZouQ68MA5UbaZWGHDctJ?usp=drive_link][whiteboard screenshots]].
+
+*ChatGPT prompt:*
+#+begin_quote
+"I've attached my first lecture given today. Give me 10 review
+questions. For the questions don't directly link back to the
+document. Short questions are better than long ones. Short answers,
+too. I want to discuss these first thing in the next class. After that
+I'm going to do the warm-up pair exercise that you suggested. Then
+give me another 10 based on the attached whiteboard screenshots."
+#+end_quote
+
+*Output:*
+
+1. What is the central question of this course?
+   #+begin_quote
+   Whether using AI means understanding a problem or just delegating
+   it.
+   #+end_quote
+
+2. What is the difference between understanding and delegating?
+   #+begin_quote
+   Understanding allows explanation and correction; delegating does
+   not.
+   #+end_quote
+
+3. Why is “vibe coding” not enough on its own?
+   #+begin_quote
+   Because useful output can still be unreliable or poorly understood.
+   #+end_quote
+
+4. What is the main risk of treating AI as a black box?
+   #+begin_quote
+   You can’t explain, verify, or fix what it produces.
+   #+end_quote
+
+5. What does “conversation before configuration” mean?
+   #+begin_quote
+   Using dialogue to shape behavior instead of complex setups.
+   #+end_quote
+
+6. Why does the course emphasize workflows instead of tools?
+   #+begin_quote
+   Tools change; reasoning and structure transfer.
+   #+end_quote
+
+7. What does it mean to say “files are memory”?
+   #+begin_quote
+   State and progress are stored in inspectable documents.
+   #+end_quote
+
+8. Why are failures and hallucinations treated as learning
+   opportunities?
+   #+begin_quote
+   They reveal limits and improve verification habits.
+   #+end_quote
+
+9. Why did I describe GenAI “insanely complex”?
+   #+begin_quote
+   Because it combines many interacting systems beyond the model
+   itself.
+   #+end_quote
+
+10. What skill matters more than prior programming experience in this
+    course?
+    #+begin_quote
+    Curiosity and willingness to experiment.
+    #+end_quote
+
+11. What is the difference between a *workflow* and a *process*?
+    #+begin_quote
+    A workflow is a process that can be automated.
+    #+end_quote
+
+12. Why are agents associated with workflows rather than simple scripts?
+    #+begin_quote
+    Because agents act in and change an environment, not just
+    respond to input.
+    #+end_quote
+
+13. Why will programmers still be needed in an AI-driven world?
+    #+begin_quote
+    Because someone must design, verify, and maintain reliable workflows.
+    #+end_quote
+
+14. What role does the command line (CLI) play in AI workflows?
+    #+begin_quote
+    It’s a universal interface for running and chaining actions.
+    #+end_quote
+
+15. Why were shell, terminal, and CLI treated as the same concept?
+    #+begin_quote
+    Because they all refer to a text-based way of interacting with a system.
+    #+end_quote
+
+16. Why were “Linux / macOS / Windows” crossed out together?
+    #+begin_quote
+    Because workflows should be independent of the operating system.
+    #+end_quote
+
+17. What does “executable (.exe)” emphasize conceptually?
+    #+begin_quote
+    That programs ultimately run as machine instructions.
+    #+end_quote
+
+18. Why is Python written alongside AI tools?
+    #+begin_quote
+    Because it’s a common glue language for workflows.
+    #+end_quote
+
+19. Why mention “Transformer (2017)” on the board?
+    #+begin_quote
+    To mark the architectural starting point of modern LLMs.
+    #+end_quote
+
+20. What is the core design principle behind this course?
+    #+begin_quote
+    To make AI behavior understandable rather than magical.
+    #+end_quote
+
+21. What is artificial intelligence trying to achieve?
+    #+begin_quote
+    Performing tasks that normally require human intelligence.
+    #+end_quote
+
+22. What kind of problems does AI handle especially well?
+    #+begin_quote
+    Finding patterns in large amounts of data.
+    #+end_quote
+
+23. How does modern AI differ from rule-based programs?
+    #+begin_quote
+    It learns from data instead of following fixed rules.
+    #+end_quote
+
+24. What role does machine learning play in AI?
+    #+begin_quote
+    It allows systems to improve behavior through data.
+    #+end_quote
+
+25. Why is data central to AI systems?
+    #+begin_quote
+    Because models are trained and shaped by data.
+    #+end_quote
+
+26. What is a common limitation of AI?
+    #+begin_quote
+    Its performance depends on data quality and training.
+    #+end_quote
+
+27. Which AI area focuses on interpreting images and visual input?
+    #+begin_quote
+    Computer vision.
+    #+end_quote
+
+28. What does it mean that AI systems are task-specific?
+    #+begin_quote
+    They are built for particular tasks, not general intelligence.
+    #+end_quote
+
+29. Why are AI outputs often described as probabilistic?
+    #+begin_quote
+    They are based on likelihoods rather than fixed outcomes.
+    #+end_quote
+
+30. Why does AI require human oversight?
+    #+begin_quote
+    Because it is powerful but limited and can make mistakes.
+    #+end_quote
+
+The first test "Course Overview", is due on Monday, 26-January (23:59)
+
+* Warm-up exercise - "The Way of the Agent" (30 min)
+#+attr_html: :width 200px :float nil:
+[[../img/the_secret_agent_conrad2.jpg]]
+
+- You already do real workflows every week.
+- An agent can *only* automate what you can specify.
+- If you cannot *specify* your tasks, you cannot build/use agents.
+- A task specification is akin to an *algorithmic* description.
+- Find where “human common sense” (*heuristics*) sneaks in, and name it.
+
+* TODO Term project: Instructions, ideas, examples
+#+attr_html: :width 400px :float nil:
+[[../img/sprint_1.png]]
+
+- Two options: Build your own single *agent*, or research an AI *topic*.
+- Purpose is *not* to deliver a complete product but to *learn* as you go.
+- Sprint 1 (Feb 9): Develop a structured project proposal.
+- TODO:
+  1) Look at the shared documents in my GDrive folder:
+     [[https://tinyurl.com/agent-project][tinyurl.com/agent-project]] - instruction, example, ideas
+  2) Enter your name and project title in =Canvas > Pages > Projects=
+     table.
+  3) Begin working on your proposal and share your prototype(s) freely
+     with me.
+  4) It's good to try out several proposals before settling on one.
+
+* TODO My personal project (too big): Advising Multi-Agent
+
+Purpose: To build an AI agent that prepares degree audits and schedule
+simulations for academic advising, reducing repetitive checking while
+keeping all decisions and approvals with the human advisor.
+
+Example flowchart (Mermaid diagram) - your task in sprint 2:
+#+begin_src mermaid :file ../img/advising_agent_workflow.png 
+  flowchart TD
+  A[Start] --> B[Load inputs]
+  B --> B1[Student profile]
+  B --> B2[Academic history]
+  B --> B3[Transfer records]
+  B --> B4[Rule files]
+  B --> B5[Course offerings]
+  B --> C[Agent 1 Audit]
+  C --> D[Status report]
+  D --> G1{Advisor gate 1}
+  G1 --> H1[Advisor updates files]
+  H1 --> C
+  G1 --> E[Agent 2 Exceptions]
+  E --> F[Attention list]
+  F --> G2{Advisor gate 2}
+  G2 --> H2[Advisor resolves items]
+  H2 --> C
+  G2 --> I[Agent 3 Planning]
+  I --> J[Draft schedules]
+  J --> K[Agent 4 Verification]
+  K --> L{Verification result}
+  L --> M[Return with failure report]
+  M --> I
+  L --> N[Final packet]
+  N --> G3{Advisor gate 3}
+  G3 --> I
+  G3 --> Z[Export and archive]
+  C --> LOG[Append log]
+  I --> LOG
+  K --> LOG
+  Z --> LOG
+#+end_src
+
+#+RESULTS:
+[[file:../img/advising_agent_workflow.png]]
+
+
+* TODO Review (DataCamp): What is AI? (Thu)
+#+attr_html: :width 300px :float nil:
+[[../img/other_fields.png]]
+
+Auto-generated from the DataCamp video transcripts by ChatGPT 5.2.
+
+1. What foundational question did Alan Turing pose in the 1950s that
+   helped launch AI as a field?
+   #+begin_quote
+   Whether machines can think.
+   #+end_quote
+
+2. What test did Turing propose as a practical way to evaluate machine
+   intelligence?
+   #+begin_quote
+   Whether a machine can convincingly imitate a human in conversation.
+   #+end_quote
+
+3. In which academic discipline did Artificial Intelligence originally
+   emerge?
+   #+begin_quote
+   Computer science.
+   #+end_quote
+
+4. How did John McCarthy define Artificial Intelligence in the 1950s?
+   #+begin_quote
+   As the science and engineering of making intelligent machines.
+   #+end_quote
+
+5. How has the definition of AI expanded beyond early formulations?
+   #+begin_quote
+   To include learning, reasoning, decision-making, and
+   problem-solving.
+   #+end_quote
+
+6. According to the European Commission, what key capabilities
+   characterize modern AI systems?
+   #+begin_quote
+   Perception, data interpretation, reasoning, decision-making, and
+   action toward goals.
+   #+end_quote
+
+7. What is Artificial Narrow Intelligence (ANI)?
+   #+begin_quote
+   AI designed to perform specific tasks well, but not general
+   reasoning.
+   #+end_quote
+
+8. What is Artificial General Intelligence (AGI)?
+   #+begin_quote
+   Hypothetical AI with human-level intelligence across many tasks.
+   #+end_quote
+
+9. Does true AGI currently exist?
+   #+begin_quote
+   No.
+   #+end_quote
+
+10. Why are systems like voice assistants and GPT considered “narrow” AI?
+    #+begin_quote
+    Because they excel at specific tasks but lack general human-like
+    intelligence.
+    #+end_quote
+
+11. What four broad categories of tasks is AI especially good at?
+    #+begin_quote
+    Prediction, pattern recognition, optimization, and automation.
+    #+end_quote
+
+12. What is Machine Learning’s central capability?
+    #+begin_quote
+    Learning from data to make decisions without explicit programming.
+    #+end_quote
+
+13. How do predictions differ from inferences in Machine Learning?
+    #+begin_quote
+    Predictions forecast future events; inferences determine outcomes
+    from existing data.
+    #+end_quote
+
+14. What role does pattern recognition play in AI systems?
+    #+begin_quote
+    Identifying trends or structures in data to support decisions.
+    #+end_quote
+
+15. How is clustering used in business applications?
+    #+begin_quote
+    To group customers with similar behaviors.
+    #+end_quote
+
+16. What is anomaly detection commonly used for?
+    #+begin_quote
+    Identifying unusual or potentially fraudulent activity.
+    #+end_quote
+
+17. What distinguishes Generative AI from other AI approaches?
+    #+begin_quote
+    It creates new content based on learned patterns.
+    #+end_quote
+
+18. Give one example of an optimization problem AI can solve.
+    #+begin_quote
+    Finding efficient delivery routes.
+    #+end_quote
+
+19. Why is automation alone not considered AI?
+    #+begin_quote
+    Because it follows fixed rules without learning or reasoning.
+    #+end_quote
+
+20. Name two key limitations of current AI systems.
+    #+begin_quote
+    Bias in data and difficulty handling novel situations.
+    #+end_quote
+
+21. What is the main goal of Machine Learning?
+    #+begin_quote
+    Enabling systems to learn patterns and make predictions from data.
+    #+end_quote
+
+22. How does Deep Learning differ from other Machine Learning methods?
+    #+begin_quote
+    It uses neural networks with many layers to model complex patterns.
+    #+end_quote
+
+23. What is the purpose of knowledge representation and reasoning in
+    AI?
+    #+begin_quote
+    To help systems understand information and make logical decisions.
+    #+end_quote
+
+24. How does Computer Vision contribute to AI systems?
+    #+begin_quote
+    By enabling machines to interpret images and visual data.
+    #+end_quote
+
+25. What does Natural Language Processing (NLP) allow AI systems to
+    do?
+    #+begin_quote
+    Understand and generate human language.
+    #+end_quote
+
+26. Why do many advanced AI systems combine multiple AI subfields?
+    #+begin_quote
+    To handle complex, real-world tasks more effectively.
+    #+end_quote
+
+27. What AI areas are combined in a voice assistant?
+    #+begin_quote
+    NLP (Natural Language Processing) and Deep Learning (Neural
+    Networks).
+    #+end_quote
+
+28. How are AI and Data Science related?
+    #+begin_quote
+    Both extract value from data using mathematical and statistical
+    methods.
+    #+end_quote
+
+29. Name two non-technical disciplines that influence AI development.
+    #+begin_quote
+    Ethics and law.
+    #+end_quote
+
+30. Why is understanding AI’s related disciplines important?
+    #+begin_quote
+    Because AI development and use affect society beyond technology
+    alone.
+    #+end_quote
+
+* TODO Discussion (Thu)
+
+The DataCamp video ("What can AI do?") from chapter 1 states:
+#+begin_quote
+»AI is only as good as the data it learns from.«
+#+end_quote
+
+In IT, this is also called "Garbage in, garbage out." (GIGO)
+
+Discuss:
+1) Do you think this is true?
+2) Can you find an example for 'bad data' leading to 'bad AI'?
+3) Is this true for humans?
+4) Can you find a counterexample ('bad data' leading to 'good AI')?
+5) Can you find a counterexample for human decisions?
+
+#+begin_notes
+- 'Bad' data are: noisy, missing, or incorrect.
+- 'Good AI' is AI that makes predictions with high accuracy.
+- Example for 4): AI "toxicity training" ([[https://arxiv.org/abs/2505.04741][Li et al, 2025]])
+- Examples for 5): Scientific serendipity (failed experiments leading
+  to good scientific results): Discovery of penicillin by accident
+  through Fleming in 1928; Vicarious learning or "crash test" effect:
+  humans can learn from other people's bad data without experiencing
+  it themselves.
+#+end_notes
+
+* Week 3 - Tasks AI can solve - 
+
+- [ ] Tue Review: Which tasks can AI solve (Quiz 3, due 30-Jan)?

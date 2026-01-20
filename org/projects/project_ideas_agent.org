@@ -1,0 +1,40 @@
+#+STARTUP: overview hideblocks indent entitiespretty: 
+* Sample Single-Agent Project Ideas
+
+1. *Degree audit assistant*: An agent that checks completed courses
+   against degree requirements and produces a structured summary of
+   satisfied and remaining items.
+
+2. *Study planning assistant*: An agent that reads course syllabi and
+   generates a weekly study plan based on deadlines and workload.
+
+3. *Research reading tracker*: An agent that maintains a list of papers,
+   tracks reading progress, and produces short summaries for future
+   reference.
+
+4. *Job or internship application tracker*: An agent that tracks
+   applications, deadlines, required materials, and current status
+   across multiple opportunities.
+
+5. *Meeting notes action-item extractor*: An agent that processes
+   meeting notes and produces a list of follow-up tasks and
+   responsibilities.
+
+6. *Personal finance review assistant*: An agent that categorizes
+   expenses from CSV files and generates periodic spending summaries.
+
+7. *Lab or report checklist verifier*: An agent that checks whether
+   required sections or components are present in a report or lab
+   submission.
+
+8. *Course workload estimator*  
+   An agent that estimates weekly workload based on assignments,
+   readings, and exams listed in course materials.
+
+9. *Internship search organizer*  
+   An agent that tracks internship postings, application steps, and
+   recruiter communications.
+
+10. *Transfer credit review assistant*  
+    An agent that flags transfer courses with unclear equivalencies and
+    prepares them for human review.

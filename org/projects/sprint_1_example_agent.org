@@ -1,0 +1,103 @@
+#+STARTUP: overview hideblocks indent entitiespretty: 
+* Sample Proposal (Single-Agent Example Only): Task List Maintenance Agent
+
+** Problem Description
+
+Many students and professionals maintain task lists for coursework, jobs,
+and personal commitments, but the list quickly becomes inconsistent:
+items are duplicated, priorities drift, deadlines are unclear, and tasks
+accumulate without an obvious weekly plan.
+
+The human workflow this project targets is the repeated process of:
+1) capturing new tasks from email, class, meetings, or memory,
+2) rewriting or reorganizing the list,
+3) deciding what to do next, and
+4) tracking what is done.
+
+This is a good target for agentic assistance because it is frequent,
+stateful, and rule-based (even if the rules are personal).
+
+** Reason
+
+This problem is interesting because it is universal and repeatable: the
+same “update the list” work happens every day or every week. A well-made
+assistant would reduce friction in staying organized and would make the
+task list more reliable as a planning tool.
+
+This is also a good beginner agent project because inputs can be kept
+explicit and structured (simple text or a small table), and success is
+easy to judge by inspection.
+
+** Constraints
+
+- Inputs may be incomplete (missing dates, vague task descriptions).
+- Different tasks may use inconsistent wording for the same work.
+- The agent cannot know true task duration or real priorities unless the
+  user provides them.
+- The project must remain a *single-agent* system: one coherent assistant
+  that repeatedly reads inputs, updates state, and produces outputs.
+
+To manage these constraints, the agent will:
+- ask for missing required fields when needed (e.g., due date),
+- avoid inventing details,
+- maintain a transparent task table that the user can edit.
+
+** Goals and Non-Goals
+
+*** Goals (ordered by importance)
+
+1. Maintain a task list as a structured state file (CSV or simple table)
+   with fields such as:
+   - task description
+   - due date (optional but encouraged)
+   - priority (optional)
+   - status (todo / doing / done)
+   - notes (optional)
+
+2. Provide an updated task list after each “update cycle,” including:
+   - newly added tasks
+   - updated statuses
+   - resolved duplicates (when confident) or flagged duplicates (when not)
+
+3. Produce a short weekly view (e.g., “next 7 days”) that highlights:
+   - tasks due soon
+   - overdue tasks
+   - tasks lacking due dates
+
+*** Non-Goals
+
+- Automatically sending reminders or notifications.
+- Integrating with external calendar APIs or email systems.
+- Estimating actual time-to-complete or making authoritative priority
+  decisions.
+- Autonomously creating tasks from sources without the user providing the
+  text.
+
+** Metrics
+
+The project will be considered successful if:
+
+- The agent produces a task table that remains consistent across updates
+  (no silent overwriting or disappearing tasks).
+- The user can update their task list faster than manual editing.
+  (Example metric: reduce weekly task-list maintenance time by ~30–50%.)
+- The weekly view correctly identifies:
+  - tasks due within 7 days,
+  - overdue tasks,
+  - and tasks with missing due dates.
+
+A simple evaluation plan:
+- Run the agent weekly for at least two weeks on real tasks.
+- Compare the time spent maintaining the task list with and without the
+  agent.
+- Check for errors: missing tasks, invented dates, incorrect status
+  changes, or incorrect duplicate merges.
+
+** References
+
+- Documentation for the AI tool used (ChatGPT or equivalent).
+- Any task-list format reference used (CSV conventions, GTD notes, or
+  personal workflow notes).
+- Personal communication (your own workflow observations) is acceptable
+  as a source if clearly labeled.
+
