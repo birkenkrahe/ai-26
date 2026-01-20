@@ -1,0 +1,131 @@
+#+TITLE: Sprint 1: Research Project Proposal Instructions (Option 2)
+#+AUTHOR: Your Name
+#+DATE: <insert date>
+#+STARTUP: overview hideblocks indent entitiespretty:
+#+OPTIONS: toc:nil num:nil ^:nil: 
+* Purpose of Sprint 1 (Option 2)
+
+This project option is for students who want to *study and understand*
+generative AI systems rather than build an agent.
+
+In Sprint 1, your task is to frame a **research-oriented project
+proposal** focused on analysis, explanation, and critical evaluation of a
+generative AI topic. You are not expected to conduct the full research
+yet; instead, you will define a clear question, scope, and evaluation
+plan.
+
+The goal is to demonstrate that you can:
+- identify a meaningful question about generative AI,
+- explain why it matters,
+- scope the project realistically,
+- and define what a successful outcome would look like.
+
+* Sprint 1 Tasks
+
+1. Select a topic related to generative AI that you want to study in
+   depth.
+2. Formulate a focused research question or guiding problem.
+3. Write a short project proposal using the required sections below.
+4. Submit your proposal materials for Sprint 1 review.
+
+* Required Proposal Sections
+
+Your proposal must include the following sections, using clear headings.
+
+** Problem Description
+
+What question are you trying to answer, or what issue are you trying to
+understand?
+
+Describe the topic you want to investigate and clearly state the central
+question or problem your project will address. This should be a *how*,
+*why*, or *what are the limits of* type question rather than a vague
+topic description.
+
+** Reason
+
+Why is this problem worth studying?
+
+Explain why this topic is interesting or important to you and why it
+matters more broadly. You may connect the topic to academic work,
+professional practice, ethical concerns, or societal impact.
+
+** Constraints
+
+What limits or difficulties do you anticipate?
+
+Discuss constraints such as:
+- access to sources or data,
+- technical depth or mathematical limits,
+- time and scope,
+- ambiguity or disagreement in the literature.
+
+This section should show awareness of what you *cannot* reasonably do
+within the scope of the course.
+
+** Goals and Non-Goals
+
+What will this project produce—and what will it deliberately not attempt?
+
+List your primary goal (for example, a structured explanatory report or
+comparative analysis). If you have secondary goals, list them in order of
+importance.
+
+Then list explicit non-goals, such as:
+- building software,
+- proving new theorems,
+- performing large-scale experiments,
+- or resolving open research debates.
+
+** Metrics
+
+How will you judge success?
+
+Describe how you will determine whether your project is successful.
+Possible metrics include:
+- clarity and coherence of explanation,
+- accuracy with respect to sources,
+- ability to compare competing views,
+- usefulness to a non-expert reader.
+
+Metrics may be qualitative, but they must be explicit.
+
+** References
+
+Which sources will inform your work?
+
+List the sources you plan to use or have already consulted. Use a
+consistent citation format (e.g. AMA). Sources may include academic
+papers, books, documentation, blog posts, videos, or lectures.
+
+Each reference should be complete (author, title, date, source).
+
+** Comments (Optional)
+
+Any additional thoughts?
+
+You may include open questions, concerns about scope, alternative topics
+you considered, or aspects of the project you are unsure how to approach
+yet.
+
+* Submission Instructions
+
+1. Write your proposal as a Google Docs document.
+2. Include a title, your name, and the date.
+3. Upload the document to a Google Drive folder named =1st Sprint Review=.
+4. Ensure the folder is shared with Lyon College.
+5. Submit the link to the folder in Canvas.
+6. Add your name and project title to the designated Canvas page.
+
+* Sprint 1 Review
+
+Sprint 1 ends with a **sprint review on February 10**.
+
+The review will focus on:
+- clarity of the research question,
+- appropriateness of scope,
+- feasibility within the course timeline,
+- and quality of reasoning.
+
+You are *not* evaluated on having answers yet—only on having a clear,
+well-justified plan for investigating the question.

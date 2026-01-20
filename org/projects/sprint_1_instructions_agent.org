@@ -1,0 +1,117 @@
+#+TITLE: Term Project – Sprint 1: Agent Project Proposal
+#+AUTHOR: Marcus Birkenkrahe (pledged)
+#+DATE: 01-20-2026
+#+STARTUP: overview hideblocks indent entitiespretty:
+#+OPTIONS: toc:nil num:nil ^:nil: 
+* Purpose of Sprint 1
+
+The goal of the first sprint is *project selection and framing*.
+
+You are not building an agent yet. Instead, you will identify a real,
+repeatable *human workflow* and develop a proposal for how a *single AI
+agent* could assist a human user across multiple steps.
+
+All term projects in this course must be *single-agent projects*. Your
+agent may perform multiple actions (planning, checking, updating files),
+but it should operate as one coherent assistant rather than as multiple
+specialized agents.
+
+The emphasis in this sprint is on *clarity, feasibility, and realism*,
+not ambition.
+
+* Sprint 1 Tasks
+
+1. Identify one or more possible agent project topics.
+2. Develop a short proposal for each topic you are considering.
+3. Select the proposal that is clearest, most feasible, and easiest to
+   justify.
+4. Submit your proposal materials for review.
+
+* Required Proposal Sections
+
+Your proposal must include the following sections, using clear
+headings.
+
+** Problem Description
+
+What are you trying to do?
+
+Describe the human task or workflow you want to support. Explain who
+performs this task, how often it occurs, and why it is time-consuming,
+repetitive, error-prone, or cognitively demanding.
+
+Focus on the *current human process*, not on the AI solution yet.
+
+** Reason
+
+Why is this problem interesting or important?
+
+Explain why this problem matters to you personally and why it might
+also matter to others (students, professionals, researchers,
+organizations, etc.). Briefly explain why this task is a good
+candidate for *agentic assistance* rather than a one-shot AI query.
+
+** Constraints
+
+Which difficulties do you foresee?
+
+Discuss anticipated challenges, such as:
+- technical constraints (data formats, access, reliability),
+- conceptual constraints (ambiguity, judgment calls, incomplete rules),
+- personal constraints (time, experience, scope).
+
+This section should demonstrate realism rather than pessimism.
+
+** Goals and Non-Goals
+
+What are you going to build—and what are you explicitly *not* going to build?
+
+List your primary goal first. If you have additional goals, list them in
+order of importance. Then include a list of *non-goals*: features or
+capabilities you are deliberately excluding from this project.
+
+Non-goals are required and are a sign of good project design.
+
+** Metrics
+
+How will you evaluate success?
+
+Describe how you will determine whether your project is successful.
+Metrics may be quantitative or qualitative, but they must be explicit.
+Examples include time saved, reduced errors, improved clarity, or
+increased consistency.
+
+** References
+
+Which sources informed your proposal?
+
+List all sources you used to develop the proposal. Use a consistent
+citation format (e.g., AMA). Sources may include academic papers,
+documentation, software tools, blog posts, videos, or personal
+communication.
+
+Each reference should be complete (author, title, date, source).
+
+** Comments (Optional)
+
+Any additional thoughts?
+
+You may optionally include open concerns, unresolved questions, risks
+you are unsure how to handle yet, or alternative project ideas you
+considered before settling on this one.
+
+* Submission Instructions
+
+1. Write your proposal as a Google Docs document.
+2. Include a title, your name, and the date.
+3. Upload the document to a Google Drive folder named =1st Sprint Review=.
+4. Ensure the folder is shared with Lyon College.
+5. Submit the link to the folder in Canvas.
+6. Add your name and project title to the designated Canvas page.
+
+* Additional Guidance
+
+For general advice on writing project proposals, see:
+
+Ellis, *Data Science Project Proposals* (2021).  
+URL: crunchingthedata.com

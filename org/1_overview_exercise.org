@@ -1,0 +1,155 @@
+#+TITLE:Course Overview Practice - Agent edition 
+#+AUTHOR:Marcus Birkenkrahe
+#+SUBTITLE:Coding in an AI World (DSC 482) Lyon College, Spring 2026
+#+STARTUP: overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+#+PROPERTY: header-args:R :session *R* :results output :exports both :noweb yes
+#+PROPERTY: header-args:python :session *Python* :results output :exports both :noweb yes
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both :noweb yes
+#+PROPERTY: header-args:C++ :main yes :includes <iostream> :results output :exports both :noweb yes
+
+* Warm-up: “Too easy? Think again.” (Agent edition)
+
+** Purpose 
+
+- You already do real workflows every week.
+- An agent can *only* automate what you can specify.
+- If you cannot *specify* your tasks, you cannot build/use agents.
+- A task specification is akin to an *algorithmic* description.
+- Find where “human common sense” (*heuristics*) sneaks in, and name it.
+
+** Example (lead-in)
+
+- *For humans:* After every class, I create review questions for the
+  beginning of the next class using the material from that day’s
+  session.
+
+- *Agent issues:*
+  1. What exactly counts as 'the material'? Slides? What I said out
+     loud? Board work?
+  2. How many questions should be created?
+  3. What kind of questions: recall, conceptual, application?
+  4. What format should they be in?
+  5. How do I avoid ambiguous or misleading questions?
+  6. How do I check that a question is actually correct?
+
+- As a human, I answer all of these silently, without noticing. An
+  agent cannot.
+
+- This exercise is about finding those silent assumptions.
+
+- When your explanation breaks down, *that’s the interesting
+  part*. That’s where agents fail — and where your projects begin.
+
+** Timing (25–30 minutes total)
+
+- 2–3 min  Pick a task + pair up
+- 5 min    Round 1 (Speaker A → Listener B)
+- 5 min    Round 2 (Speaker B → Listener A)
+- 3 min    Silent notes (both)
+- 10–15 min Debrief (whole class)
+
+** Setup (1 minute)
+
+- Pair up.
+- Each person chooses *one* task they personally do at least once a
+  week.
+- Choose tasks that involve steps (not “thinking about something”).
+  *Examples:* paying a bill, submitting an assignment, scheduling a
+  meeting, ordering groceries, doing laundry, checking grades, backing
+  up files.
+
+** Rules (important)
+
+- Speaker: Explain the task as if the listener must *automate it
+  tomorrow*.
+- Listener: You may *only* ask clarifying questions.
+- Listener must interrupt whenever a step could not be executed
+  *exactly as stated*.
+
+** Round 1 (5 minutes)
+- Speaker A explains their weekly task.
+- Listener B asks only clarifying questions:
+  - “What does ‘done’ mean here?”
+  - “What’s the input? What’s the output?”
+  - “Where does the information come from?”
+  - “What do you do if X is missing / fails / is late?”
+  - “How do you decide between option A vs B?”
+
+** Switch (5 minutes)
+
+- Swap roles and repeat.
+
+** Silent reflection (3 minutes, individual writing)
+
+Write short answers (bullet points are fine):
+#+begin_quote
+1. Where did the explanation break down (the first “wait—what?”
+   moment)?
+2. What did you assume the other person already knew?
+3. Which parts relied on judgment rather than rules?
+4. Where did words like “just,” “normally,” or “obvious” appear?
+5. If this were an AI agent, what would it do wrong *first*?
+6. What would you need to add to make the task repeatable?
+#+end_quote
+
+** Debrief (10–15 minutes)
+- Give examples, from your session, for:
+  - a “breakdown point”
+  - an assumption
+  - a judgment call
+  - a vague word (“just/normal/obvious”)
+
+*** Agent bridge
+
+- A chatbot answers questions.
+- An *agent* takes a goal, plans steps, uses tools, keeps state, and acts.
+- Agents fail exactly where humans rely on:
+  - unstated context
+  - vague language
+  - judgment without criteria
+  - missing error-handling
+
+** One-minute takeaway (tie to agent projects)
+
+- Your project (option 1) is: take a real workflow and turn it into:
+  1. *steps* (plan)
+  2. *state* (what to remember)
+  3. *inputs/outputs* (what changes)
+  4. *verification* (how we know it worked)
+
+  ...so that an agent can run it without guessing.
+
+** One-minute takeaway (for research projects)
+
+If you choose the research project instead of building an agent, this
+exercise still applies directly to your work.
+
+Research also relies on silent assumptions:
+1. what counts as relevant evidence
+2. which sources are trustworthy
+3. what level of rigor is “enough”
+4. how conclusions are justified
+5. how uncertainty is handled
+
+When you explain your research task and it breaks down, that breakdown
+marks:
+- an unclear research question
+- an unstated methodological choice
+- a hidden evaluation criterion
+
+AI systems tend to expose these weak points because they cannot “fill
+in the gaps” the way humans do.
+
+For a research project, your goal is not to automate the task, but to
+*make the reasoning explicit*:
+- define terms
+- state assumptions
+- justify choices
+- show how claims are checked
+
+If an agent would struggle to follow your instructions, a reader
+likely would too.
+
+That’s why this exercise matters, regardless of which project option
+you choose.

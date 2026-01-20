@@ -1,0 +1,102 @@
+#+STARTUP: overview hideblocks indent entitiespretty:
+#+OPTIONS: toc:nil num:nil ^:nil: 
+* Sample Proposal (Research Project – Option 2)
+
+** Problem Description
+
+Generative AI systems such as large language models often produce outputs
+that appear fluent and confident but are factually incorrect or
+unsupported. These errors are commonly referred to as *hallucinations*.
+Despite frequent discussion of hallucinations in popular media, the term
+is often used loosely, and explanations of why hallucinations occur are
+inconsistent.
+
+This project investigates the question: *Why do generative AI systems
+hallucinate, and under what conditions are hallucinations more or less
+likely to occur?*
+
+The goal is not to eliminate hallucinations, but to understand their
+mechanisms and limits.
+
+** Reason
+
+This problem is interesting because hallucinations directly affect how
+much generative AI systems can be trusted in academic, professional, and
+everyday settings. Misunderstanding hallucinations often leads users to
+either overtrust AI outputs or dismiss the technology entirely.
+
+Understanding hallucinations also clarifies a deeper issue: how language
+models generate plausible text without grounding it in truth or
+verification. This topic is relevant to students who use AI tools for
+writing, research, and coding, as well as to broader discussions about
+responsibility and trust in AI-assisted work.
+
+** Constraints
+
+This project is limited to conceptual and explanatory analysis rather
+than empirical experimentation. The project will not involve training
+models, accessing proprietary datasets, or running large-scale tests.
+
+Another constraint is that there is no single agreed-upon definition of
+“hallucination” in the literature. The project must therefore compare
+and evaluate competing definitions rather than assume a single correct
+one.
+
+Time constraints limit the depth of technical detail, so mathematical
+formalisms will be discussed only at a high level.
+
+** Goals and Non-Goals
+
+*** Goals
+
+1. Provide a clear, accessible explanation of what hallucinations are in
+   the context of generative AI.
+2. Compare at least two different explanations for why hallucinations
+   occur (e.g., probabilistic generation, lack of grounding, training
+   data limitations).
+3. Identify practical strategies that reduce hallucinations and explain
+   why they work.
+
+*** Non-Goals
+
+- Building or modifying an AI system.
+- Proposing a new technical solution to hallucinations.
+- Conducting original experiments or benchmarks.
+- Resolving open research debates about the “correct” definition of
+  hallucination.
+
+** Metrics
+
+The project will be considered successful if:
+
+- The explanation of hallucinations is clear and consistent.
+- Claims are supported by credible sources.
+- Differences between explanations are clearly articulated.
+- A non-expert reader can understand why hallucinations occur and why
+  certain mitigation strategies help.
+
+Self-evaluation will include checking whether the final report avoids
+technical jargon where unnecessary and whether all major claims are
+explicitly sourced.
+
+** References
+
+Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021).
+On the dangers of stochastic parrots: Can language models be too big?
+*Proceedings of the ACM Conference on Fairness, Accountability, and
+Transparency*.
+
+Ji, Z., Lee, N., Frieske, R., et al. (2023).
+Survey of hallucination in natural language generation.
+*ACM Computing Surveys*.
+
+Mollick, E. (2024).
+*Co-Intelligence: Living and Working with AI*.
+Penguin.
+
+** Comments (Optional)
+
+One challenge in this project will be balancing accessibility with
+accuracy. The topic is often discussed informally, but careful language
+is required to avoid overstating what current AI systems can or cannot
+do. This project will prioritize clarity over novelty.
