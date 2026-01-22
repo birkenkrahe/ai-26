@@ -75,11 +75,12 @@ processes*.
 
 - [X] Tue Review: Course overview (for Quiz 1, due Fri 23-Jan)
 - [X] Short warm-up exercise: task analysis (the way of the agent)
-- [ ] Term project: Instructions, ideas, examples
 - [ ] Thu Review: What is AI (for Quiz 2, due Mon 26-Jan)
 - [ ] Thu Discussion: Do bad data lead to bad AI?
+- [ ] Practice: Building a simple web app with AI
+- [ ] Term project: Instructions, ideas, examples
 
-* DONE Google Chat review:
+** DONE Google Chat review:
 #+attr_html: :width 200px :float nil:
 [[../img/guardian.png]]
 
@@ -95,7 +96,7 @@ What you may have missed:
 - Prompt engineering is still a thing in 2026
 - Hallucinations, fixations, and regression of AI
 - Progress in medical imaging (copyright implications)
-* DONE Review (First session) - Course overview (Tue)
+** DONE Review (First session) - Course overview (Tue)
 #+attr_html: :width 300px :float nil:
 [[../img/turk.png]]
 
@@ -271,7 +272,7 @@ give me another 10 based on the attached whiteboard screenshots."
 
 The first test "Course Overview", is due on Monday, 26-January (23:59)
 
-* DONE Warm-up exercise - "The Way of the Agent" (30 min)
+** DONE Warm-up exercise - "The Way of the Agent" (30 min)
 #+attr_html: :width 200px :float nil:P
 [[../img/the_secret_agent_conrad2.jpg]]
 
@@ -281,7 +282,7 @@ The first test "Course Overview", is due on Monday, 26-January (23:59)
 - A task specification is akin to an *algorithmic* description.
 - Find where “human common sense” (*heuristics*) sneaks in, and name it.
 
-* TODO Review (DataCamp): What is AI? (Thu)
+** TODO Review (DataCamp): What is AI? (Thu)
 #+attr_html: :width 300px :float nil:
 [[../img/other_fields.png]]
 
@@ -451,7 +452,7 @@ Auto-generated from the DataCamp video transcripts by ChatGPT 5.2.
     alone.
     #+end_quote
 
-* TODO Discussion (Thu)
+** TODO Discussion (Thu)
 
 The DataCamp video ("What can AI do?") from chapter 1 states:
 #+begin_quote
@@ -462,8 +463,26 @@ In IT, this is also called "Garbage in, garbage out." (GIGO)
 
 Discuss:
 1) Do you think this is true?
+   #+begin_quote
+   Yes, but it's incomplete: Bad data sets the limits of what an AI
+   can reliably learn; good data does not guarantee good behavior.
+   #+end_quote
 2) Can you find an example for 'bad data' leading to 'bad AI'?
+   #+begin_quote
+   - Facial recognition systems respond directly to training data
+     based on skin color - e.g. cannot see X-skinned people.
+   - Medical AI trained on data from one population failing on
+     another. Skin cancer recognition depending on skin color.
+   - Hiring systems encode discrimination when based on certain data.
+   #+end_quote
 3) Is this true for humans?
+   #+begin_quote
+   Yes, and no. Humans also learn from examples, experiences,
+   feedback. "Bad data" correspond to: lack of information, biased
+   feedback. But humans can reflect on their data and question
+   it. They can also use bad data to develop resilience to it
+   (e.g. click bait, email scams, fake news).
+   #+end_quote
 4) Can you find a counterexample ('bad data' leading to 'good AI')?
 5) Can you find a counterexample for human decisions?
 
@@ -477,11 +496,11 @@ Discuss:
   humans can learn from other people's bad data without experiencing
   it themselves.
 #+end_notes
-* TODO Review: The Way of the Agent
+** TODO Review: The Way of the Agent
 #+attr_html: :width 400px :float nil:
 [[../img/agent_mapping.png]]
 
-* PRACTICE Building a simple web app in 5 minutes
+** PRACTICE Building a simple web app in 5 minutes
 #+attr_html: :width 400px :float nil:
 [[../img/birthday-card-helper4.png]]
 
@@ -491,7 +510,7 @@ Discuss:
 - This is still a cognitive, not a true agent.
 - Next, we're going to build a simple game.
 
-* Term project: Instructions, ideas, examples (Thu)
+** Term project: Instructions, ideas, examples (Thu)
 #+attr_html: :width 400px :float nil:
 [[../img/sprint_1.png]]
 
