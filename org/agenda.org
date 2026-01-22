@@ -73,20 +73,29 @@ processes*.
 
 * Week 2 - Term project / What is AI
 
-- [ ] Tue Review: Course overview (for Quiz 1, due Fri 23-Jan)
-- [ ] Short warm-up exercise: task analysis (the way of the agent)
+- [X] Tue Review: Course overview (for Quiz 1, due Fri 23-Jan)
+- [X] Short warm-up exercise: task analysis (the way of the agent)
 - [ ] Term project: Instructions, ideas, examples
-
 - [ ] Thu Review: What is AI (for Quiz 2, due Mon 26-Jan)
 - [ ] Thu Discussion: Do bad data lead to bad AI?
 
-* Google Chat review:
+* DONE Google Chat review:
 #+attr_html: :width 200px :float nil:
 [[../img/guardian.png]]
 
 What you may have missed:
-
-* NEXT Review (First session) - Course overview (Tue)
+- Mechanical Turk (Amazon & Chess master)
+- AI needs guardrails if the world wants to survive
+- Debugging will also be done by machines in the future
+- Performance evaluation is already been done by AI
+- ...as is applications evaluation
+- 26 resources to learn AI in 2026
+- Summarized the entry survey to justify my approach
+- ChapterPal - AI-supported reading [project]
+- Prompt engineering is still a thing in 2026
+- Hallucinations, fixations, and regression of AI
+- Progress in medical imaging (copyright implications)
+* DONE Review (First session) - Course overview (Tue)
 #+attr_html: :width 300px :float nil:
 [[../img/turk.png]]
 
@@ -246,7 +255,7 @@ give me another 10 based on the attached whiteboard screenshots."
     #+end_quote
 
 28. What does it mean that AI systems are task-specific?
-    #+begin_quote
+    #+begin_quotenn
     They are built for particular tasks, not general intelligence.
     #+end_quote
 
@@ -262,8 +271,8 @@ give me another 10 based on the attached whiteboard screenshots."
 
 The first test "Course Overview", is due on Monday, 26-January (23:59)
 
-* Warm-up exercise - "The Way of the Agent" (30 min)
-#+attr_html: :width 200px :float nil:
+* DONE Warm-up exercise - "The Way of the Agent" (30 min)
+#+attr_html: :width 200px :float nil:P
 [[../img/the_secret_agent_conrad2.jpg]]
 
 - You already do real workflows every week.
@@ -271,67 +280,6 @@ The first test "Course Overview", is due on Monday, 26-January (23:59)
 - If you cannot *specify* your tasks, you cannot build/use agents.
 - A task specification is akin to an *algorithmic* description.
 - Find where “human common sense” (*heuristics*) sneaks in, and name it.
-
-* TODO Term project: Instructions, ideas, examples
-#+attr_html: :width 400px :float nil:
-[[../img/sprint_1.png]]
-
-- Two options: Build your own single *agent*, or research an AI *topic*.
-- Purpose is *not* to deliver a complete product but to *learn* as you go.
-- Sprint 1 (Feb 9): Develop a structured project proposal.
-- TODO:
-  1) Look at the shared documents in my GDrive folder:
-     [[https://tinyurl.com/agent-project][tinyurl.com/agent-project]] - instruction, example, ideas
-  2) Enter your name and project title in =Canvas > Pages > Projects=
-     table.
-  3) Begin working on your proposal and share your prototype(s) freely
-     with me.
-  4) It's good to try out several proposals before settling on one.
-
-* TODO My personal project (too big): Advising Multi-Agent
-
-Purpose: To build an AI agent that prepares degree audits and schedule
-simulations for academic advising, reducing repetitive checking while
-keeping all decisions and approvals with the human advisor.
-
-Example flowchart (Mermaid diagram) - your task in sprint 2:
-#+begin_src mermaid :file ../img/advising_agent_workflow.png 
-  flowchart TD
-  A[Start] --> B[Load inputs]
-  B --> B1[Student profile]
-  B --> B2[Academic history]
-  B --> B3[Transfer records]
-  B --> B4[Rule files]
-  B --> B5[Course offerings]
-  B --> C[Agent 1 Audit]
-  C --> D[Status report]
-  D --> G1{Advisor gate 1}
-  G1 --> H1[Advisor updates files]
-  H1 --> C
-  G1 --> E[Agent 2 Exceptions]
-  E --> F[Attention list]
-  F --> G2{Advisor gate 2}
-  G2 --> H2[Advisor resolves items]
-  H2 --> C
-  G2 --> I[Agent 3 Planning]
-  I --> J[Draft schedules]
-  J --> K[Agent 4 Verification]
-  K --> L{Verification result}
-  L --> M[Return with failure report]
-  M --> I
-  L --> N[Final packet]
-  N --> G3{Advisor gate 3}
-  G3 --> I
-  G3 --> Z[Export and archive]
-  C --> LOG[Append log]
-  I --> LOG
-  K --> LOG
-  Z --> LOG
-#+end_src
-
-#+RESULTS:
-[[file:../img/advising_agent_workflow.png]]
-
 
 * TODO Review (DataCamp): What is AI? (Thu)
 #+attr_html: :width 300px :float nil:
@@ -529,7 +477,38 @@ Discuss:
   humans can learn from other people's bad data without experiencing
   it themselves.
 #+end_notes
+* TODO Review: The Way of the Agent
+#+attr_html: :width 400px :float nil:
+[[../img/agent_mapping.png]]
 
+* PRACTICE Building a simple web app in 5 minutes
+#+attr_html: :width 400px :float nil:
+[[../img/birthday-card-helper4.png]]
+
+- I'm going to demonstrate the process for you.
+- You're going to get a prompting template.
+- Then you have to apply the template yourself.
+- This is still a cognitive, not a true agent.
+- Next, we're going to build a simple game.
+
+* Term project: Instructions, ideas, examples (Thu)
+#+attr_html: :width 400px :float nil:
+[[../img/sprint_1.png]]
+
+- Two options: Build your own single *agent*, or research an AI *topic*.
+- Purpose is *not* to deliver a complete product but to *learn* as you go.
+- Sprint 1 (Feb 9): Develop a structured project proposal.
+- TODO:
+  1) Look at the shared documents in my GDrive folder:
+     [[https://tinyurl.com/agent-project][tinyurl.com/agent-project]] - instruction, example, ideas
+  2) Enter your name and project title in =Canvas > Pages > Projects=
+     table.
+  3) Begin working on your proposal and share your prototype(s) freely
+     with me.
+  4) It's good to try out several proposals before settling on one.
+
+- Must understand the difference between *cognitive* and *true* agents.
+  
 * Week 3 - Tasks AI can solve - 
 
 - [ ] Tue Review: Which tasks can AI solve (Quiz 3, due 30-Jan)?
