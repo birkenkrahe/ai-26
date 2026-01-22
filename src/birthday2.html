@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎉 Birthday Card Confetti 🎉</title>
+  <style>
+    :root {
+      --bg: #1a0f2e;
+      --panel: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.75);
+      --border: rgba(255,255,255,0.18);
+      --focus: rgba(255,184,108,0.65);
+      --shadow: rgba(0,0,0,0.45);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 5%, rgba(91,163,255,0.22), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(255,120,180,0.18), transparent 55%),
+        radial-gradient(900px 700px at 40% 100%, rgba(120,255,160,0.12), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .wrap {
+      width: min(920px, 100%);
+      display: grid;
+      gap: 18px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 8px 6px;
+    }
+    h1 {
+      font-size: 32px;
+      margin: 0;
+      font-weight: 800;
+      background: linear-gradient(90deg,#ff7a18,#ffb347,#ff5fa2,#7cf5c3);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hint { font-size: 13px; color: var(--muted); margin: 0; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 10px 35px var(--shadow);
+      overflow: hidden;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 860px) {
+      .grid { grid-template-columns: 1.1fr 0.9fr; }
+    }
+    .left, .right { padding: 18px; }
+    .left { border-bottom: 1px solid var(--border); }
+    @media (min-width: 860px) {
+      .left { border-bottom: none; border-right: 1px solid var(--border); }
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 10px 0 6px;
+    }
+    input, select {
+      width: 100%;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 12px;
+      outline: none;
+    }
+    input:focus, select:focus {
+      border-color: var(--focus);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+    }
+    .row {
+      display: grid;
+      gap: 12px;
+    }
+    @media (min-width: 520px) {
+      .row { grid-template-columns: 1fr 1fr; }
+    }
+    .btnrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    button {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .primary {
+      background: linear-gradient(135deg,#ff7a18,#ff5fa2);
+      border-color: rgba(255,122,24,0.6);
+    }
+    .ghost { background: transparent; }
+
+    .right { display: grid; gap: 12px; }
+
+    /* Card */
+    .card {
+      position: relative;
+      border-radius: 18px;
+      padding: 18px 16px;
+      min-height: 260px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background:
+        radial-gradient(800px 250px at 10% 0%, rgba(255,255,255,0.22), transparent 55%),
+        radial-gradient(600px 220px at 90% 10%, rgba(255,184,108,0.22), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.08));
+      box-shadow:
+        0 18px 50px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.18);
+      overflow: hidden;
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 50%;
+      width: 1px;
+      background: linear-gradient(180deg,transparent,rgba(0,0,0,0.18),transparent);
+      opacity: 0.45;
+    }
+    .card-top,
+    .card-bottom {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+    }
+    .card-message {
+      margin: 12px 0;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px dashed rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.15);
+      white-space: pre-wrap;
+      line-height: 1.45;
+      font-size: 15px;
+    }
+    .sig {
+      font-weight: 700;
+      background: linear-gradient(90deg,#ffb347,#ff5fa2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 18px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>🎂 Birthday Card Confetti 🎉</h1>
+      <p class="hint">Enter a name, age, and hobby — get a funny message.</p>
+    </div>
+  </header>
+
+  <section class="panel">
+    <div class="grid">
+      <div class="left">
+        <div class="row">
+          <div>
+            <label>Name</label>
+            <input id="name" />
+          </div>
+          <div>
+            <label>Age</label>
+            <input id="age" type="number" />
+          </div>
+        </div>
+        <label>Hobby</label>
+        <input id="hobby" />
+        <label>Tone</label>
+        <select id="tone">
+          <option value="friendly">Friendly</option>
+          <option value="silly">Silly</option>
+          <option value="dry">Dry</option>
+          <option value="punny">Punny</option>
+          <option value="short">Short</option>
+        </select>
+        <div class="btnrow">
+          <button class="primary" id="generate">Generate</button>
+          <button id="shuffle">Shuffle</button>
+          <button class="ghost" id="clear">Clear</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <label>Inside the card</label>
+        <div class="card">
+          <div class="card-top">To: <span id="cardTo">(someone awesome)</span></div>
+          <div class="card-message" id="cardMessage">Your generated message will appear here...</div>
+          <div class="card-bottom">With love, <span class="sig">(you)</span></div>
+        </div>
+        <div class="btnrow">
+          <button id="copy">Copy</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <span>Works offline</span>
+      <span id="templateInfo">Template: 1</span>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+
+  const nameEl = $('name');
+  const ageEl = $('age');
+  const hobbyEl = $('hobby');
+  const toneEl = $('tone');
+  const cardMessageEl = $('cardMessage');
+  const cardToEl = $('cardTo');
+  const templateInfo = $('templateInfo');
+
+  const templates = {
+    friendly: [
+      ({n,a,h}) => `Happy ${a}th Birthday, ${n}!\n\nMay your day include cake, laughs, and plenty of ${h}.`,
+      ({n,a,h}) => `Cheers to ${a}, ${n}!\n\nAnother year wiser — and still excellent at ${h}.`
+    ],
+    silly: [
+      ({n,a,h}) => `Happy ${a}!\n\nYou’ve unlocked Level ${a}. Special ability: elite ${h} skills.`,
+      ({n,a,h}) => `Breaking news!\n\n${n} turns ${a} today and celebrates with excessive ${h}.`
+    ],
+    dry: [
+      ({n

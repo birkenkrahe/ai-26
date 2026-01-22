@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birthday Card Writer</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,0.06);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --border: rgba(255,255,255,0.12);
+      --focus: rgba(255,255,255,0.22);
+      --shadow: rgba(0,0,0,0.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 600px at 10% 5%, rgba(91, 163, 255, 0.22), transparent 60%),
+                  radial-gradient(900px 600px at 90% 20%, rgba(255, 120, 180, 0.18), transparent 55%),
+                  radial-gradient(900px 700px at 40% 100%, rgba(120, 255, 160, 0.12), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .wrap {
+      width: min(920px, 100%);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 4px;
+    }
+    h1 { font-size: 20px; margin: 0; letter-spacing: 0.2px; }
+    .hint { margin: 0; font-size: 13px; color: var(--muted); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 10px 35px var(--shadow);
+      overflow: hidden;
+    }
+    .grid { display: grid; grid-template-columns: 1fr; }
+    @media (min-width: 860px) { .grid { grid-template-columns: 1.1fr 0.9fr; } }
+    .left, .right { padding: 18px; }
+    .left { border-bottom: 1px solid var(--border); }
+    @media (min-width: 860px) { .left { border-bottom: none; border-right: 1px solid var(--border); } }
+    label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 10px 0 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 12px;
+      outline: none;
+      transition: border-color 120ms ease, box-shadow 120ms ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--focus);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+    }
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+      line-height: 1.35;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 520px) { .row { grid-template-columns: 1fr 1fr; } }
+    .btnrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    button {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.15px;
+      transition: transform 60ms ease, background 120ms ease, border-color 120ms ease;
+    }
+    button:hover { background: rgba(255,255,255,0.11); border-color: rgba(255,255,255,0.18); }
+    button:active { transform: translateY(1px); }
+    .primary { background: rgba(91,163,255,0.22); border-color: rgba(91,163,255,0.34); }
+    .primary:hover { background: rgba(91,163,255,0.28); border-color: rgba(91,163,255,0.42); }
+    .ghost { background: transparent; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.20);
+      color: var(--muted);
+    }
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.55);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-4px);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Birthday Card Writer</h1>
+        <p class="hint">Enter a name, age, and hobby — get a funny message you can copy into a card.</p>
+      </div>
+      <span class="badge" id="statusBadge">Ready</span>
+    </header>
+
+    <section class="panel">
+      <div class="grid">
+        <div class="left">
+          <div class="row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="e.g., Priya" autocomplete="off" />
+            </div>
+            <div>
+              <label for="age">Age</label>
+              <input id="age" type="number" min="0" max="130" placeholder="e.g., 34" />
+            </div>
+          </div>
+
+          <label for="hobby">Hobby</label>
+          <input id="hobby" type="text" placeholder="e.g., baking sourdough / hiking / D&D" autocomplete="off" />
+
+          <label for="tone">Tone</label>
+          <select id="tone">
+            <option value="friendly">Friendly funny</option>
+            <option value="silly">Extra silly</option>
+            <option value="dry">Dry / deadpan</option>
+            <option value="punny">Pun-heavy</option>
+            <option value="short">Short + punchy</option>
+          </select>
+
+          <div class="btnrow">
+            <button class="primary" id="generate">Generate message</button>
+            <button id="shuffle">Shuffle template</button>
+            <button class="ghost" id="clear">Clear</button>
+          </div>
+        </div>
+
+        <div class="right">
+          <label for="output">Your message</label>
+          <textarea id="output" readonly placeholder="Your generated message will appear here..."></textarea>
+          <div class="btnrow">
+            <button id="copy">Copy</button>
+            <button id="addPS">Add a P.S.</button>
+          </div>
+          <p class="hint" style="margin-top:10px;">
+            Tip: Use “Shuffle template” until you get something that fits the recipient.
+          </p>
+        </div>
+      </div>
+      <div class="footer">
+        <span>Works offline. No data leaves your browser.</span>
+        <span id="templateInfo">Template: 1</span>
+      </div>
+    </section>
+
+    <div class="toast" id="toast">Copied</div>
+  </div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+
+  const nameEl = $('name');
+  const ageEl = $('age');
+  const hobbyEl = $('hobby');
+  const toneEl = $('tone');
+  const outputEl = $('output');
+  const statusBadge = $('statusBadge');
+  const templateInfo = $('templateInfo');
+  const toast = $('toast');
+
+  const templates = {
+    friendly: [
+      ({n,a,h}) => `Happy ${a} Birthday, ${n}! May your day be packed with cake, laughs, and just enough time for ${h} before reality notices you're missing.`,
+      ({n,a,h}) => `Cheers to ${a}, ${n}! You're aging like a fine something… and like all fine things, you deserve more ${h} and fewer "adulting" emails today.`,
+      ({n,a,h}) => `Happy ${a}, ${n}! You're officially old enough to know better—and wise enough to do ${h} anyway.`,
+      ({n,a,h}) => `Happy ${a}, ${n}! I hope your birthday is 90% fun and only 10% "wait… is this my back now?". Celebrate with extra ${h}!`,
+    ],
+    silly: [
+      ({n,a,h}) => `Happy ${a}, ${n}! ${a} looks great on you—like a stylish hat, except the hat is made of experience and the occasional weird noise when you stand up. Now go do ${h} like the legend you are!`,
+      ({n,a,h}) => `Breaking news: ${n} turns ${a} today. Sources confirm they will celebrate with cake and an aggressive amount of ${h}. Experts call it "the correct choice."`,
+      ({n,a,h}) => `Happy ${a}, ${n}! May your cake be moist, your candles be manageable, and your ${h} be gloriously over-the-top.`,
+      ({n,a,h}) => `Congrats, ${n}—you've reached level ${a}! Your unlocked skill: doing ${h} with 20% more confidence and 80% more snack breaks.`,
+    ],
+    dry: [
+      ({n,a,h}) => `Happy ${a}, ${n}. You are now ${a} years into your subscription to existence. Please enjoy your complimentary cake and your optional ${h}.`,
+      ({n,a,h}) => `Happy ${a}, ${n}. Statistically speaking, turning ${a} is inevitable. Doing ${h} today, however, is a choice. Choose wisely.`,
+      ({n,a,h}) => `Happy ${a}, ${n}. May your day be calm, your cake be acceptable, and your ${h} be uninterrupted by minor inconveniences.`,
+      ({n,a,h}) => `Happy ${a}, ${n}. Another year older, still objectively impressive at ${h}. The data is conclusive.`,
+    ],
+    punny: [
+      ({n,a,h}) => `Happy ${a}, ${n}! I hope you have a hobby good time doing ${h}—and if anyone complains, tell them you're just aging with grace and a sprinkle of chaos.`,
+      ({n,a,h}) => `Happy ${a}, ${n}! At ${a}, you're not getting older—you're getting more refined. Like ${h}, but with more snacks and fewer rules.`,
+      ({n,a,h}) => `Happy ${a}, ${n}! May your day be un-bela-birthday-able… and may your ${h} plans go exactly according to plan. (Or funnier.)`,
+      ({n,a,h}) => `Happy ${a}, ${n}! You're ${a} and still crushing ${h}. That's what I call a pro-${h}-essional.`,
+    ],
+    short: [
+      ({n,a,h}) => `Happy ${a}, ${n}! More cake. More ${h}. Less nonsense.`,
+      ({n,a,h}) => `Happy ${a}, ${n}! ${a} never looked so ready for ${h}.`,
+      ({n,a,h}) => `Cheers to ${a}, ${n}. Go celebrate with ${h} and cake. In that order.`,
+      ({n,a,h}) => `Happy ${a}, ${n}! May your day be full of laughs and prime ${h} time.`,
+    ],
+  };
+
+  const psLines = [
+    ({h}) => `P.S. If you do ${h} today, it counts as self-care. Science probably agrees.`,
+    ({h}) => `P.S. Save me a slice. Or at least a story about the ${h} adventure.`,
+    ({h}) => `P.S. Your birthday is a valid excuse for extra ${h}. I checked the rules.`,
+    ({h}) => `P.S. If anyone asks, I was your alibi while you were doing ${h}.`,
+  ];
+
+  let currentIndex = 0;
+
+  function setBadge(text) {
+    statusBadge.textContent = text;
+  }
+
+  function clampAge(val) {
+    const n = Number(val);
+    if (!Number.isFinite(n)) return null;
+    return Math.max(0, Math.min(130, Math.floor(n)));
+  }
+
+  function normalizeInputs() {
+    const name = (nameEl.value || '').trim();
+    const hobby = (hobbyEl.value || '').trim();
+    const age = clampAge(ageEl.value);
+
+    return {
+      n: name || 'friend',
+      h: hobby || 'doing your favorite thing',
+      a: age
+    };
+  }
+
+  function ordinalize(age) {
+    const a = Number(age);
+    const mod10 = a % 10;
+    const mod100 = a % 100;
+    let suf = 'th';
+    if (mod10 === 1 && mod100 !== 11) suf = 'st';
+    else if (mod10 === 2 && mod100 !== 12) suf = 'nd';
+    else if (mod10 === 3 && mod100 !== 13) suf = 'rd';
+    return `${a}${suf}`;
+  }
+
+  function render() {
+    const tone = toneEl.value;
+    const bank = templates[tone] || templates.friendly;
+    currentIndex = ((currentIndex % bank.length) + bank.length) % bank.length;
+
+    const data = normalizeInputs();
+
+    let ageLabel = (data.a === null) ? 'your' : ordinalize(data.a);
+    // Slight smoothing so templates still read fine if age is missing:
+    if (data.a === null) ageLabel = 'your';
+
+    const message = bank[currentIndex]({ n: data.n, a: ageLabel, h: data.h });
+
+    outputEl.value = message.trim();
+    templateInfo.textContent = `Template: ${currentIndex + 1}`;
+
+    setBadge('Generated');
+    setTimeout(() => setBadge('Ready'), 900);
+  }
+
+  function shuffleTemplate() {
+    const tone = toneEl.value;
+    const bank = templates[tone] || templates.friendly;
+    currentIndex = (currentIndex + 1) % bank.length;
+    render();
+  }
+
+  async function copyOut() {
+    const text = outputEl.value || '';
+    if (!text.trim()) {
+      setBadge('Nothing to copy');
+      setTimeout(() => setBadge('Ready'), 900);
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(text);
+      showToast('Copied');
+    } catch {
+      outputEl.focus();
+      outputEl.select();
+      document.execCommand('copy');
+      showToast('Copied');
+    }
+  }
+
+  function addPS() {
+    const data = normalizeInputs();
+    const line = psLines[Math.floor(Math.random() * psLines.length)]({ h: data.h });
+
+    if (!outputEl.value.trim()) render();
+    outputEl.value = `${outputEl.value.trim()}\n\n${line}`;
+
+    setBadge('Added P.S.');
+    setTimeout(() => setBadge('Ready'), 900);
+  }
+
+  function clearAll() {
+    nameEl.value = '';
+    ageEl.value = '';
+    hobbyEl.value = '';
+    outputEl.value = '';
+    currentIndex = 0;
+    templateInfo.textContent = 'Template: 1';
+    setBadge('Cleared');
+    setTimeout(() => setBadge('Ready'), 900);
+    nameEl.focus();
+  }
+
+  let toastTimer = null;
+  function showToast(text) {
+    toast.textContent = text;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 900);
+  }
+
+  $('generate').addEventListener('click', render);
+  $('shuffle').addEventListener('click', shuffleTemplate);
+  $('copy').addEventListener('click', copyOut);
+  $('addPS').addEventListener('click', addPS);
+  $('clear').addEventListener('click', clearAll);
+
+  [nameEl, ageEl, hobbyEl].forEach(el => {
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); render(); }
+    });
+  });
+
+  toneEl.addEventListener('change', () => {
+    currentIndex = 0;
+    templateInfo.textContent = 'Template: 1';
+    if (outputEl.value.trim()) render();
+  });
+
+  // Seed example
+  nameEl.value = 'Alex';
+  ageEl.value = '29';
+  hobbyEl.value = 'hiking';
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎉 Birthday Card Confetti 🎉</title>
+  <style>
+    :root {
+      --bg: #1a0f2e;
+      --panel: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.75);
+      --border: rgba(255,255,255,0.18);
+      --focus: rgba(255,184,108,0.65);
+      --shadow: rgba(0,0,0,0.45);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 5%, rgba(91,163,255,0.22), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(255,120,180,0.18), transparent 55%),
+        radial-gradient(900px 700px at 40% 100%, rgba(120,255,160,0.12), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 48px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      background: linear-gradient(90deg,#ff7a18,#ffb347,#ff5fa2,#7cf5c3);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .wrap {
+      width: min(980px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 10px 35px var(--shadow);
+      overflow: hidden;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 860px) {
+      .grid { grid-template-columns: 1.1fr 0.9fr; }
+    }
+
+    .left, .right { padding: 18px; }
+    .left { border-bottom: 1px solid var(--border); }
+    @media (min-width: 860px) {
+      .left { border-bottom: none; border-right: 1px solid var(--border); }
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 10px 0 6px;
+    }
+
+    input, select {
+      width: 100%;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 12px;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--focus);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+    }
+
+    .row {
+      display: grid;
+      gap: 12px;
+    }
+    @media (min-width: 520px) {
+      .row { grid-template-columns: 1fr 1fr; }
+    }
+
+    .btnrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    button {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .primary {
+      background: linear-gradient(135deg,#ff7a18,#ff5fa2);
+      border-color: rgba(255,122,24,0.6);
+    }
+
+    .ghost { background: transparent; }
+
+    .right {
+      display: grid;
+      gap: 14px;
+    }
+
+    /* Card stack */
+    .card-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      position: relative;
+      border-radius: 18px;
+      padding: 18px 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background:
+        radial-gradient(800px 250px at 10% 0%, rgba(255,255,255,0.22), transparent 55%),
+        radial-gradient(600px 220px at 90% 10%, rgba(255,184,108,0.22), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.08));
+      box-shadow:
+        0 18px 50px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.18);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 50%;
+      width: 1px;
+      background: linear-gradient(180deg,transparent,rgba(0,0,0,0.18),transparent);
+      opacity: 0.45;
+    }
+
+    .card-top,
+    .card-bottom {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .card-message {
+      margin: 12px 0;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px dashed rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.15);
+      white-space: pre-wrap;
+      line-height: 1.45;
+      font-size: 15px;
+    }
+
+    .sig {
+      font-weight: 700;
+      background: linear-gradient(90deg,#ffb347,#ff5fa2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+<div class="title">🎈 Make Someone’s Birthday Ridiculously Better 🎈</div>
+
+<div class="wrap">
+  <section class="panel">
+    <div class="grid">
+      <div class="left">
+        <div class="row">
+          <div>
+            <label>Name</label>
+            <input id="name">
+          </div>
+          <div>
+            <label>Age</label>
+            <input id="age" type="number">
+          </div>
+        </div>
+
+        <label>Hobby</label>
+        <input id="hobby">
+
+        <label>Tone</label>
+        <select id="tone">
+          <option value="friendly">Friendly</option>
+          <option value="silly">Silly</option>
+          <option value="dry">Dry</option>
+          <option value="punny">Punny</option>
+          <option value="short">Short</option>
+        </select>
+
+        <div class="btnrow">
+          <button class="primary" id="generate">Generate Card</button>
+          <button id="shuffle">Shuffle</button>
+          <button class="ghost" id="clear">Clear</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <label>Cards (newest on top)</label>
+        <div class="card-stack" id="cardStack"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+
+  const nameEl = $('name');
+  const ageEl = $('age');
+  const hobbyEl = $('hobby');
+  const toneEl = $('tone');
+  const stackEl = $('cardStack');
+
+  const templates = {
+    friendly: [
+      ({n,a,h}) => `Happy ${a}, ${n}!\n\nMay your day include cake, laughs, and lots of ${h}.`,
+      ({n,a,h}) => `Cheers to ${a}, ${n}!\n\nStill excellent at ${h}.`
+    ],
+    silly: [
+      ({n,a,h}) => `🎉 Level ${a} unlocked!\n\nNew skill: elite ${h}.`,
+      ({n,a,h}) => `Breaking news!\n\n${n} turns ${a} and celebrates with extreme ${h}.`
+    ],
+    dry: [
+      ({n,a,h}) => `Happy ${a}, ${n}.\n\nCake is provided.\n${h} is optional.`,
+      ({n,a,h}) => `${a} achieved.\n\n${h} proficiency remains high.`
+    ],
+    punny: [
+      ({n,a,h}) => `Hope your birthday is ${h}-tacular, ${n}!`,
+      ({n,a,h}) => `Still pro-${h}-essional at ${a}.`
+    ],
+    short: [
+      ({n,a,h}) => `Happy ${a}, ${n}.\nCake.\n${h}.`,
+      ({n,a,h}) => `${a}.\n${h}.\nPerfection.`
+    ]
+  };
+
+  let idx = 0;
+
+  function ordinal(a) {
+    const m10 = a % 10, m100 = a % 100;
+    if (m10 === 1 && m100 !== 11) return a + "st";
+    if (m10 === 2 && m100 !== 12) return a + "nd";
+    if (m10 === 3 && m100 !== 13) return a + "rd";
+    return a + "th";
+  }
+
+  function makeCard(n, message) {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="card-top">To: ${n}</div>
+      <div class="card-message">${message}</div>
+      <div class="card-bottom">With love, <span class="sig">(you)</span></div>
+    `;
+    stackEl.prepend(card);
+  }
+
+  function render() {
+    const n = nameEl.value.trim() || "friend";
+    const h = hobbyEl.value.trim() || "having fun";
+    const aNum = Number(ageEl.value);
+    const a = Number.isFinite(aNum) ? ordinal(aNum) : "your";
+
+    const bank = templates[toneEl.value];
+    const msg = bank[idx % bank.length]({ n, a, h });
+
+    makeCard(n, msg);
+  }
+
+  $('generate').onclick = render;
+  $('shuffle').onclick = () => { idx++; };
+  $('clear').onclick = () => {
+    nameEl.value = ageEl.value = hobbyEl.value = "";
+    stackEl.innerHTML = "";
+    idx = 0;
+  };
+
+  nameEl.value = "Alex";
+  ageEl.value = "29";
+  hobbyEl.value = "hiking";
+})();
+</script>
+
+</body>
+</html>
