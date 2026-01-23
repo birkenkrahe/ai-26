@@ -1,4 +1,4 @@
-#+TITLE:Building a web app with prompts
+xg#+TITLE:Building a web app with prompts
 #+AUTHOR:Marcus Birkenkrahe (pledged)
 #+SUBTITLE:Coding with AI (DSC 482), Lyon College, Spring 2026
 #+STARTUP: overview hideblocks indent
