@@ -80,7 +80,7 @@ processes*.
 - [ ] Practice: Building a simple web app with AI
 - [ ] Term project: Instructions, ideas, examples
 
-** DONE Google Chat review:
+** Google Chat review:
 #+attr_html: :width 200px :float nil:
 [[../img/guardian.png]]
 
@@ -96,7 +96,7 @@ What you may have missed:
 - Prompt engineering is still a thing in 2026
 - Hallucinations, fixations, and regression of AI
 - Progress in medical imaging (copyright implications)
-** DONE Review (First session) - Course overview (Tue)
+** Review (First session) - Course overview (Tue)
 #+attr_html: :width 300px :float nil:
 [[../img/turk.png]]
 
@@ -272,7 +272,7 @@ give me another 10 based on the attached whiteboard screenshots."
 
 The first test "Course Overview", is due on Monday, 26-January (23:59)
 
-** DONE Warm-up exercise - "The Way of the Agent" (30 min)
+** Warm-up exercise - "The Way of the Agent" (30 min)
 #+attr_html: :width 200px :float nil:P
 [[../img/the_secret_agent_conrad2.jpg]]
 
@@ -282,7 +282,7 @@ The first test "Course Overview", is due on Monday, 26-January (23:59)
 - A task specification is akin to an *algorithmic* description.
 - Find where “human common sense” (*heuristics*) sneaks in, and name it.
 
-** TODO Review (DataCamp): What is AI? (Thu)
+** Review (DataCamp): What is AI? (Thu)
 #+attr_html: :width 300px :float nil:
 [[../img/other_fields.png]]
 
@@ -452,7 +452,7 @@ Auto-generated from the DataCamp video transcripts by ChatGPT 5.2.
     alone.
     #+end_quote
 
-** TODO Discussion (Thu)
+** Discussion (Thu)
 
 The DataCamp video ("What can AI do?") from chapter 1 states:
 #+begin_quote
@@ -496,7 +496,7 @@ Discuss:
   humans can learn from other people's bad data without experiencing
   it themselves.
 #+end_notes
-** TODO Review: The Way of the Agent
+** Review: The Way of the Agent
 #+attr_html: :width 400px :float nil:
 [[../img/agent_mapping.png]]
 
@@ -528,6 +528,6 @@ Discuss:
 
 - Must understand the difference between *cognitive* and *true* agents.
   
-* Week 3 - Tasks AI can solve - 
 
-- [ ] Tue Review: Which tasks can AI solve (Quiz 3, due 30-Jan)?
+
+
