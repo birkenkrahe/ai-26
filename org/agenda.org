@@ -6,7 +6,7 @@
 #+attr_html: :width 400px :float nil:
 [[../img/cover.png]]
 
-* Week 1 - Overview
+* DONE Week 1 - Overview
 
 - [X] Introduction to the lecturer
 - [X] Introduction to the course
@@ -71,16 +71,16 @@ processes*.
 *Bottom line:* This course is about learning how to *work with* AI
  responsibly and deliberately — not just how to get answers from it.
 
-* Week 2 - Term project / What is AI
+* DONE Week 2 - Term project / What is AI
 
 - [X] Tue Review: Course overview (for Quiz 1, due Fri 23-Jan)
 - [X] Short warm-up exercise: task analysis (the way of the agent)
-- [ ] Thu Review: What is AI (for Quiz 2, due Mon 26-Jan)
-- [ ] Thu Discussion: Do bad data lead to bad AI?
-- [ ] Practice: Building a simple web app with AI
+- [X] Thu Review: What is AI (for Quiz 2, due Mon 26-Jan)
+- [X] Thu Discussion: Do bad data lead to bad AI?
+- [X] Practice: Building a simple web app with AI
 - [ ] Term project: Instructions, ideas, examples
 
-** Google Chat review:
+** DONE Google Chat roundup:
 #+attr_html: :width 200px :float nil:
 [[../img/guardian.png]]
 
@@ -96,7 +96,7 @@ What you may have missed:
 - Prompt engineering is still a thing in 2026
 - Hallucinations, fixations, and regression of AI
 - Progress in medical imaging (copyright implications)
-** Review (First session) - Course overview (Tue)
+** DONE Review (First session) - Course overview (Tue)
 #+attr_html: :width 300px :float nil:
 [[../img/turk.png]]
 
@@ -272,7 +272,7 @@ give me another 10 based on the attached whiteboard screenshots."
 
 The first test "Course Overview", is due on Monday, 26-January (23:59)
 
-** Warm-up exercise - "The Way of the Agent" (30 min)
+** DONE Warm-up exercise - "The Way of the Agent" (30 min)
 #+attr_html: :width 200px :float nil:P
 [[../img/the_secret_agent_conrad2.jpg]]
 
@@ -282,7 +282,7 @@ The first test "Course Overview", is due on Monday, 26-January (23:59)
 - A task specification is akin to an *algorithmic* description.
 - Find where “human common sense” (*heuristics*) sneaks in, and name it.
 
-** Review (DataCamp): What is AI? (Thu)
+** DONE Review (DataCamp): What is AI? (Thu)
 #+attr_html: :width 300px :float nil:
 [[../img/other_fields.png]]
 
@@ -293,166 +293,137 @@ Auto-generated from the DataCamp video transcripts by ChatGPT 5.2.
    #+begin_quote
    Whether machines can think.
    #+end_quote
-
 2. What test did Turing propose as a practical way to evaluate machine
    intelligence?
    #+begin_quote
    Whether a machine can convincingly imitate a human in conversation.
    #+end_quote
-
 3. In which academic discipline did Artificial Intelligence originally
    emerge?
    #+begin_quote
    Computer science.
    #+end_quote
-
 4. How did John McCarthy define Artificial Intelligence in the 1950s?
    #+begin_quote
    As the science and engineering of making intelligent machines.
    #+end_quote
-
 5. How has the definition of AI expanded beyond early formulations?
    #+begin_quote
    To include learning, reasoning, decision-making, and
    problem-solving.
    #+end_quote
-
 6. According to the European Commission, what key capabilities
    characterize modern AI systems?
    #+begin_quote
    Perception, data interpretation, reasoning, decision-making, and
    action toward goals.
    #+end_quote
-
 7. What is Artificial Narrow Intelligence (ANI)?
    #+begin_quote
    AI designed to perform specific tasks well, but not general
    reasoning.
    #+end_quote
-
 8. What is Artificial General Intelligence (AGI)?
    #+begin_quote
    Hypothetical AI with human-level intelligence across many tasks.
    #+end_quote
-
 9. Does true AGI currently exist?
    #+begin_quote
    No.
    #+end_quote
-
 10. Why are systems like voice assistants and GPT considered “narrow” AI?
     #+begin_quote
     Because they excel at specific tasks but lack general human-like
     intelligence.
     #+end_quote
-
 11. What four broad categories of tasks is AI especially good at?
     #+begin_quote
     Prediction, pattern recognition, optimization, and automation.
     #+end_quote
-
 12. What is Machine Learning’s central capability?
     #+begin_quote
     Learning from data to make decisions without explicit programming.
     #+end_quote
-
 13. How do predictions differ from inferences in Machine Learning?
     #+begin_quote
     Predictions forecast future events; inferences determine outcomes
     from existing data.
     #+end_quote
-
 14. What role does pattern recognition play in AI systems?
     #+begin_quote
     Identifying trends or structures in data to support decisions.
     #+end_quote
-
 15. How is clustering used in business applications?
     #+begin_quote
     To group customers with similar behaviors.
     #+end_quote
-
 16. What is anomaly detection commonly used for?
     #+begin_quote
     Identifying unusual or potentially fraudulent activity.
     #+end_quote
-
 17. What distinguishes Generative AI from other AI approaches?
     #+begin_quote
     It creates new content based on learned patterns.
     #+end_quote
-
 18. Give one example of an optimization problem AI can solve.
     #+begin_quote
     Finding efficient delivery routes.
     #+end_quote
-
 19. Why is automation alone not considered AI?
     #+begin_quote
     Because it follows fixed rules without learning or reasoning.
     #+end_quote
-
 20. Name two key limitations of current AI systems.
     #+begin_quote
     Bias in data and difficulty handling novel situations.
     #+end_quote
-
 21. What is the main goal of Machine Learning?
     #+begin_quote
     Enabling systems to learn patterns and make predictions from data.
     #+end_quote
-
 22. How does Deep Learning differ from other Machine Learning methods?
     #+begin_quote
     It uses neural networks with many layers to model complex patterns.
     #+end_quote
-
 23. What is the purpose of knowledge representation and reasoning in
     AI?
     #+begin_quote
     To help systems understand information and make logical decisions.
     #+end_quote
-
 24. How does Computer Vision contribute to AI systems?
     #+begin_quote
     By enabling machines to interpret images and visual data.
     #+end_quote
-
 25. What does Natural Language Processing (NLP) allow AI systems to
     do?
     #+begin_quote
     Understand and generate human language.
     #+end_quote
-
 26. Why do many advanced AI systems combine multiple AI subfields?
     #+begin_quote
     To handle complex, real-world tasks more effectively.
     #+end_quote
-
 27. What AI areas are combined in a voice assistant?
     #+begin_quote
     NLP (Natural Language Processing) and Deep Learning (Neural
     Networks).
     #+end_quote
-
 28. How are AI and Data Science related?
     #+begin_quote
     Both extract value from data using mathematical and statistical
     methods.
     #+end_quote
-
 29. Name two non-technical disciplines that influence AI development.
     #+begin_quote
     Ethics and law.
     #+end_quote
-
 30. Why is understanding AI’s related disciplines important?
     #+begin_quote
     Because AI development and use affect society beyond technology
     alone.
     #+end_quote
 
-** Discussion (Thu)
+** DONE Discussion (Thu)
 
 The DataCamp video ("What can AI do?") from chapter 1 states:
 #+begin_quote
@@ -496,11 +467,11 @@ Discuss:
   humans can learn from other people's bad data without experiencing
   it themselves.
 #+end_notes
-** Review: The Way of the Agent
+** DONE Review: The Way of the Agent
 #+attr_html: :width 400px :float nil:
 [[../img/agent_mapping.png]]
 
-** PRACTICE Building a simple web app in 5 minutes
+** DONE Building a simple web app in 5 minutes
 #+attr_html: :width 400px :float nil:
 [[../img/birthday-card-helper4.png]]
 
@@ -510,7 +481,224 @@ Discuss:
 - This is still a cognitive, not a true agent.
 - Next, we're going to build a simple game.
 
-** Term project: Instructions, ideas, examples (Thu)
+* DONE Week 3 - Winter storm [no meetings]
+* Week 4 - Tasks AI can solve
+#+attr_html: :width 600px :float nil:
+[[../img/imagine.png]]
+
+- [ ] QUIZ 3: Which tasks can AI solve? Prompting for web app.
+- [ ] ROUNDUP: Google Chat messages and discussions 27-Jan to 3-Feb
+- [ ] ASSIGNMENT: NotebookLM infographic for the course.
+- [ ] PRACTICE: ChatGPT Personalization.
+- [ ] DISCUSSION: Term project: Instructions, ideas, examples.
+- [ ] PRACTICE: Developing a simple game with ChatGPT.
+
+** Google Chat Roundup (since Fri 23-Jan) - 10'
+
+It would be good for you if you at least skimmed these articles and
+responded yourself once in a while. Knowledge does not come for free!
+
+1. [[https://chat.google.com/room/AAAAeuayDfs/ebt4OkeFgeM/ebt4OkeFgeM?cls=10][AI Trends in 2026: Hype versus reality (13 min).]]
+   #+begin_quote Summarize: one statement that contains the central message
+   AI—especially agentic and generative AI—is overhyped in the short
+   term, failing to deliver broad measurable value, but will create
+   real, sustainable impact only when organizations move past
+   individual productivity uses toward disciplined, enterprise-level
+   deployment supported by strong data leadership and AI factory
+   capabilities.
+   #+end_quote
+2. [[https://www.manning.com/books/coding-with-ai]["Coding with AI":]] Practical techniques to accelerate software
+   development using generative AI. Uses Python. Manning, 2025.
+3. [[https://chat.google.com/room/AAAAeuayDfs/sxYjiMSKNug/sxYjiMSKNug?cls=10][Video: You feel faster. You're not.]]
+   #+begin_quote Summarize: one statement that contains the central message
+   AI-driven coding creates an illusion of productivity by generating
+   more code faster, but degrades system quality, increases bugs and
+   technical debt, and ultimately slows real progress unless humans
+   retain responsibility for understanding, architecture, and
+   long-term system design.
+   #+end_quote
+4. [[https://chat.google.com/room/AAAAeuayDfs/EO9Ex7zGDvM/EO9Ex7zGDvM?cls=10][How do you activate GitHub for students and why would you do it?]]
+   #+begin_quote
+   It gives you free access to CoPilot and Codespaces, an AI-powered
+   development environment. Also more space. Not just for coders.
+   #+end_quote
+5. [[https://chat.google.com/room/AAAAeuayDfs/1N3PFuhpgHs/1N3PFuhpgHs?cls=10][Animating images with AI]]. Examples on my blog: [[https://birkenkrahe.github.io][birkenkrahe.github.io]]
+   #+begin_quote
+   Works really well if you 1) upload the image to ChatGPT, 2) ask
+   ChatGPT for a restrained animation for Grok Imagine, 3) let Grok
+   Imagine do the animation (6 seconds, normal, not "fun" mode).
+   #+end_quote
+6. [[https://chat.google.com/room/AAAAeuayDfs/tKZhsixIlME/tKZhsixIlME?cls=10][Coding agents in production.]]
+   #+begin_quote
+   Cursor successfully built and deployed a production-ready AI coding
+   agent by combining a purpose-built, efficient agentic coding model
+   with a complex system architecture—including model routing, tool
+   integration, context retrieval, iterative orchestration, and
+   sandboxed execution—to reliably inspect, edit, test, and iterate on
+   real codebases until tasks are completed.
+   #+end_quote
+7. [[https://chat.google.com/room/AAAAeuayDfs/yVeBYwN6CNM/yVeBYwN6CNM?cls=10][Big Tech's AI-fueled spending surge.]] "Too much spending, limited
+   returns." (Shensi Wang)
+   #+begin_quote summarize this plot for me
+   The plot shows that Microsoft, Alphabet, Amazon, and Meta are all
+   sharply increasing capital expenditures through 2025, with Amazon
+   and Alphabet leading the surge, indicating an industry-wide
+   escalation in AI-driven infrastructure and investment spending.
+   #+end_quote
+8. [[https://chat.google.com/room/AAAAeuayDfs/4_FCxUU0emI/4_FCxUU0emI?cls=10][Making a classic adventure game with AI.]]
+9. [[https://chat.google.com/room/AAAAeuayDfs/HZDPPUlXiRU/HZDPPUlXiRU?cls=10][Panel discussion with Yuval Harari and Max Tegmark]].
+10. [[https://chat.google.com/room/AAAAeuayDfs/QgSzaKLJHWw/QgSzaKLJHWw?cls=10]["Scale is not what you need."]]
+    #+begin_quote Summarize key message
+    AGI is unattainable with today’s AI because scaling statistical,
+    data-driven models cannot reproduce human intelligence, does not
+    generalize economically, and leads to exploding costs, brittle
+    systems, and diminishing returns rather than true intelligence.
+    #+end_quote
+11. [[https://chat.google.com/room/AAAAeuayDfs/B59N7Hni5xQ/B59N7Hni5xQ?cls=10][Inside a multibillion dollar AI data center]] powering the future of
+    the American economy.
+12. [[https://chat.google.com/room/AAAAeuayDfs/DQmqOTZR-hc/DQmqOTZR-hc?cls=10][Management as AI superpower.]]
+    #+begin_quote Key message
+    In an age of agentic AI, competitive advantage comes not from
+    coding or prompting skill but from management expertise—clearly
+    defining goals, delegating effectively, evaluating outputs, and
+    knowing “what good looks like”—because those skills determine
+    whether AI delivers real value.
+    #+end_quote
+13. [[https://chat.google.com/room/AAAAeuayDfs/aLj6oTAzmbU/aLj6oTAzmbU?cls=10]["We renovated the penthouse, the basement is still flooding."]]
+    #+begin_quote Key message
+    AI strategies and analytics will knownly fail to deliver real
+    value if organizations neglect their underlying data foundations
+    and infrastructure, making flashy AI initiatives ineffective
+    without fixing core data problems first.
+    #+end_quote
+14. [[https://chat.google.com/room/AAAAeuayDfs/iSG8HSQuSe0/iSG8HSQuSe0?cls=10][AI workspace for researchers from OpenAI]].
+15. [[https://chat.google.com/room/AAAAeuayDfs/ofrxBo8lVy4/ofrxBo8lVy4?cls=10]["How AI assistance impacts the formation of coding skills."]]
+    #+begin_quote Key message
+    While AI coding assistance can speed up some tasks, it can
+    undermine the development of coding skills and deep understanding
+    unless users actively engage with the material (e.g., asking
+    conceptual questions and seeking explanations), because heavy
+    reliance on AI for code generation leads to poorer mastery of
+    underlying concepts and debugging ability.
+    #+end_quote
+16. [[https://chat.google.com/room/AAAAeuayDfs/_3vNYSlA_Nw/_3vNYSlA_Nw?cls=10][The Competent Human]] - super lazy fun web app built by Claude Code.
+    #+begin_quote
+    Prompt by Ethan Mollick (via a Robert Heinlein): Hey Claude Code:
+    "change a diaper, plan an invasion, butcher a hog, conn a ship,
+    design a building, write a sonnet, balance accounts, build a wall,
+    set a bone, comfort the dying, take orders, give orders,
+    cooperate, act alone, solve equations, analyze a new problem,
+    pitch manure, program a computer, cook a tasty meal, fight
+    efficiently, die gallantly. Figure it out, don't ask me any
+    questions, make it awesome"
+    #+end_quote
+17. [[https://chat.google.com/room/AAAAeuayDfs/BNuGQaNAGjA/BNuGQaNAGjA?cls=10][Game arena by Kaggle with AI bots.]]
+18. [[https://chat.google.com/room/AAAAeuayDfs/KdloQhEgRbU/KdloQhEgRbU?cls=10][OpenClaw (formerly Moltbot)]]
+    #+begin_quote
+    Open, adversarial “bot world” designed to evaluate agentic AI in a
+    persistent, multi-agent environment, focusing on long-horizon
+    planning, adaptation, cooperation and competition, and failure
+    modes that do not appear in static benchmarks, making it a stress
+    test for how autonomous agents actually behave when operating
+    continuously under real pressure rather than responding to
+    isolated prompts.
+    #+end_quote
+19. [[https://chat.google.com/room/AAAAeuayDfs/xU3716bpMOE/xU3716bpMOE?cls=10][Marathon podcast (> 4 hrs) on the future of AI (Lex Fridman)]]
+    #+begin_quote 145 pages of transcript (58,000 words)
+    AI is a powerful but fundamentally limited tool that amplifies
+    human agency rather than replacing it, and long-term progress
+    depends less on fear of takeover and more on human judgment,
+    community, open research, and sustained effort to understand both
+    AI’s limits and ourselves.
+    #+end_quote
+20. [[https://chat.google.com/room/AAAAeuayDfs/H3oGOqG7cRk/H3oGOqG7cRk?cls=10][Does AI already have human-level intelligence?]]
+    #+begin_quote key message
+    The key message of that Nature article is that AI systems have now
+    achieved a form of human-level intelligence, meaning they display
+    flexible, general cognitive capabilities comparable to humans, and
+    that acknowledging this reality clearly—without fear or hype—is
+    essential for preparing society for the consequences and
+    opportunities ahead.
+    #+end_quote
+21. [[https://chat.google.com/room/AAAAeuayDfs/ofrxBo8lVy4/ofrxBo8lVy4?cls=10][Insights on agents by DHH (Ruby on Rails, Basecamp)]]
+    #+begin_quote Key message of this summary
+    The key message is that AI agents should be treated less like
+    fragile tools and more like junior collaborators—given high-level
+    goals, room to explore, and safe failure modes—because real
+    productivity and innovation come from delegating outcomes rather
+    than micromanaging tasks, even if that means “running dangerously”
+    and adapting workflows, culture, and management practices
+    accordingly.
+    #+end_quote
+    
+** NotebookLM Warmup after the winter break - 10'
+#+attr_html: :width 400px :float nil:
+[[../nlm/week1_summary.png]]
+
+1. Add relevant course materials as sources to NotebookLM.
+2. Write a clear, structured prompt for an infographic.
+3. Generate the infographic, download/submit the result.
+4. Showcase your result, share your observations.
+
+We're going to use this on Thursday for your projects.
+
+** Personalize your ChatGPT
+
+- Open the ChatGPT dashboard.
+- Open the settings (bottom left).
+- Open the =Personalization= menu.
+- Set it to the following values:
+  1. *Base style and tone*: Efficient
+  2. *Warm*: Less
+  3. *Enthusiastic*: Less
+  4. *Headers & Lists*: Default
+  5. *Emoji*: Less
+  6. *Custom instructions:*
+     #+begin_example
+     I am a student in DSC 482: Coding in an AI World.
+     I am learning to use AI as a collaborator and agent, not as an oracle.
+     I am a beginner with no/little/intermediate programming experience.
+     I am expected to understand, explain, and verify AI outputs.
+     When I ask for help, I want explanations I can defend and modify.
+     #+end_example
+  7. *About me*: Add some facts about yourself (only what you're willing
+     to share on a resume).
+
+** DataCamp pop quiz: Understanding ChatGPT
+#+attr_html: :width 400px :float nil:
+[[../nlm/understanding_chatGPT.png]]
+
+1. Open [[https://tinyurl.com/understanding-chatgpt-quiz][tinyurl.com/understanding-chatgpt-quiz]] in Google Docs. Make a
+   copy and set the share permissions to "Lyon College".
+
+2. Take 20 minutes to answer the questions. Do not use any help. This
+   is for you to check your understanding, and later to test AI
+   assessment.
+
+3. Save your file as a PDF to your PC.
+
+4. Download the sample solutions from
+   [[https://tinyurl.com/understanding-chatgpt-solution][tinyurl.com/understanding-chatgpt-solution]]
+
+5. Open a new chat with ChatGPT. Upload your solution PDF and the
+   sample solution PDF, and ask for an assessment and a grade based on
+   comparing the two.
+
+6. Download my self-assessment prompt from:
+   [[https://tinyurl.com/understanding-chatgpt-prompt][tinyurl.com/understanding-chatgpt-prompt]] and look at it.
+
+7. Open a new chat with ChatGPT. Upload your solution, the sample
+   solution, and the prompt, and give the following instructions:
+   #+begin_quote
+   I have uploaded three files - use the prompt to assess the student
+   submission based on the sample solution.
+   #+end_quote
+
+9. Read your AI assessment. Transfer the grade to your DOCS file.
+      
+10. Submit the URL of your file in Canvas ("Bonus assignment").
+
+** Term project: Instructions, ideas, examples
 #+attr_html: :width 400px :float nil:
 [[../img/sprint_1.png]]
 
@@ -528,6 +716,8 @@ Discuss:
 
 - Must understand the difference between *cognitive* and *true* agents.
   
+** PRACTICE Building a simple game with AI
 
 
+** [[https://www.youtube.com/watch?v=plbPcvoHBBo][The Thinking Machine (1961)]] 
 
