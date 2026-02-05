@@ -10,7 +10,7 @@
 
 - [X] Introduction to the lecturer
 - [X] Introduction to the course
-  
+
 ** Entry Survey Summary — What This Class Looks Like (Week 1)
 
 *** Background & Experience
@@ -69,7 +69,7 @@ processes*.
 - Prior programming experience is *not required* to succeed here.
 
 *Bottom line:* This course is about learning how to *work with* AI
- responsibly and deliberately — not just how to get answers from it.
+responsibly and deliberately — not just how to get answers from it.
 
 * DONE Week 2 - Term project / What is AI
 
@@ -482,18 +482,19 @@ Discuss:
 - Next, we're going to build a simple game.
 
 * DONE Week 3 - Winter storm [no meetings]
-* Week 4 - Tasks AI can solve
+* Week 4 - Tasks AI can solve / Personalization / Project design
 #+attr_html: :width 600px :float nil:
+#+caption: Mosaic of the Grok animations I created in late January
 [[../img/imagine.png]]
 
-- [ ] QUIZ 3: Which tasks can AI solve? Prompting for web app.
-- [ ] ROUNDUP: Google Chat messages and discussions 27-Jan to 3-Feb
-- [ ] ASSIGNMENT: NotebookLM infographic for the course.
-- [ ] PRACTICE: ChatGPT Personalization.
-- [ ] DISCUSSION: Term project: Instructions, ideas, examples.
-- [ ] PRACTICE: Developing a simple game with ChatGPT.
+- [X] *Quiz 3:* Which tasks can AI solve? Prompting for web app.
+- [X] *Roundup:* Google Chat messages and discussions 27-Jan to 3-Feb
+- [X] *Assignment:* NotebookLM infographic for the course.
+- [ ] *Practice:* ChatGPT Personalization I + II
+- [ ] *Discussion:* Term project: Instructions, ideas, examples.
+- [ ] *Assignment:* Understanding prompt engineering (DataCamp)
 
-** Google Chat Roundup (since Fri 23-Jan) - 10'
+** DONE Google Chat Roundup (since Fri 23-Jan)
 
 It would be good for you if you at least skimmed these articles and
 responded yourself once in a while. Knowledge does not come for free!
@@ -519,7 +520,7 @@ responded yourself once in a while. Knowledge does not come for free!
    #+end_quote
 4. [[https://chat.google.com/room/AAAAeuayDfs/EO9Ex7zGDvM/EO9Ex7zGDvM?cls=10][How do you activate GitHub for students and why would you do it?]]
    #+begin_quote
-   It gives you free access to CoPilot and Codespaces, an AI-powered
+   It gives you free access to CoPialot and Codespaces, an AI-powered
    development environment. Also more space. Not just for coders.
    #+end_quote
 5. [[https://chat.google.com/room/AAAAeuayDfs/1N3PFuhpgHs/1N3PFuhpgHs?cls=10][Animating images with AI]]. Examples on my blog: [[https://birkenkrahe.github.io][birkenkrahe.github.io]]
@@ -530,7 +531,7 @@ responded yourself once in a while. Knowledge does not come for free!
    #+end_quote
 6. [[https://chat.google.com/room/AAAAeuayDfs/tKZhsixIlME/tKZhsixIlME?cls=10][Coding agents in production.]]
    #+begin_quote
-   Cursor successfully built and deployed a production-ready AI coding
+   *Cursor* successfully built and deployed a production-ready AI coding
    agent by combining a purpose-built, efficient agentic coding model
    with a complex system architecture—including model routing, tool
    integration, context retrieval, iterative orchestration, and
@@ -630,8 +631,8 @@ responded yourself once in a while. Knowledge does not come for free!
     and adapting workflows, culture, and management practices
     accordingly.
     #+end_quote
-    
-** NotebookLM Warmup after the winter break - 10'
+
+** DONE NotebookLM Warmup after the winter break
 #+attr_html: :width 400px :float nil:
 [[../nlm/week1_summary.png]]
 
@@ -640,40 +641,18 @@ responded yourself once in a while. Knowledge does not come for free!
 3. Generate the infographic, download/submit the result.
 4. Showcase your result, share your observations.
 
-We're going to use this on Thursday for your projects.
+We're going to use this for your projects.
 
-** Personalize your ChatGPT
-
-- Open the ChatGPT dashboard.
-- Open the settings (bottom left).
-- Open the =Personalization= menu.
-- Set it to the following values:
-  1. *Base style and tone*: Efficient
-  2. *Warm*: Less
-  3. *Enthusiastic*: Less
-  4. *Headers & Lists*: Default
-  5. *Emoji*: Less
-  6. *Custom instructions:*
-     #+begin_example
-     I am a student in DSC 482: Coding in an AI World.
-     I am learning to use AI as a collaborator and agent, not as an oracle.
-     I am a beginner with no/little/intermediate programming experience.
-     I am expected to understand, explain, and verify AI outputs.
-     When I ask for help, I want explanations I can defend and modify.
-     #+end_example
-  7. *About me*: Add some facts about yourself (only what you're willing
-     to share on a resume).
-
-** DataCamp pop quiz: Understanding ChatGPT
+** DONE DataCamp pop quiz: Understanding ChatGPT
 #+attr_html: :width 400px :float nil:
 [[../nlm/understanding_chatGPT.png]]
 
 1. Open [[https://tinyurl.com/understanding-chatgpt-quiz][tinyurl.com/understanding-chatgpt-quiz]] in Google Docs. Make a
    copy and set the share permissions to "Lyon College".
 
-2. Take 20 minutes to answer the questions. Do not use any help. This
-   is for you to check your understanding, and later to test AI
-   assessment.
+2. Take 15 (?) minutes to answer the questions. Do not use any
+   help. This is for you to check your understanding, and later to
+   test AI assessment.
 
 3. Save your file as a PDF to your PC.
 
@@ -695,17 +674,196 @@ We're going to use this on Thursday for your projects.
    #+end_quote
 
 9. Read your AI assessment. Transfer the grade to your DOCS file.
-      
+
 10. Submit the URL of your file in Canvas ("Bonus assignment").
 
-** Term project: Instructions, ideas, examples
+
+** IN PROGRESS Personalize your ChatGPT I + II
+
+Class exercise - 15 min
+
+*** Part I - for the self-assessment exercise
+- Open the ChatGPT dashboard.
+- Open the settings (bottom left).
+- Open the =Personalization= menu.
+- Set it to the following values:
+  1. *Base style and tone*: Efficient
+  2. *Warm*: Less
+  3. *Enthusiastic*: Less
+  4. *Headers & Lists*: Default
+  5. *Emoji*: Less
+  6. *About me:*
+     #+begin_example
+     I am a student in DSC 482: Coding in an AI World.
+     I am learning to use AI as a collaborator and agent, not as an oracle.
+     I am a beginner with no/little/intermediate programming experience.
+     I am expected to understand, explain, and verify AI outputs.
+     When I ask for help, I want explanations I can defend and modify.
+     #+end_example
+  7. *About me*: Add some facts about yourself (only what you're willing
+     to share on a resume).
+
+*** Test personalization I
+
+In a new chat, ask a deliberately vague question:
+#+begin_quote
+"Help me automate my weekly study routine."
+#+end_quote
+
+*Rename* the chat: =Test persona (default)=.
+
+*** Instructions for all your class work
+
+Copy the instructions from [[https://tinyurl.com/chatgpt-personalization][tinyurl.com/chatgpt-personalization]] into
+the =Custom instructions= field of your ChatGPT dashboard.
+
+In a *new chat*, ask the same vague question again.
+
+*Rename* the chat: =Test persona (custom)=.
+
+*Share* an observation about the difference between the two.
+
+*** Test personalization (my results)
+
+**** My default test persona:
+
+Your request is underspecified. “Automate” can mean several different
+things in this context. To proceed correctly, the following
+clarification is required:
+
+Specify what kind of automation you want, for example:
+
+- Scheduling (calendar reminders, recurring tasks)
+- Study plan generation (weekly topics, time blocks)
+- Workflow automation (scripts, Makefiles, Org-mode, cron jobs)
+- Progress tracking (checklists, logs, reports)
+- Tool integration (Emacs/Org-mode, shell scripts, Git, Anki, etc.)
+
+Also specify:
+
+- The subject(s) you are studying
+- The time horizon (e.g., weekly, semester-long)
+- The tools you already use (e.g. plain text, calendar apps)
+
+Once these are defined, an automatable routine can be designed
+precisely rather than generically.
+
+**** My custom test persona:
+
+***** Automating a Weekly Study Routine — Structured Breakdown
+
+****** 1. Clarify the goal
+To automate a routine, the routine must be explicit first.
+
+Possible interpretations of *automation* (one or more may apply):
+
+- Scheduling: automatically generate a weekly study schedule
+- Tracking: automatically record what was studied and for how long
+- Enforcement: reminders, deadlines, or checklists
+- Documentation: automatic notes, logs, or summaries
+- Feedback: progress checks, spaced repetition, review prompts
+
+Missing information:
+- Which of these should be automated
+- Which parts should remain manual
+
+---
+
+****** 2. Define the inputs (required each week)
+
+Please specify or confirm:
+
+- Subjects or projects being studied
+- Total time budget per week
+- Preferred session length (e.g., 30 / 50 / 90 minutes)
+- Fixed constraints (teaching days, meetings, deadlines)
+- Tools already used or preferred
+  (e.g., Org-mode, calendar, shell scripts, cron, reminders)
+
+If any of these vary week to week, that variability must be stated.
+
+---
+
+****** 3. Define the outputs (what automation produces)
+
+Examples of concrete outputs:
+
+- Weekly plan (plain text, Org-mode, calendar events)
+- Daily task list
+- Study log entries
+- Review questions or checkpoints
+- Explicit done / not-done signals
+
+Automation requires outputs that are concrete and checkable.
+
+---
+
+****** 4. Make assumptions explicit
+
+Unless stated otherwise, the following assumptions would be made:
+
+- The routine is meant to be repeatable week-to-week
+- Text-based, scriptable tooling is preferred
+- Low overhead is desired (no complex app)
+
+If any assumption is wrong, it affects the design.
+
+---
+
+****** 5. Draft minimal automation pipeline (placeholder)
+
+This is a structural sketch, not an implementation:
+
+1. Weekly input file
+   - Topics + time budget
+2. Expansion step
+   - Daily study blocks
+   - Explicit tasks per block
+3. End-of-session logging
+   - Planned vs. completed
+4. Weekly review
+   - Carryover + adjustments
+
+Implementation should only happen after inputs and outputs are fixed.
+
+---
+
+****** 6. Verification checks
+
+Any automated routine should answer:
+
+- Was the routine actually followed?
+- Did it reduce decision-making overhead?
+- Did it reflect reality rather than idealized plans?
+
+If these cannot be checked, automation will fail silently.
+
+---
+
+****** 7. Required next step
+
+Please answer at least the following:
+
+1. What exactly do you want automated
+   (schedule, tracking, reminders, notes)?
+2. What tool or format must the output be in?
+3. What part of your current weekly study routine causes the most friction?
+
+Once these are clear, a concrete, repeatable workflow can be designed.
+```
+
+
+** NEXT Term project: Instructions, ideas, examples
 #+attr_html: :width 400px :float nil:
 [[../img/sprint_1.png]]
 
 - Two options: Build your own single *agent*, or research an AI *topic*.
+
 - Purpose is *not* to deliver a complete product but to *learn* as you go.
-- Sprint 1 (Feb 9): Develop a structured project proposal.
-- TODO:
+
+- Sprint 1 (Feb 1, 2.30 pm): Develop a structured project proposal.
+
+- *To do:*
   1) Look at the shared documents in my GDrive folder:
      [[https://tinyurl.com/agent-project][tinyurl.com/agent-project]] - instruction, example, ideas
   2) Enter your name and project title in =Canvas > Pages > Projects=
@@ -715,9 +873,29 @@ We're going to use this on Thursday for your projects.
   4) It's good to try out several proposals before settling on one.
 
 - Must understand the difference between *cognitive* and *true* agents.
-  
-** PRACTICE Building a simple game with AI
 
+- Feel free to use AI to help you: *But you will present it yourself.*
 
-** [[https://www.youtube.com/watch?v=plbPcvoHBBo][The Thinking Machine (1961)]] 
+- For the proposal presentation, you can use slides.
 
+- If you use NotebookLM to create a slide deck, use the *Short* option.
+
+** PRACTICE Project design with NotebookLM
+
+See here for the full exercise: tinyurl.com/sprint1-notebooklm
+
+* Week 5 - Designing a game / Project proposal presentations
+
+- [ ] PRACTICE: Developing a simple game with ChatGPT.
+- [ ] PRESENTATION: Your project proposals
+
+** PRACTICE Building a simple game with AI  
+
+** Presentation of your project proposals (1st sprint review)
+
+* Week 6 - Connecting Apps / Creating GPT agents
+
+- [ ] Connecting GMail and GDrive to ChatGPT.
+- [ ] Creating a GPT agent for ASCII diagram creation.
+
+** Thursday assignment: [[https://www.youtube.com/watch?v=plbPcvoHBBo][The Thinking Machine (1961)]]

@@ -1,19 +1,30 @@
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+OPTIONS: toc:nil num:nil ^:nil:
 * Objectives
+
+- [ ] Understand the difference between cognitive and true agents
+- [ ] Understand the sprint 1 assignment (project proposal)
+- [ ] Complete in-class exercise: Project design with NotebookLM
+- [ ] Sample project ideas (agentic adviser / hallucination research)
+
 * Cognitive vs. true agents
 
 - There are two *kinds of agents*, cognitive vs. true agent.
-  
+
 - Both types reason in similar ways; the difference is *what they are
   allowed to do*.
-  
+
 - *Cognitive agents* produce advice and structure but do not change the
   world. This can be done purely through conversation (no coding).
-  
+
+- Our *Birthday card generator* and the web-game *Pong* are examples for
+  this: The bot builds them but you have to install, test, debug them.
+
 - *True agents* can change their environment by using tools, which
   introduces risk and responsibility. Also: much more IT.
-  
+
+- Example: agent schedules an event for you in your Google Calendar.
+
 - The key question shifts from *correctness* to *permission and trust*.
 
 | Dimension        | Cognitive Agent        | True Agent (Env-Changing) |
@@ -33,63 +44,633 @@
 | Course example   | Audit summary          | Writes audit.md           |
 | Trust question   | “Is this sound?”       | “Should it do this?”     |
 
-* Term project: Instructions, ideas, examples (Thu)
+* Term project: Instructions, ideas, examples
 #+attr_html: :width 400px :float nil:
 [[../img/sprint_1.png]]
 
-- Two options: Build your own single *agent*, or research an AI *topic*.
+- Two options: Build your own single, cognitive or true *agent*, or
+  research an AI *topic*.
+
 - Purpose is *not* to deliver a complete product but to *learn* as you go.
-- Sprint 1 (Feb 9): Develop a structured project proposal.
+
+- Sprint 1 (Feb 12, 2.30 pm): Develop a structured project proposal.
+
+- Briefly introduce your project in class on Thursday, February 12.
+
 - TODO:
   1) Look at the shared documents in my GDrive folder:
-     [[https://tinyurl.com/agent-project][tinyurl.com/agent-project]] - instruction, example, ideas
+     [[https://tinyurl.com/agent-project][tinyurl.com/agent-project]] - instruction, examples, ideas.
   2) Enter your name and project title in =Canvas > Pages > Projects=
      table.
   3) Begin working on your proposal and share your prototype(s) freely
      with me.
   4) It's good to try out several proposals before settling on one.
 
-* My personal precious project: Advising Multi-Agent
+- Feel free to use AI to help you: *But you will present it yourself.*
 
-Purpose: To build an AI agent that prepares degree audits and schedule
-simulations for academic advising, reducing repetitive checking while
-keeping all decisions and approvals with the human advisor.
+- For the proposal presentation, you can use slides.
 
-Example flowchart (Mermaid diagram) - your task in sprint 2:
-#+begin_src mermaid :file ../img/advising_agent_workflow.png 
-  flowchart TD
-  A[Start] --> B[Load inputs]
-  B --> B1[Student profile]
-  B --> B2[Academic history]
-  B --> B3[Transfer records]
-  B --> B4[Rule files]
-  B --> B5[Course offerings]
-  B --> C[Agent 1 Audit]
-  C --> D[Status report]
-  D --> G1{Advisor gate 1}
-  G1 --> H1[Advisor updates files]
-  H1 --> C
-  G1 --> E[Agent 2 Exceptions]
-  E --> F[Attention list]
-  F --> G2{Advisor gate 2}
-  G2 --> H2[Advisor resolves items]
-  H2 --> C
-  G2 --> I[Agent 3 Planning]
-  I --> J[Draft schedules]
-  J --> K[Agent 4 Verification]
-  K --> L{Verification result}
-  L --> M[Return with failure report]
-  M --> I
-  L --> N[Final packet]
-  N --> G3{Advisor gate 3}
-  G3 --> I
-  G3 --> Z[Export and archive]
-  C --> LOG[Append log]
-  I --> LOG
-  K --> LOG
-  Z --> LOG
-#+end_src
+- If you use NotebookLM to create a slide deck, use the *Short* option.
 
-#+RESULTS:
-[[file:../img/advising_agent_workflow.png]]
+- If you use AI to help you, don't just accept any output - work it.
 
+
+* In-Class Exercise: From Interest → Sprint 1 Proposal Skeleton
+
+- *Purpose:* By the end of today’s session, you will have a *clear
+  starting point* for Sprint 1.
+  + You will *not* build anything yet.
+  + You will *not* finish your proposal.
+  + Your goal is to design a *viable project direction* and make the
+  structure explicit.
+
+- You must choose *one* of the two project paths:
+  1) *Build-oriented*: design a single AI agent that supports a
+     repeatable task.
+  2) *Research-oriented*: conduct a structured deep dive into a
+     generative AI topic.
+
+- Today’s work is meant to *reduce ambiguity*, not to impress.
+
+- *Time Available*: 45 minutes total (including short discussion at the
+  end)
+
+* *Step 1: Pick a Topic + Grab One Source (10 minutes)*
+
+You can combine steps 1 + 2 and perform the search inside a new
+NotebookLM (that's what I did for my test run).
+
+1) Choose a topic you are genuinely interested in. You may use a topic
+   from the shared list ([[https://tinyurl.com/agent-project][tinyurl.com/agent-project]]) or propose your
+   own.
+
+2) Find at least *one credible source* related to your topic:
+   - research paper
+   - technical article
+   - policy or position paper
+   - long-form analysis
+   - a text that you write yourself about your interest.
+
+3) Rules:
+   - Do *not* read it deeply yet.
+   - Do *not* summarize it.
+   - Just make sure it is relevant and non-trivial.
+
+4) Save the source as a PDF or have a stable link ready.
+
+* *Step 2: Create a NotebookLM Project (5 minutes)*
+
+1) Open NotebookLM.
+2) Create a *new notebook*.
+3) Title it: =DSC 482 - Sprint 1 - <working project title>=
+4) Upload:
+   - your chosen source
+   - the *Sprint 1 instructions PDF* - these are identical to the text
+     in Canvas. Online: [[https://tinyurl.com/sprint1-instructions][tinyurl.com/sprint1-instructions]]
+
+Purpose: You are putting *constraints* (Sprint rules) and *content* (your
+source) into the same reasoning space.
+
+* Step 3: Ask Structured Questions (20 minutes)
+
+Run the following prompts *exactly* (one at a time) *inside your
+NotebookLM*.
+- Get them from here so that you don't have to type them in:
+  [[https://drive.google.com/file/d/1hn717qvOG3rBtb0RQkK9BdtqOQqYTzcU/view?usp=drive_link][tinyurl.com/sprint1-prompts]]
+
+- Save the answers as *notes* in your NotebookLM.
+
+-----
+
+1) *Prompt 1 - Customize response*
+   #+begin_quote
+   For all answers in this session:
+   - Bullet points only.
+   - Max 5 bullets total.
+   - Each bullet ≤ 10 words.
+   - No prose, no paragraphs.
+   - No justification or elaboration.
+   - Focus on structure, not content.
+   #+end_quote
+
+2) *Prompt 2 — Project Path*
+   #+begin_quote
+   Based only on the uploaded source and the Sprint 1 instructions,
+   what kind of project does this topic best support: a build-oriented
+   single agent or a research deep dive?  Briefly explain why.
+   #+end_quote
+
+3) *Prompt 3 — Proposal Skeleton*
+   #+begin_quote
+   Based on the Sprint 1 proposal structure (problem, reason,
+   constraints, goals, metrics, references), do NOT write a proposal.
+
+   Instead:
+   - list what information would be required for each section
+   - state what can be inferred from the uploaded source
+   - state what would still require human decisions or clarification
+
+   Present the result as a checklist or table.
+   #+end_quote
+
+4) *Prompt 4 — Next Actions*
+   #+begin_quote
+   Do not assume this project is finalized.
+
+   Identify:
+   - the key decisions that must be made before a Sprint 1 proposal can be written
+   - the main risks related to scope, feasibility, or clarity
+   - what information or feedback would reduce each risk
+
+   Present the result as short bullet points.
+   Do not suggest implementation steps or timelines.
+   #+end_quote
+
+Rules:
+- Do not ask for “better ideas.”
+- Do not ask for examples from other students.
+- Treat gaps and uncertainty as *useful signals*.
+- Point out to the bot when the format/content gets too dense for you
+  to understand, and ask for a simpler/shorter version.
+
+* *Step 4: Create a Visual Summary (10 minutes)*
+
+Ask NotebookLM to generate *one visual artifact*:
+
+#+begin_quote
+Create a one-page infographic that explains:
+- the project goal
+- the chosen project path (build or research)
+- the workflow or reasoning flow (inputs → process → outputs)
+- open questions, risks, or assumptions
+
+This is for explaining the project in class, not for marketing.
+#+end_quote
+
+Optional (if time): Ask for a short slide deck (about 5 slides)
+explaining the same structure.
+
+* *Step 5: Submit + Reflect (5 minutes)*
+
+1. Export the infographic as an image.
+2. Upload it to Canvas for today’s participation credit.
+3. Keep your NotebookLM notebook — you will reuse it for Sprint 1.
+
+Be ready to discuss:
+- Where did the outline feel weak or unclear?
+- What required *your* judgment rather than the AI’s?
+- Did this exercise change which project path you prefer?
+
+* *Key Reminder*
+
+Sprint 1 will be evaluated on:
+- clarity
+- feasibility
+- scope
+
+Not on:
+- technical sophistication
+- how advanced the idea sounds
+
+If an agent (or reader) cannot follow your plan,
+the plan is not ready yet.
+
+* My example: Project Credo
+#+attr_html: :width 400px :float nil: 
+[[../nlm/project_credo.png]]
+
+Sources prompt: "An agent to help me learn ecclesiastical Latin"
+
+(Based on 9 sources and the prompt from the exercise.)
+
+* My prompt for the NotebookLM exercise
+
+Okay, I want to design an exercise for the students for today.
+available time with discussion (15 min) at end: 45 minutes.
+
+Students need to pick one of two project paths:
+- building something
+- doing some research
+
+In the first sprint they shall only design a proposal.
+
+I need an idea for an exercise today that enables them to complete
+the attached instruction set.
+
+What I had in mind:
+- ask them to superficially research ("grab") at least one source related
+  to a topic on or off the list that they are interested in.
+- create a new notebook & upload the source to NotebookLM, as well as
+  any relevant course material (e.g. the sprint 1 instructions)
+- query NotebookLM on best next steps for this project.
+- ask for a summary in the form of an infographic (to be shown in class)
+- ask for a short slide deck explaining the steps
+- upload the infographic for points at the end of class.
+
+* My personal agentic building project: Advising Multi-Agent (option 1)
+
+** Purpose
+- Assist (not replace) academic advisors in routine advising tasks.
+- Reduce repetitive manual checking of degree requirements.
+- Improve consistency and completeness of degree audits.
+
+** What the AI agent does
+- Prepares *draft* degree audits based on:
+  - program requirements,
+  - completed courses,
+  - in-progress courses.
+- Flags:
+  - missing requirements,
+  - potential issues,
+  - edge cases that require human judgment.
+- Proposes time slots for academic advising meetings.
+
+** What the AI agent does *not* do
+- Does not make academic decisions.
+- Does not approve degree completion.
+- Does not override advisor judgment.
+- Does not communicate final decisions to students.
+
+** Human-in-the-loop guarantee
+- All audits are reviewed by a human advisor.
+- All approvals remain the advisor’s responsibility.
+- The advisor can accept, modify, or reject any AI output.
+
+** Why this is a *true agent*
+- The agent interacts with real institutional data and scheduling
+  tools.
+- Its actions change external state (draft audits, calendar
+  proposals).
+- Guardrails ensure authority remains with the human advisor.
+
+** Summary
+- *Assumption:* Advising workflows are rule-heavy but
+  judgment-sensitive.
+- *Risk managed:* Automation without authority.
+- *Human judgment required:* Every final academic decision.
+
+** Flowchart
+
+- Example flowchart (ASCII diagram) - your task in sprint 2:
+  #+begin_example ascii
+                               +-------+
+                               | Start |
+                               +-------+
+                                   |
+                                   v
+                          +------------------+
+                          |   Load inputs    |
+                          +------------------+
+                            |   |   |   |   |
+                            |   |   |   |   |
+        +-------------------+   |   |   |   +------------------+
+        |                       |   |   |                      |
+        v                       v   v   v                      v
++------------------+   +------------------+   +------------------+
+| Student profile  |   | Academic history |   | Transfer records |
++------------------+   +------------------+   +------------------+
+
+        +------------------+       +------------------+
+        |    Rule files    |       | Course offerings |
+        +------------------+       +------------------+
+                    \               /
+                     \             /
+                      v           v
+                    +------------------+
+                    |  Agent 1 Audit   |
+                    +------------------+
+                             |
+                             v
+                     +------------------+
+                     |  Status report   |
+                     +------------------+
+                             |
+                             v
+                     +------------------+
+                     | Advisor gate 1 ? |
+                     +------------------+
+                        |            |
+                      yes            no
+                        |            |
+                        v            v
+           +---------------------+   +---------------------+
+           | Advisor updates     |   | Agent 2 Exceptions  |
+           | files               |   +---------------------+
+           +---------------------+             |
+                        |                      v
+                        |              +------------------+
+                        +------------> | Attention list   |
+                                       +------------------+
+                                                |
+                                                v
+                                        +------------------+
+                                        | Advisor gate 2 ? |
+                                        +------------------+
+                                           |            |
+                                         yes            no
+                                           |            |
+                                           v            v
+                            +---------------------+   +------------------+
+                            | Advisor resolves    |   | Agent 3 Planning |
+                            | items               |   +------------------+
+                            +---------------------+            |
+                                           |                    v
+                                           +--------------> +-------------------+
+                                                             | Draft schedules  |
+                                                             +------------------+
+                                                                      |
+                                                                      v
+                                                             +------------------+
+                                                             | Agent 4          |
+                                                             | Verification     |
+                                                             +------------------+
+                                                                      |
+                                                                      v
+                                                             +------------------+
+                                                             | Verification ?   |
+                                                             +------------------+
+                                                               |            |
+                                                             fail          pass
+                                                               |            |
+                                                               v            v
+                                               +---------------------+   +------------------+
+                                               | Return with failure |   | Final packet     |
+                                               | report              |   +------------------+
+                                               +---------------------+            |
+                                                               |                   v
+                                                               +----------> +------------------+
+                                                                            | Advisor gate 3 ? |
+                                                                            +------------------+
+                                                                               |            |
+                                                                             revise        approve
+                                                                               |            |
+                                                                               v            v
+                                                                     (back to Planning)  +------------------+
+                                                                                         | Export & archive|
+                                                                                         +------------------+
+
+   ---------------------------------------------------------------
+     LOGGING (append-only)
+     Agent 1 Audit
+     Agent 3 Planning
+     Agent 4 Verification
+     Export & archive
+   ---------------------------------------------------------------
+
+  #+end_example
+
+- Example flowchart (Mermaid diagram) - your task in sprint 2:
+  #+begin_src mermaid :file ../img/advising_agent_workflow.png
+       flowchart TD
+       A[Start] --> B[Load inputs]
+       B --> B1[Student profile]
+       B --> B2[Academic history]
+       B --> B3[Transfer records]
+       B --> B4[Rule files]
+       B --> B5[Course offerings]
+       B --> C[Agent 1 Audit]
+       C --> D[Status report]
+       D --> G1{Advisor gate 1}
+       G1 --> H1[Advisor updates files]
+       H1 --> C
+       G1 --> E[Agent 2 Exceptions]
+       E --> F[Attention list]
+       F --> G2{Advisor gate 2}
+       G2 --> H2[Advisor resolves items]
+       H2 --> C
+       G2 --> I[Agent 3 Planning]
+       I --> J[Draft schedules]
+       J --> K[Agent 4 Verification]
+       K --> L{Verification result}
+       L --> M[Return with failure report]
+       M --> I
+       L --> N[Final packet]
+       N --> G3{Advisor gate 3}
+       G3 --> I
+       G3 --> Z[Export and archive]
+       C --> LOG[Append log]
+       I --> LOG
+       K --> LOG
+       Z --> LOG
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/advising_agent_workflow.png]]
+
+** Slide deck (NotebookLM)
+
+[[https://drive.google.com/drive/folders/1W0CTsHm2Dphj-UaTMYoHpSjoUGUp_pwO?usp=drive_link][Slide deck (GDrive)]]
+
+- Based on two sources: Overview lecture and text above.
+- Prompt:
+  #+begin_example
+Create a SHORT slide deck (5–6 slides) for an in-class presentation.
+
+Audience:
+Undergraduate students in a course on agentic AI workflows.
+Mixed technical background. Conceptual clarity matters more than implementation details.
+
+Tone:
+Clear, concrete, non-hyped.
+Focus on workflows, guardrails, and human-in-the-loop design.
+
+Slide structure:
+
+Slide 1 — Project overview
+- Title: “Advising as a Multi-Agent System”
+- One-sentence motivation: why advising is a good candidate for agentic automation
+- Emphasize: assist, not replace, human advisors
+
+Slide 2 — Problem being addressed
+- What advisors currently do that is repetitive or rule-heavy
+- Where human judgment is still essential
+- Why this is NOT just a chatbot
+
+Slide 3 — Agent roles (high level)
+- Audit agent: prepares draft degree audits
+- Exception agent: flags edge cases and inconsistencies
+- Planning agent: proposes schedules
+- Verification agent: checks outputs before review
+
+Slide 4 — Human-in-the-loop gates
+- Show where advisors review, approve, or reject outputs
+- Emphasize responsibility and authority staying with humans
+- Contrast with fully automated decision-making
+
+Slide 5 — Why this is a “true agent”
+- Interaction with real data and scheduling tools
+- External state changes (drafts, proposed schedules)
+- Guardrails, logging, and review steps
+
+Optional Slide 6 — Takeaway
+- Key lesson about agent design
+- Trust, permissions, and verification matter more than clever prompts
+
+Formatting guidelines:
+- One title + 3–5 bullets per slide
+- No code
+- No diagrams unless extremely simple
+- Use plain language suitable for discussion
+  #+end_example
+
+* My personal AI research project: Hallucinations as phase transitions (option 2)
+** Purpose
+- Investigate AI hallucinations as *system-level behavior*, not isolated
+  errors.
+- Explore whether hallucinations resemble *phase transitions* between
+  stable and unstable regimes.
+- Make limits and failure modes of generative models explicit and
+  observable.
+
+** Research focus
+- Treat a language model as a complex system with multiple behavioral
+  regimes.
+- Examine how small changes in inputs or settings can trigger
+  disproportionate changes in outputs.
+- Shift the framing from “wrong answers” to “regime change.”
+
+** What the research does
+- Designs families of prompts that vary *one control variable at a
+  time*:
+  - ambiguity,
+  - prompt length,
+  - task complexity,
+  - temperature or randomness,
+  - availability of tools or context.
+- Collects and compares model outputs across controlled variations.
+- Identifies transitions such as:
+  - grounded → fabricated,
+  - cautious → overconfident,
+  - consistent → self-contradictory.
+
+** What the research does *not* do
+- Does not attempt to fix or fine-tune the model.
+- Does not reverse-engineer model internals.
+- Does not claim formal mathematical proof.
+- Does not assume hallucinations are purely random noise.
+
+** Evidence students are expected to produce
+- Prompt–output pairs with minimal changes highlighted.
+- Clear “before / after” boundary cases where behavior shifts sharply.
+- Short annotations explaining why a change looks like a transition
+  rather than gradual degradation.
+
+** Human judgment and interpretation
+- Deciding what counts as a hallucination in context.
+- Distinguishing genuine uncertainty from confident fabrication.
+- Interpreting patterns without overgeneralizing from limited samples.
+
+** Why this fits the *agentic* perspective
+- The researcher behaves like an agent designer:
+  - probing the system,
+  - mapping safe vs unsafe regions,
+  - identifying hidden assumptions.
+- The model’s behavior constrains what a future true agent can safely
+  do.
+
+** Summary
+- *Assumption:* Hallucinations may reflect structural regime changes.
+- *Risk acknowledged:* Transitions may be fuzzy or prompt-dependent.
+- *Human judgment required:* Defining boundaries, interpreting evidence,
+  and drawing cautious conclusions.
+
+** Flowchart
+#+begin_example ascii
++------------------+
+| Research Question|
+| "Hallucinations?"|
++--------+---------+
+         |
+         v
++------------------+
+| Prompt Design    |
+| (control vars)   |
++--------+---------+
+         |
+         v
++------------------+
+| Model Interaction|
+| (run prompts)    |
++--------+---------+
+         |
+         v
++------------------+
+| Observe Outputs  |
+| consistency?     |
+| confidence?      |
++--------+---------+
+         |
+         v
++------------------+
+| Regime Detection |
+| stable / unstable|
++--------+---------+
+         |
+         v
++------------------+
+| Interpretation   |
+| phase transition?|
++------------------+
+
+#+end_example
+
+** Slide deck (NotebookLM)
+
+[[https://drive.google.com/drive/folders/1W0CTsHm2Dphj-UaTMYoHpSjoUGUp_pwO?usp=drive_link][Slide deck (GDrive)]]
+
+- Prompt:
+  #+begin_example
+  Create a SHORT slide deck (5–6 slides) for an in-class presentation.
+
+Audience:
+Undergraduate students in a course on agentic AI workflows.
+Mixed technical background.
+The goal is conceptual understanding, not mathematical rigor.
+
+Tone:
+Analytical, careful, non-hyped.
+Frame this as exploratory research, not a claim of proof.
+
+Slide structure:
+
+Slide 1 — Project overview
+- Title: “AI Hallucinations as Phase Transitions”
+- One-sentence motivation: why hallucinations matter for agentic systems
+- Emphasize: system behavior, not isolated mistakes
+
+Slide 2 — Core idea
+- Treat a language model as a complex system
+- Introduce the analogy to phase transitions
+- Contrast: “wrong answer” vs “regime change”
+
+Slide 3 — What is being varied
+- Prompt ambiguity
+- Prompt length
+- Task complexity
+- Temperature / randomness
+- Tool or context availability
+- Emphasize: one variable at a time
+
+Slide 4 — What is observed
+- Grounded → fabricated responses
+- Cautious → overconfident tone
+- Consistent → self-contradictory output
+- Focus on sharp changes, not gradual drift
+
+Slide 5 — Why this matters for agents
+- Agents rely on stable model behavior
+- Regime shifts create hidden risk
+- Mapping safe vs unsafe regions is essential
+
+Optional Slide 6 — Limits and judgment
+- This is not a formal proof
+- Transitions may be fuzzy or context-dependent
+- Human interpretation is unavoidable
+
+Formatting guidelines:
+- One title + 3–5 bullets per slide
+- No equations
+- No code
+- No heavy diagrams (simple text only)
+- Use language suitable for discussion
+  #+end_example
