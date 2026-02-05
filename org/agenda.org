@@ -882,7 +882,7 @@ Once these are clear, a concrete, repeatable workflow can be designed.
 
 ** PRACTICE Project design with NotebookLM
 
-See here for the full exercise: tinyurl.com/sprint1-notebooklm
+See here for the full exercise: [[https://tinyurl.com/sprint1-notebooklm][tinyurl.com/sprint1-notebooklm]]
 
 * Week 5 - Designing a game / Project proposal presentations
 
