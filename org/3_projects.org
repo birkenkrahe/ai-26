@@ -74,7 +74,6 @@
 
 - If you use AI to help you, don't just accept any output - work it.
 
-
 * In-Class Exercise: From Interest → Sprint 1 Proposal Skeleton
 
 - *Purpose:* By the end of today’s session, you will have a *clear
@@ -237,7 +236,7 @@ the plan is not ready yet.
 
 * My example: Project Credo
 #+attr_html: :width 400px :float nil: 
-[[../nlm/project_credo.png]]
+[[../img/project_credo.png]]
 
 Sources prompt: "An agent to help me learn ecclesiastical Latin"
 
