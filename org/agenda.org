@@ -1,5 +1,5 @@
 #+TITLE:Coding in an AI World - Agenda notebook
-#+AUTHOR:Marcus Birkenkrahe (pledged)
+n#+AUTHOR:Marcus Birkenkrahe (pledged)
 #+SUBTITLE:DSC 482 - Lyon College - Spring 2026
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+OPTIONS: toc:nil num:nil ^:nil:
@@ -882,13 +882,13 @@ Once these are clear, a concrete, repeatable workflow can be designed.
 
 See here for the full exercise: [[https://tinyurl.com/sprint1-notebooklm][tinyurl.com/sprint1-notebooklm]]
 
-* Week 5 - Prompting techniques / Designing a game / Project proposal presentations
+* Week 5 - Prompting techniques/Designing a game/Project proposal presentations
 
+- [ ] *Presentation*: Your project proposals (Thu - be prepared).
 - [ ] *Practice*: Developing a simple game with ChatGPT.
-- [ ] *Presentation*: Your project proposals (be prepared).
 - [ ] *Review*: DataCamp "Prompting unveiled".
 
-** NEXT Presentation of your project proposals (1st sprint review)
+** DONE Presentation of your project proposals (1st sprint review)
 
 *What I'm going to ask:*
 1) What's the purpose of your project?
@@ -904,8 +904,9 @@ Enhanced exercise (see Canvas):
 #+attr_html: :width 400px :float nil:
 [[../img/game2.png]]
 
-Apply the prompting techniques you learnt to build an app in no more
-than 30 minutes, including at least 1 improvement loop and testing.
+Apply the prompting techniques you learnt to build a web app in no
+more than 20 minutes, including at least 1 improvement loop and
+testing.
 
 Remember the process we applied for our birthday generator app:
 
@@ -916,17 +917,36 @@ Remember the process we applied for our birthday generator app:
 
 *Examples:* You could build
 - A reaction game (timing matters)
-- A guessing game (the system checks how close they are)
+- A guessing game (the system checks how close you are)
 - A rules based game (player input is scored)
 - A text-based game (choices lead to outcomes)
 
+*Submit* the URL to your ChatGPT conversation to Canvas.. It will take a
+little time to generate this URL, be patient.
+
 ** Vote on the best game
 
-Criteria:
+*Criteria:*
 1) *Clarity*: Can you tell what it is supposed to do in < 10 sec
 2) *Functionality*: Does it actually work when played?
 3) *Iteration*: Is there at least one visible improvement beyond the
    first version?
+
+*Competition entries:*
+
+| No | Name     | Game                 | Points | Place |
+|----+----------+----------------------+--------+-------|
+|  1 | James    | Tetris               |      1 |     4 |
+|  2 | Cassidy  | Tetris               |      1 |     4 |
+|  3 | Tomas    | Logic grid runner    |      2 |     3 |
+|  4 | Kamsy    | Island Diamond Quest |      1 |     4 |
+|  5 | Ryan     | Simple Platformer    |      3 |     2 |
+|  6 | Blakeley | Memorization Game    |      3 |     2 |
+|  7 | Lauren   | Snake game           |      0 |     5 |
+|  8 | Fallon   | Baseball game        |      0 |     5 |
+|  9 | Thomas   | Pong                 |      0 |     5 |
+| 10 | Charles  | Reaction game        |      2 |     3 |
+| 11 | Zach     | Pixel quest          |      6 |     1 |
 
 ** TODO Submit your game design in Canvas (share conversation)
 
