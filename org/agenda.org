@@ -482,7 +482,7 @@ Discuss:
 - Next, we're going to build a simple game.
 
 * DONE Week 3 - Winter storm [no meetings]
-* Week 4 - Tasks AI can solve / Personalization / Project design
+* DONE Week 4 - Tasks AI can solve / Personalization / Project design
 #+attr_html: :width 600px :float nil:
 #+caption: Mosaic of the Grok animations I created in late January
 [[../img/imagine.png]]
@@ -490,11 +490,11 @@ Discuss:
 - [X] *Quiz 3:* Which tasks can AI solve? Prompting for web app.
 - [X] *Roundup:* Google Chat messages and discussions 27-Jan to 3-Feb
 - [X] *Assignment:* NotebookLM infographic for the course.
-- [ ] *Practice:* ChatGPT Personalization I + II
-- [ ] *Discussion:* Term project: Instructions, ideas, examples.
+- [X] *Practice:* ChatGPT Personalization I + II
+- [X] *Discussion:* Term project: Instructions, ideas, examples.
 - [ ] *Assignment:* Understanding prompt engineering (DataCamp)
 
-** DONE Google Chat Roundup (since Fri 23-Jan)
+** Google Chat Roundup (since Fri 23-Jan)
 
 It would be good for you if you at least skimmed these articles and
 responded yourself once in a while. Knowledge does not come for free!
@@ -632,7 +632,7 @@ responded yourself once in a while. Knowledge does not come for free!
     accordingly.
     #+end_quote
 
-** DONE NotebookLM Warmup after the winter break
+** NotebookLM Warmup after the winter break
 #+attr_html: :width 400px :float nil:
 [[../nlm/week1_summary.png]]
 
@@ -643,7 +643,7 @@ responded yourself once in a while. Knowledge does not come for free!
 
 We're going to use this for your projects.
 
-** DONE DataCamp pop quiz: Understanding ChatGPT
+** DataCamp pop quiz: Understanding ChatGPT
 #+attr_html: :width 400px :float nil:
 [[../nlm/understanding_chatGPT.png]]
 
@@ -677,8 +677,7 @@ We're going to use this for your projects.
 
 10. Submit the URL of your file in Canvas ("Bonus assignment").
 
-
-** IN PROGRESS Personalize your ChatGPT I + II
+** Personalize your ChatGPT I + II
 
 Class exercise - 15 min
 
@@ -852,8 +851,7 @@ Please answer at least the following:
 Once these are clear, a concrete, repeatable workflow can be designed.
 ```
 
-
-** NEXT Term project: Instructions, ideas, examples
+** Term project: Instructions, ideas, examples
 #+attr_html: :width 400px :float nil:
 [[../img/sprint_1.png]]
 
@@ -884,14 +882,55 @@ Once these are clear, a concrete, repeatable workflow can be designed.
 
 See here for the full exercise: [[https://tinyurl.com/sprint1-notebooklm][tinyurl.com/sprint1-notebooklm]]
 
-* Week 5 - Designing a game / Project proposal presentations
+* Week 5 - Prompting techniques / Designing a game / Project proposal presentations
 
-- [ ] PRACTICE: Developing a simple game with ChatGPT.
-- [ ] PRESENTATION: Your project proposals
+- [ ] *Practice*: Developing a simple game with ChatGPT.
+- [ ] *Presentation*: Your project proposals (be prepared).
+- [ ] *Review*: DataCamp "Prompting unveiled".
 
-** PRACTICE Building a simple game with AI  
+** NEXT Presentation of your project proposals (1st sprint review)
 
-** Presentation of your project proposals (1st sprint review)
+*What I'm going to ask:*
+1) What's the purpose of your project?
+2) What is the main deliverable of your project?
+3) What is your greatest challenge for this project?
+4) What are you going to do in the next sprint?
+
+Enhanced exercise (see Canvas):
+- *Create a prompt with ChatGPT using your proposal (draft) as source.*
+- *Use NotebookLM to create a short slide deck to present your project.*
+
+** PRACTICE Building a simple game with AI
+#+attr_html: :width 400px :float nil:
+[[../img/game2.png]]
+
+Apply the prompting techniques you learnt to build an app in no more
+than 30 minutes, including at least 1 improvement loop and testing.
+
+Remember the process we applied for our birthday generator app:
+
+1. *Goal* (what kind of game?)
+2. *Inputs* (what does the player do?)
+3. *Output* (how do you know it worked?)
+4. One *improvement* you plan to add
+
+*Examples:* You could build
+- A reaction game (timing matters)
+- A guessing game (the system checks how close they are)
+- A rules based game (player input is scored)
+- A text-based game (choices lead to outcomes)
+
+** Vote on the best game
+
+Criteria:
+1) *Clarity*: Can you tell what it is supposed to do in < 10 sec
+2) *Functionality*: Does it actually work when played?
+3) *Iteration*: Is there at least one visible improvement beyond the
+   first version?
+
+** TODO Submit your game design in Canvas (share conversation)
+
+** DataCamp Review: Prompting unveiled
 
 * Week 6 - Connecting Apps / Creating GPT agents
 
