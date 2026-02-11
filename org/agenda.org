@@ -900,7 +900,7 @@ Enhanced exercise (see Canvas):
 - *Create a prompt with ChatGPT using your proposal (draft) as source.*
 - *Use NotebookLM to create a short slide deck to present your project.*
 
-** PRACTICE Building a simple game with AI
+** DONE Building a simple game with AI
 #+attr_html: :width 400px :float nil:
 [[../img/game2.png]]
 
@@ -924,7 +924,7 @@ Remember the process we applied for our birthday generator app:
 *Submit* the URL to your ChatGPT conversation to Canvas.. It will take a
 little time to generate this URL, be patient.
 
-** Vote on the best game
+** DONE Vote on the best game
 
 *Criteria:*
 1) *Clarity*: Can you tell what it is supposed to do in < 10 sec
@@ -948,9 +948,61 @@ little time to generate this URL, be patient.
 | 10 | Charles  | Reaction game        |      2 |     3 |
 | 11 | Zach     | Pixel quest          |      6 |     1 |
 
-** TODO Submit your game design in Canvas (share conversation)
+** DONE Submit your game design in Canvas (share conversation)
+
+** Post-mortem: The 10 Commandments of AI-Collaborative Coding
+#+attr_html: :width 400px :float nil:
+[[../img/ten_commandments_info.png]]
+
+Here are a few extra tips for building code (as in web apps) with AI,
+since it's not just about the *product*, but also (or more) about the
+*process*:
+
+1) Structure your prompts (goal, input, output, mechanics, behavior,
+   buttons, etc.)
+2) Be specific. Write short sentences. Make it easy for the machine to
+   get you.
+3) Ask for the prompt to be added as a comment at the top of the file.
+4) Ask for a program header with title, author (you + AI), license,
+   input, output, etc.
+5) Look at your prompts as if they were programming functions:
+   tag/name them (promptID).
+6) Don't ask AI to fix the whole app once it gets large - refactor
+   only parts of it.
+7) Define a single source of truth (state managemen): for example,
+   "track all variables in one object named gameState"
+8) Use chain of verification: before asking for the final code, ask AI
+   to list the logic then write the code (reduces hallucinations)
+9) Specify edge case handling: ask the AI to use semantic naming.
+10) Always ask the AI to explain why it changed something.
+
+As a table, with more detail:
+
+| Commandment                | Description                           | Benefit                   |
+|----------------------------+---------------------------------------+---------------------------|
+| 1. Structure the Prompt    | Use sections: GOAL/INPUT/OUTPUT/      | Clarity + fewer misses.   |
+|                            | MECHANICS/CONSTRAINTS/BEHAVIOR.       |                           |
+| 2. Be Specific             | Short sentences + concrete technical  | Less fluff/hallucination  |
+|                            | constraints (files, keys, limits).    | and better fit.           |
+| 3. Header Block            | Require top comment: title, GOAL,     | Keeps intent + context    |
+|                            | INPUT, OUTPUT, AUTHOR, VERSION/DATE.  | for future edits.         |
+| 4. Named Prompt IDs        | Tag each change request (PROMPT_ID).  | Reuse + traceability.     |
+| 5. Modular Refactoring     | Change one feature at a time; keep    | Avoids regressions and    |
+|                            | diffs small and reviewable.           | token-limit amnesia.      |
+| 6. Explicit State Model    | Define state vars once; avoid         | Prevents split/duplicate  |
+|                            | duplicated state across functions.    | logic.                    |
+| 7. Pre-code Design Check   | List: state, update order, inputs,    | Forces architecture       |
+|                            | collisions, scoring, edge cases.      | before code.              |
+| 8. Human-readable Logic    | Semantic names + small functions.     | Maintainable code.        |
+| 9. Iterative Audit         | After code: explain what changed and  | Surfaces silent behavior  |
+|                            | why; note risks/regressions.          | changes.                  |
+| 10. Acceptance Checklist   | Verify controls, scoring, serve,      | Fast correctness checks.  |
+|                            | pause, win, difficulty effects.       |                           |
+| 11. Dependency Constraints | State: single file, no external libs, | Portability + predictable |
+|                            | no external assets; browser targets.  | runs.                     |
 
 ** DataCamp Review: Prompting unveiled
+
 
 * Week 6 - Connecting Apps / Creating GPT agents
 
