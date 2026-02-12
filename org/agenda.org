@@ -882,11 +882,11 @@ Once these are clear, a concrete, repeatable workflow can be designed.
 
 See here for the full exercise: [[https://tinyurl.com/sprint1-notebooklm][tinyurl.com/sprint1-notebooklm]]
 
-* Week 5 - Prompting techniques/Designing a game/Project proposal presentations
+* Week 5 - Prompting techniques/ Web game / Project proposal presentations
 
+- [X] *Practice*: Developing a simple game with ChatGPT.
 - [ ] *Presentation*: Your project proposals (Thu - be prepared).
-- [ ] *Practice*: Developing a simple game with ChatGPT.
-- [ ] *Review*: DataCamp "Prompting unveiled".
+- [ ] Two reading assignments for next week (for discussion)
 
 ** DONE Presentation of your project proposals (1st sprint review)
 
@@ -950,6 +950,9 @@ little time to generate this URL, be patient.
 
 ** DONE Submit your game design in Canvas (share conversation)
 
+
+* Week 6 -
+
 ** Post-mortem: The 10 Commandments of AI-Collaborative Coding
 #+attr_html: :width 400px :float nil:
 [[../img/ten_commandments_info.png]]
@@ -958,26 +961,27 @@ Here are a few extra tips for building code (as in web apps) with AI,
 since it's not just about the *product*, but also (or more) about the
 *process*:
 
-1) Structure your prompts (goal, input, output, mechanics, behavior,
+1) *Structure your prompts* (goal, input, output, mechanics, behavior,
    buttons, etc.)
-2) Be specific. Write short sentences. Make it easy for the machine to
+2) *Be specific.* Write short sentences. Make it easy for the machine to
    get you.
-3) Ask for the prompt to be added as a comment at the top of the file.
-4) Ask for a program header with title, author (you + AI), license,
+3) Ask for the *prompt* to be added as a comment at the top of the file.
+4) Ask for a *program header* with title, author (you + AI), license,
    input, output, etc.
-5) Look at your prompts as if they were programming functions:
+5) Look at your prompts as if they were programming *functions*:
    tag/name them (promptID).
-6) Don't ask AI to fix the whole app once it gets large - refactor
+6) Don't ask AI to fix the whole app once it gets large - *refactor*
    only parts of it.
-7) Define a single source of truth (state managemen): for example,
-   "track all variables in one object named gameState"
-8) Use chain of verification: before asking for the final code, ask AI
+7) Define a *single source of truth* (state management): for example,
+   "track all variables in one object named =gameState="
+8) Use chain of *verification:* before asking for the final code, ask AI
    to list the logic then write the code (reduces hallucinations)
-9) Specify edge case handling: ask the AI to use semantic naming.
-10) Always ask the AI to explain why it changed something.
+9) Specify *edge case* handling: ask the AI to use semantic (meaningful)
+   names.
+10) Always ask the AI to *explain why* it changed something.
 
 As a table, with more detail:
-
+#+begin_quote
 | Commandment                | Description                           | Benefit                   |
 |----------------------------+---------------------------------------+---------------------------|
 | 1. Structure the Prompt    | Use sections: GOAL/INPUT/OUTPUT/      | Clarity + fewer misses.   |
@@ -1000,13 +1004,15 @@ As a table, with more detail:
 |                            | pause, win, difficulty effects.       |                           |
 | 11. Dependency Constraints | State: single file, no external libs, | Portability + predictable |
 |                            | no external assets; browser targets.  | runs.                     |
+#+end_quote
 
 ** DataCamp Review: Prompting unveiled
+** AI and the future of the labor market (debate)
+** Thursday assignment: [[https://www.youtube.com/watch?v=plbPcvoHBBo][The Thinking Machine (1961)]]
 
 
-* Week 6 - Connecting Apps / Creating GPT agents
+* Week 7 - Connecting Apps / Creating GPT agents
 
 - [ ] Connecting GMail and GDrive to ChatGPT.
 - [ ] Creating a GPT agent for ASCII diagram creation.
 
-** Thursday assignment: [[https://www.youtube.com/watch?v=plbPcvoHBBo][The Thinking Machine (1961)]]
