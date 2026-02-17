@@ -882,13 +882,13 @@ Once these are clear, a concrete, repeatable workflow can be designed.
 
 See here for the full exercise: [[https://tinyurl.com/sprint1-notebooklm][tinyurl.com/sprint1-notebooklm]]
 
-* Week 5 - Prompting techniques/ Web game / Project proposal presentations
+* DONE Week 5 - Prompting techniques/ Web game / Project proposal presentations
 
 - [X] *Practice*: Developing a simple game with ChatGPT.
-- [ ] *Presentation*: Your project proposals (Thu - be prepared).
-- [ ] Two reading assignments for next week (for discussion)
+- [X] *Presentation*: Your project proposals (Thu - be prepared).
+- [X] Two reading assignments for next week (for discussion)
 
-** DONE Presentation of your project proposals (1st sprint review)
+** Presentation of your project proposals (1st sprint review)
 
 *What I'm going to ask:*
 1) What's the purpose of your project?
@@ -900,7 +900,7 @@ Enhanced exercise (see Canvas):
 - *Create a prompt with ChatGPT using your proposal (draft) as source.*
 - *Use NotebookLM to create a short slide deck to present your project.*
 
-** DONE Building a simple game with AI
+** Building a simple game with AI
 #+attr_html: :width 400px :float nil:
 [[../img/game2.png]]
 
@@ -924,7 +924,7 @@ Remember the process we applied for our birthday generator app:
 *Submit* the URL to your ChatGPT conversation to Canvas.. It will take a
 little time to generate this URL, be patient.
 
-** DONE Vote on the best game
+** Vote on the best game
 
 *Criteria:*
 1) *Clarity*: Can you tell what it is supposed to do in < 10 sec
@@ -948,10 +948,10 @@ little time to generate this URL, be patient.
 | 10 | Charles  | Reaction game        |      2 |     3 |
 | 11 | Zach     | Pixel quest          |      6 |     1 |
 
-** DONE Submit your game design in Canvas (share conversation)
+** Submit your game design in Canvas (share conversation)
 
 
-* Week 6 -
+* Week 6 - Past, present and future of AI
 
 ** Post-mortem: The 10 Commandments of AI-Collaborative Coding
 #+attr_html: :width 400px :float nil:
@@ -1006,9 +1006,51 @@ As a table, with more detail:
 |                            | no external assets; browser targets.  | runs.                     |
 #+end_quote
 
-** DataCamp Review: Prompting unveiled
-** AI and the future of the labor market (debate)
+** DataCamp Review: Prompting unveiled (chapter 1/3)
+
+1. What are the three key traits of an effective prompt?
+   #+begin_quote
+   Clear, specific, and open-ended.
+   #+end_quote
+
+2. Why does ambiguity in a prompt lead to generalized answers?
+   #+begin_quote
+   Because vague instructions give the model too much freedom,
+   reducing precision.
+   #+end_quote
+
+3. What is the difference between zero-shot and few-shot prompting?
+   #+begin_quote
+   Zero-shot provides no structure; few-shot gives example steps or
+   guidance.
+   #+end_quote
+
+4. What are two common pitfalls when crafting prompts?
+   #+begin_quote
+   Overloading with irrelevant information and over-complicating
+   language.
+   #+end_quote
+
+5. Why is prompt refinement described as an iterative process?
+   #+begin_quote
+   Because prompts improve through feedback and repeated adjustment.
+   #+end_quote
+
 ** Thursday assignment: [[https://www.youtube.com/watch?v=plbPcvoHBBo][The Thinking Machine (1961)]]
+
+- Identify how AI was imagined at the time
+- Compare those expectations to today's reality
+- Analyze what the film gets right or wrong.
+
+[[https://lyon.instructure.com/courses/4421/assignments/58530][Canvas assignment]]: Write a short summary.
+1. What definition of intelligence is used?
+2. What assumptions about progress are made?
+3. How are machines portrayed compared to humans?
+4. How did the predictions in the film age?
+5. What does this tell us about forecasting tech change?
+
+** AI and the future of the labor market (debate)
+
 
 
 * Week 7 - Connecting Apps / Creating GPT agents

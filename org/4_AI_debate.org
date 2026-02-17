@@ -1,0 +1,103 @@
+#+TITLE: DSC 482 — Debate Session
+#+AUTHOR: Marcus Birkenkrahe
+#+STARTUP: overview hideblocks indent entitiespretty: 
+* Debate Topic
+*Is large-scale AI job disruption within 1–5 years plausible?*
+
+Based on:
+Matt Shumer, “Something Big Is Happening” (2026)
+
+You will debate the *structure* of the argument — not whether AI is
+“good” or “bad.”
+
+- Team A (3 students): DEFEND the article.
+- Team B (3 students): CHALLENGE the article.
+- A-Observers (2 students) - SCORE and ANALYSE the team.
+- B-Observers (2 students) - SCORE and ANALYSE the team.
+
+* Phase 1 — Preparation (5 minutes)
+
+In your assigned group:
+
+1. Write the author’s central claim in ONE sentence.
+2. Identify TWO strongest arguments or mechanisms from the article.
+3. Identify ONE key assumption the argument depends on.
+
+Keep this concise. Bullet points only.
+
+* Phase 2 — Opening Statements (15 minutes)
+
+- 5 minutes: DEFEND the article
+- 5 minutes: CHALLENGE the article
+
+Requirements:
+- Refer to specific mechanisms from the text.
+- Be precise about timeline and scope.
+
+Post-mortem:
+- 5 minutes to analyse the arguments of the other team.
+- Your analysis should focus on the assumption attack.
+
+* Phase 3 — Assumption Attack (10 minutes)
+
+5 minutes per team.
+
+Each side must:
+
+1. Identify one key assumption.
+2. Argue why that assumption is fragile, unrealistic, or incomplete.
+3. Finish with a short, summarizing closing statement.
+
+Possible categories of assumptions:
+- Technical (capability scaling)
+- Economic (labor market absorption)
+- Institutional (regulation, adoption speed)
+- Behavioral (organizational change)
+- Societal (politics/religion/culture)
+
+* Phase 4 - Evaluation (10 minutes)
+
+5 minutes for observers to privately assign scores:
+
+Criteria (0-2 points each):
+1. Clarity of thesis
+2. Use of mechanisms from the text
+3. Identification of assumptions
+4. Distinction between evidence and projection
+5. Responsiveness under pressure
+
+Total possible: 10 per team.
+
+5 minutes to share (1 observer for each team only):
+- Score
+- One strong move from the debate
+- One weak point for improvement exposed
+
+* Phase 4 — Evidence vs Projection (10 minutes)
+
+Whole class discussion:
+
+- Where does the article rely on measurement?
+- Where does it rely on extrapolation?
+- At what point does evidence become narrative?
+
+* Final Synthesis (10 minutes)
+
+Answer together:
+
+1. What must be true next year for this article to be clearly correct?
+2. What observation would strongly falsify it?
+
+Be specific and measurable.
+
+* Ground Rules
+
+- Use the text.
+- Distinguish:
+  - Data
+  - Authority
+  - Extrapolation
+- Avoid vague summaries.
+- Focus on argument structure.
+
+
