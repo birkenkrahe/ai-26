@@ -1,0 +1,152 @@
+#+TITLE: DSC 482 – In-Class Lab
+#+SUBTITLE: Prompt Engineering – Structured Prompt Design
+#+AUTHOR: Marcus Birkenkrahe with ChatGPT
+#+OPTIONS: toc:nil num:nil ^:nil
+#+STARTUP: overview hideblocks indent entitiespretty: 
+* Format
+- Work in pairs
+- Duration: 60 minutes
+- Tool: ChatGPT (or equivalent)
+- Submit one document per pair
+
+* Purpose
+
+Today you will:
+
+- Turn vague prompts into structured instructions
+- Add output control and safeguards
+- Test prompts and observe failures
+- Refine based on evidence
+
+You are not trying to get a “good answer.” You are learning to design
+prompts deliberately.
+
+* How This Lab Works
+
+You will complete *4 exercises*. Each exercise uses *five 2-minute cycles*
+(10 minutes total). After each exercise, we pause for a *5-minute
+read-out*.
+
+For each exercise:
+- Start a new conversation (important!)
+- Run the original prompt
+- Rewrite it
+- Run your revised version
+- Refine once more
+
+* Exercise 1 – Vague → Controlled
+
+Original prompt:
+#+begin_quote
+Make this better.
+#+end_quote
+
+1. List what is missing.
+2. Define:
+   - Goal
+   - Input
+   - Output format
+   - Length
+3. Add:
+   - Audience
+   - Tone
+4. Add one verification constraint (e.g., “Do not add new
+   information.”)
+5. Run original + revised prompts. Refine once based on output.
+
+*Deliverable*
+- Final revised prompt
+- One failure you observed
+- One change that improved output
+
+* Exercise 2 – Overloaded Prompt Repair
+
+Original prompt:
+#+begin_quote
+Write a detailed but short yet comprehensive summary of AI including
+history, math, philosophy, business and coding. Make it simple but
+technical and professional and funny.
+#+end_quote
+
+*Cycles*:
+1. Identify at least 3 structural problems.
+2. Narrow the scope.
+3. Choose one clear audience.
+4. Choose one tone.
+5. Add structure (sections, bullets, word limit). Test and refine.
+
+*Deliverable*
+- Revised prompt
+- 2–3 sentences explaining why this version is more reliable
+
+* Exercise 3 – Persona + Structure Control
+
+Original prompt:
+
+#+begin_quote
+Write a speech about studying computer science.
+#+end_quote
+
+1. Add speaker persona.
+2. Define audience.
+3. Define tone.
+4. Define structure (e.g., opening anecdote, 3 sections, conclusion).
+5. Add length + formatting constraints. Run both versions. Compare.
+
+*Deliverable*
+- Final revised prompt
+- 3 observable differences between original and revised outputs
+
+* Exercise 4 – Hallucination Defense
+
+Original prompt:
+#+begin_quote
+Who won the Nobel Prize in physics in 2027.
+#+end_quote
+
+1. Identify the risk.
+2. Require explicit uncertainty handling.
+3. Require separation of known vs unknown.
+4. Require statement of limits (e.g., knowledge cutoff).
+5. Add instruction to refuse if unverifiable. Test and refine.
+
+If the model refuses to hallucinate, can you think of ways to make it?
+Try some of them and check the responses.
+
+*Deliverable*
+- Final safeguarded prompt
+- 2 sentences: Why this matters in automated workflows
+- Fallback: If model refuses to lie, how could you force it to?
+
+* Read-Out (5 minutes after each exercise)
+
+Be prepared to share:
+- One unstated assumption you initially forgot
+- One constraint that significantly improved output
+- One failure that still occurred
+
+Keep comments precise.
+
+* Final Reflection (Last 5 minutes)
+
+Answer together:
+#+begin_quote
+If this prompt were used in an automated workflow 100 times without
+supervision, what would break first — and why?
+#+end_quote
+
+Write 3–4 sentences.
+
+* Evaluation Focus
+
+You are assessed on:
+
+- Clarity of structure
+- Output control
+- Anticipation of failure
+- Evidence-based refinement
+
+Not on creativity.
+
+
+
