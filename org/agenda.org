@@ -1016,7 +1016,7 @@ As a table, with more detail:
 2. Why does ambiguity in a prompt lead to generalized answers?
    #+begin_quote
    Because vague instructions give the model too much freedom,
-   reducing precision.
+   reducing precision. It also allows it to hallucinate wildly.
    #+end_quote
 
 3. What is the difference between zero-shot and few-shot prompting?
@@ -1052,8 +1052,33 @@ As a table, with more detail:
 ** AI and the future of the labor market (debate)
 
 
+* Week 7 - Thinking Machines debrief / The Journey from Data to Action
+#+attr_html: :width 400px :float nil:
+[[../img/evolution.png]]
 
-* Week 7 - Connecting Apps / Creating GPT agents
+- [ ] *Due:* The "Prompt Engineering" DataCamp course is due on Thursday.
+- [ ] *Sprint 2:* Literature Review assignment coming (until March 13).
+- [ ] *Review:* Prompt engineering applied practice (in-class, Tuesday).
+- [ ] *Review:* Thinking Machines (1961).
+- [ ] *Lecture:* "The journey from Data to Action" (Thursday).
+
+** PRACTICE Prompt engineering
+
+*Four (4) exercises + class discussion:*
+- Turn vague prompts into structured instructions
+- Add output control and safeguards
+- Test prompts and observe failures
+- Refine based on evidence
+
+*You work in pairs:*  
+- Run the prompts
+- Rewrite the prompt
+- Run your revised version
+- Refine once more
+
+Open the exercise for instructions: [[https://tinyurl.com/structured-prompts][tinyurl.com/structured-prompts]]
+
+* Week 8 - Literature Review / Connecting Apps / Creating GPT agents
 
 - [ ] Connecting GMail and GDrive to ChatGPT.
 - [ ] Creating a GPT agent for ASCII diagram creation.
