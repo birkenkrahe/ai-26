@@ -950,8 +950,7 @@ little time to generate this URL, be patient.
 
 ** Submit your game design in Canvas (share conversation)
 
-
-* Week 6 - Past, present and future of AI
+* DONE Week 6 - Past, present and future of AI
 
 ** Post-mortem: The 10 Commandments of AI-Collaborative Coding
 #+attr_html: :width 400px :float nil:
@@ -1051,18 +1050,21 @@ As a table, with more detail:
 
 ** AI and the future of the labor market (debate)
 
-
 * Week 7 - Thinking Machines debrief / The Journey from Data to Action
 #+attr_html: :width 400px :float nil:
 [[../img/evolution.png]]
 
-- [ ] *Due:* The "Prompt Engineering" DataCamp course is due on Thursday.
-- [ ] *Sprint 2:* Literature Review assignment coming (until March 13).
+- [X] *Due:* The "Prompt Engineering" DataCamp course is due on Thursday.
+- [X] *Sprint 2:* Literature Review assignment coming (until March 13).
+- [X] *Review:* Thinking Machines (1961).
 - [ ] *Review:* Prompt engineering applied practice (in-class, Tuesday).
-- [ ] *Review:* Thinking Machines (1961).
 - [ ] *Lecture:* "The journey from Data to Action" (Thursday).
 
-** PRACTICE Prompt engineering
+** IN PROGRESS Prompt engineering
+#+attr_html: :width 400px :float nil:
+[[../img/5_prompt_engineering_summary.png]]
+
+*Sources*: DataCamp lessons on prompt engineering
 
 *Four (4) exercises + class discussion:*
 - Turn vague prompts into structured instructions
@@ -1076,7 +1078,19 @@ As a table, with more detail:
 - Run your revised version
 - Refine once more
 
+*Exercises:*
+1) [X] Controlling vague prompts
+2) [X] Reparing overloaded prompts
+3) [X] Controlling persona and structure
+4) [ ] Defending against hallucinations
+
 Open the exercise for instructions: [[https://tinyurl.com/structured-prompts][tinyurl.com/structured-prompts]]
+
+** TODO Literature Review (The "How" of the Project)
+#+attr_html: :width 400px :float nil:
+[[../img/sprint2.png]]
+
+- Deadline is Sunday, March 15 (11:59 pm)
 
 * Week 8 - Literature Review / Connecting Apps / Creating GPT agents
 

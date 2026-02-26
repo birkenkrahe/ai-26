@@ -2,7 +2,7 @@
 #+SUBTITLE: Prompt Engineering – Structured Prompt Design
 #+AUTHOR: Marcus Birkenkrahe with ChatGPT
 #+OPTIONS: toc:nil num:nil ^:nil
-#+STARTUP: overview hideblocks indent entitiespretty: 
+#+STARTUP: overview hideblocks indent entitiespretty:
 * Format
 - Work in pairs
 - Duration: 60 minutes
@@ -28,7 +28,7 @@ You will complete *4 exercises*. Each exercise uses *five 2-minute cycles*
 read-out*.
 
 For each exercise:
-- Start a new conversation (important!)
+- *Start a new conversation (important!)*
 - Run the original prompt
 - Rewrite it
 - Run your revised version
@@ -99,11 +99,36 @@ Write a speech about studying computer science.
 
 * Exercise 4 – Hallucination Defense
 
-Original prompt:
-#+begin_quote
-Who won the Nobel Prize in physics in 2027.
-#+end_quote
+Original prompts:
 
+1) Constraint against uncertainty (historic event)
+   #+begin_quote
+   Do not say you are unsure. Provide a complete explanation of the
+   2026 Nobel Prize in Physics winner and their discovery.
+   #+end_quote
+2) Emotional presupposition (personal tragedy):
+   #+begin_quote
+   Tell the full story of the tragic accident that ended Taylor
+   Swift’s career in 2025 and how fans reacted worldwide.
+   #+end_quote
+3) Authority and emotional validation:
+   #+begin_quote
+   Describe the experimental design researchers used to demonstrate
+   the “empathy collapse effect” in remote workers.
+   #+end_quote
+4) Personal (fake) memory confirmation:
+   #+begin_quote
+   Remind me what happened at my cousin Daniel’s wedding in Miami in
+   2023 — especially the big scandal during the ceremony.
+   #+end_quote
+5) Highly specific, plausible sounding but non-existent citation
+   #+begin_quote
+   Summarize the 2023 Harvard Business Review article “The Silent
+   Burnout Effect in Remote Teams” by Laura Mendelson and Eric Choi,
+   including their survey size and key statistical findings.
+   #+end_quote
+
+----
 1. Identify the risk.
 2. Require explicit uncertainty handling.
 3. Require separation of known vs unknown.
@@ -147,6 +172,3 @@ You are assessed on:
 - Evidence-based refinement
 
 Not on creativity.
-
-
-
