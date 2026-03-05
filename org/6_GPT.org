@@ -1,0 +1,194 @@
+#+TITLE: In-Class Exercise (≈30 min): Build a Tiny Custom GPT (Task Agent)
+#+AUTHOR: DSC 482 — Coding in an AI World
+#+OPTIONS: toc:nil num:nil
+
+* Purpose
+
+- In this exercise you will design a small *task agent* using a Custom
+  GPT.
+- The goal is not to get a “good answer.” The goal is to practice
+  turning a vague task into a *clear specification* that an AI system
+  can follow.
+
+- If you cannot specify the task clearly, an agent cannot perform it
+  reliably.
+
+* What you will produce
+
+By the end of this exercise you should have:
+
+- One small task specification
+- One Custom GPT based on that specification
+- Two short test runs
+- One improvement you made after observing a failure
+
+Work in *pairs*.
+
+* Step 1 — Choose a task (2 minutes)
+
+Choose a small task that you do regularly.
+
+Requirements:
+- It should involve *steps*
+- It should have *clear inputs and outputs*
+- It should be possible to test quickly
+
+Examples:
+
+- Generate a short study plan
+- Extract action items from meeting notes
+- Improve an email subject line
+- Suggest a short workout plan
+- Summarize a short text and generate review questions
+
+Write your task in one sentence.
+
+Example: Literature review
+#+begin_quote
+Given a research topic, produce search keywords and 3–5 research
+questions that could guide a literature search.
+#+end_quote
+
+* Step 2 — Write the task specification (3 minutes)
+
+Before building the GPT, define the task clearly.
+
+Fill in the following fields.
+
+Goal:
+#+begin_quote
+What is the task trying to achieve?
+#+end_quote
+
+Inputs:
+#+begin_quote
+What information must the user provide?
+#+end_quote
+
+Outputs:
+#+begin_quote
+What should the agent produce?
+The result must be something you can check.
+#+end_quote
+
+Verification:
+#+begin_quote
+How can the user tell if the result is correct or useful?
+Write 1–2 simple checks.
+#+end_quote
+
+* Step 3 — Create the Custom GPT (6 minutes)
+
+Open ChatGPT and go to:
+
+Explore GPTs → Create
+
+In the *Instructions* box, paste the template below and edit it using
+your specification.
+
+#+begin_src text
+You are a task agent that helps the user complete a repeatable task.
+
+TASK GOAL:
+[Write the goal here.]
+
+INPUTS:
+Ask the user for the following information:
+[List the required inputs.]
+
+OUTPUT:
+Produce the following result:
+[Describe the output.]
+
+RULES:
+1. Ask clarifying questions if information is missing.
+2. Do not invent facts.
+3. Present results in short structured sections.
+4. Keep answers concise.
+
+OUTPUT FORMAT:
+Inputs received:
+Plan or result:
+Verification checklist:
+#+end_src
+
+* Step 4 — Test run #1 (4 minutes)
+
+Run your GPT with a realistic prompt.
+
+Examples:
+
+"I have 40 minutes to study biology. Make a study plan."
+
+"Here are meeting notes: [paste text]. Extract action items."
+
+Copy the output into your notes.
+
+Questions to consider:
+
+- Did the GPT ask the right questions?
+- Did the output match your specification?
+- Was anything missing?
+
+* Step 5 — Test run #2 (4 minutes)
+
+Run the GPT again with a *harder or messier input*.
+
+Examples:
+
+- Missing information
+- A vague request
+- Conflicting instructions
+
+Observe what happens.
+
+Write one failure you observed.
+
+Example:
+#+begin_quote
+
+#+end_quote
+
+* Step 6 — Improve the instructions (5 minutes)
+
+Modify the GPT instructions to address the failure you observed.
+
+Examples of improvements:
+
+- Require clarifying questions when the goal is vague
+- Limit the length of the plan
+- Require the agent to state assumptions
+- Add a clearer output structure
+
+Write the change you made.
+
+Example:
+#+begin_quote
+
+#+end_quote
+
+Run the GPT again quickly to see if the change improved the result.
+
+* Step 7 — Share-out (≈6 minutes)
+
+Be ready to briefly report:
+
+1. Your task
+2. One failure you observed
+3. One change you made to the instructions
+4. One verification check you added
+
+* Takeaway
+
+Agents fail where humans rely on:
+- vague language
+- unstated assumptions
+- missing inputs
+- lack of verification
+
+Designing a reliable agent means turning a task into:
+
+1. Goal
+2. Inputs
+3. Outputs
+4. Verification
