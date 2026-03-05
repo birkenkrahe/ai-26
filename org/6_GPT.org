@@ -49,6 +49,31 @@ Given a research topic, produce search keywords and 3–5 research
 questions that could guide a literature search.
 #+end_quote
 
+** Example
+
+#+begin_quote
+My research topic is "Advanced Operating Systems". That's a course I'd
+like to teach. Here is the description: This is an advanced course in
+Operating Systems. The students should be graduate students or upper
+division students with the instructor's permission. This course
+exposes students to the operating systems as a research field and
+study operating systems, and more broadly computer systems in general,
+from a design point of view. We will examine the genesis and
+theoretical underpinnings of different systems in both important
+historical context and recent research developments. In addition to
+teaching various system techniques, the objectives of the course also
+include helping students learn academic skills appropriate to graduate
+students. About 60% of the course will be devoted to abstracting
+underlying concepts and techniques, and the about 40% will be on more
+manifested current topics in modern operating systems and distributed
+systems.
+
+Your job: Given this research topic, produce search keywords and 3-5
+research questions that could guide a literature search.
+#+end_quote
+
+[[https://chatgpt.com/share/e/69a9a56b-49a4-8013-9dcf-5346079001d0][Link to the conversation.]]
+
 * Step 2 — Write the task specification (3 minutes)
 
 Before building the GPT, define the task clearly.
@@ -77,14 +102,69 @@ How can the user tell if the result is correct or useful?
 Write 1–2 simple checks.
 #+end_quote
 
+** Example:
+
+Task:
+#+begin_quote
+Transform a short research topic description into a structured
+literature-search plan.
+#+end_quote
+
+Goal:
+#+begin_quote
+Help start OS research quickly and systematically.
+#+end_quote
+
+Inputs:
+#+begin_quote
+1. research topic
+2. short description
+3. optional focus
+#+end_quote
+
+Outputs:
+#+begin_quote
+The GPT should produce four structured elements.
+1. Search keywords: 3-5 keyword groups covering core concepts,
+   algorithms or techniques, architecture, modern research directions.
+2. 3-5 combined search queries to be pasted into scholarly databases.
+3. 3-5 research questions that should be conceptual, guide a
+   literature search, and not require original experiments.
+4. 3-5 ways to narrow the research topic if it becomes too broad.
+#+end_quote
+
+Verification:
+#+begin_quote
+1. Structural checks: The output must include:
+   - keyword list
+   - search queries
+   - research questions
+   - narrowing directions
+2. Quality checks: Research questions should
+   - be answerable through existing literature
+   - not be purely factual
+   - not require experiments
+   - be relevant to operating systems design
+3. Practical check: I should be able to
+   - paste at least one search query into Google Scholar
+   - find multiple relevant papers
+   within the first results page.
+#+end_quote
+
 * Step 3 — Create the Custom GPT (6 minutes)
+
+Ask for a GPT instruction block (system prompt) for this agent so that
+you can paste it directly into the GPT builder.
 
 Open ChatGPT and go to:
 
-Explore GPTs → Create
+GPTs → Create → Configure
 
-In the *Instructions* box, paste the template below and edit it using
-your specification.
+In the *Configure* box:
+1) Name your GPT
+paste the template below in the *Instructions* box
+and edit it using your specification. You can ask ChatGPT to fill the
+template it but you should check it, of course, before uploading it.
 
 #+begin_src text
 You are a task agent that helps the user complete a repeatable task.
@@ -111,6 +191,73 @@ Inputs received:
 Plan or result:
 Verification checklist:
 #+end_src
+
+** Example
+
+System prompt:
+#+begin_example
+You are a task agent that helps the user complete a repeatable task.
+
+TASK GOAL: Generate a structured literature-search starting point for
+a research topic in Advanced Operating Systems. The task helps
+students turn a short topic description into a usable literature
+search plan including keywords, search queries, research questions,
+and possible focus directions.
+
+INPUTS:
+Ask the user for the following information:
+- Research topic title
+- Short description of the topic (1–5 sentences)
+- Academic level (undergraduate, graduate, or mixed)
+- Optional focus area (examples: kernel design, distributed systems, virtualization, security, performance, scheduling, memory management)
+
+OUTPUT:
+Produce the following result:
+A structured literature-search plan that includes:
+- Search keyword groups (core concepts, algorithms/mechanisms,
+  architecture, modern research directions)
+- 3–4 example academic search queries that can be used in Google
+  Scholar, ACM Digital Library, IEEE Xplore, or arXiv
+- 3–5 research questions suitable for a literature review
+- 3–5 possible directions to narrow the topic if it is too broad
+
+RULES:
+1. Ask clarifying questions if information is missing.
+2. Do not invent facts or specific papers.
+3. Present results in short structured sections.
+4. Keep answers concise.
+5. Research questions must guide literature exploration and not
+   require original experiments.
+6. Focus on operating systems design, algorithms, and systems architecture.
+
+OUTPUT FORMAT:
+
+Inputs received:
+- Topic:
+- Description:
+- Level:
+- Focus (if provided):
+
+Plan or result:
+
+Search keywords:
+[Grouped keyword lists]
+
+Example search queries:
+[List of realistic queries]
+
+Research questions:
+[3–5 questions]
+
+Possible focus directions:
+[3–5 narrowing options]
+
+Verification checklist:
+- Do the research questions explore design, algorithms, or system trade-offs?
+- Can at least one search query return multiple academic papers?
+- Are the keywords specific enough for scholarly databases?
+- Are the questions answerable through existing literature?
+#+end_example
 
 * Step 4 — Test run #1 (4 minutes)
 
