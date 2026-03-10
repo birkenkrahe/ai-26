@@ -1,184 +1,168 @@
-#+TITLE: In-Class Exercise (≈30 min): Build a Tiny Custom GPT (Task Agent)
+#+TITLE: Build a Custom GPT (Task Agent)
 #+AUTHOR: DSC 482 — Coding in an AI World
 #+OPTIONS: toc:nil num:nil
+#+STARTUP: overview hideblocks indent entitiespretty: 
+* Practice Exercise: Build a Simple Custom GPT for Your Own Learning
 
-* Purpose
+*Goal:*  
+Create a very simple Custom GPT that helps with one repeatable learning task of
+your own.
 
-- In this exercise you will design a small *task agent* using a Custom
-  GPT.
-- The goal is not to get a “good answer.” The goal is to practice
-  turning a vague task into a *clear specification* that an AI system
-  can follow.
+The point of this exercise is not to build something complicated. The point is
+to define one useful task clearly enough that the GPT can do it repeatedly.
 
-- If you cannot specify the task clearly, an agent cannot perform it
-  reliably.
+Examples of possible tasks:
 
-* What you will produce
+- generate short Java drills on a topic
+- quiz on Python vocabulary
+- create a short review prompt for statistics
+- critique a draft paragraph before rewriting it
+- generate one small calculus practice problem at a time
 
-By the end of this exercise you should have:
+* Step 1 — Choose One Repeatable Learning Task
 
-- One small task specification
-- One Custom GPT based on that specification
-- Two short test runs
-- One improvement you made after observing a failure
+Pick a task that:
 
-Work in *pairs*.
+- you do often
+- is small enough to describe clearly
+- has a visible result
 
-* Step 1 — Choose a task (2 minutes)
+Good example:
 
-Choose a small task that you do regularly.
+#+begin_quote
+I am learning Java. I want a GPT that gives me one short exercise on a topic,
+then critiques my solution before showing a model answer.
+#+end_quote
 
-Requirements:
-- It should involve *steps*
-- It should have *clear inputs and outputs*
-- It should be possible to test quickly
+Other examples:
+
+#+begin_quote
+I am studying statistics. I want a GPT that gives me one short interpretation
+question about a graph or summary statistic.
+#+end_quote
+
+#+begin_quote
+I am learning Spanish vocabulary. I want a GPT that quizzes me on five words at
+a time and corrects my mistakes.
+#+end_quote
+
+Write your task here:
+
+#+begin_quote
+
+#+end_quote
+
+* Step 2 — Define Goal, Inputs, Outputs, Verification
+
+Fill this in before you build the GPT.
+
+*Goal*
+What is the GPT supposed to help you do?
+
+#+begin_quote
+
+#+end_quote
+
+*Inputs*
+What information does the GPT need from you?
 
 Examples:
 
-- Generate a short study plan
-- Extract action items from meeting notes
-- Improve an email subject line
-- Suggest a short workout plan
-- Summarize a short text and generate review questions
-
-Write your task in one sentence.
-
-Example: Literature review
-#+begin_quote
-Given a research topic, produce search keywords and 3–5 research
-questions that could guide a literature search.
-#+end_quote
-
-** Example
+- topic
+- difficulty level
+- kind of practice
+- constraints
 
 #+begin_quote
-My research topic is "Advanced Operating Systems". That's a course I'd
-like to teach. Here is the description: This is an advanced course in
-Operating Systems. The students should be graduate students or upper
-division students with the instructor's permission. This course
-exposes students to the operating systems as a research field and
-study operating systems, and more broadly computer systems in general,
-from a design point of view. We will examine the genesis and
-theoretical underpinnings of different systems in both important
-historical context and recent research developments. In addition to
-teaching various system techniques, the objectives of the course also
-include helping students learn academic skills appropriate to graduate
-students. About 60% of the course will be devoted to abstracting
-underlying concepts and techniques, and the about 40% will be on more
-manifested current topics in modern operating systems and distributed
-systems.
 
-Your job: Given this research topic, produce search keywords and 3-5
-research questions that could guide a literature search.
 #+end_quote
 
-[[https://chatgpt.com/share/e/69a9a56b-49a4-8013-9dcf-5346079001d0][Link to the conversation.]]
+*Outputs*
+What should the GPT produce?
 
-* Step 2 — Write the task specification (3 minutes)
+Examples:
 
-Before building the GPT, define the task clearly.
+- one short exercise
+- one quiz
+- one critique
+- one checklist
+- one corrected version
 
-Fill in the following fields.
-
-Goal:
 #+begin_quote
-What is the task trying to achieve?
+
 #+end_quote
 
-Inputs:
+*Verification*
+How will you know the GPT did the task well?
+
+Examples:
+
+- the exercise is short and focused
+- the critique points to specific mistakes
+- the answer is not revealed too early
+- the output matches the requested topic
+
 #+begin_quote
-What information must the user provide?
+
 #+end_quote
 
-Outputs:
+* Step 3 — Open the GPT Builder
+
+1. Go to ChatGPT.
+2. Click *Explore GPTs*.
+3. Click *Create*.
+4. Move to the *Configure* tab.
+
+* Step 4 — Fill In the Basic Fields
+
+Choose a name and short description.
+
+Example:
+
+Name:
 #+begin_quote
-What should the agent produce?
-The result must be something you can check.
+Java Drill Coach
 #+end_quote
 
-Verification:
+Description:
 #+begin_quote
-How can the user tell if the result is correct or useful?
-Write 1–2 simple checks.
+Creates short Java exercises, critiques solutions, and delays the full answer
+until after feedback.
 #+end_quote
 
-** Example:
+Now write your own:
 
-Task:
+Name:
 #+begin_quote
-Transform a short research topic description into a structured
-literature-search plan.
+
 #+end_quote
 
-Goal:
+Description:
 #+begin_quote
-Help start OS research quickly and systematically.
+
 #+end_quote
 
-Inputs:
+* Step 5 — Paste a Simple Instruction Template
+
+Paste this into the *Instructions* box and adapt the bracketed parts.
+
 #+begin_quote
-1. research topic
-2. short description
-3. optional focus
-#+end_quote
-
-Outputs:
-#+begin_quote
-The GPT should produce four structured elements.
-1. Search keywords: 3-5 keyword groups covering core concepts,
-   algorithms or techniques, architecture, modern research directions.
-2. 3-5 combined search queries to be pasted into scholarly databases.
-3. 3-5 research questions that should be conceptual, guide a
-   literature search, and not require original experiments.
-4. 3-5 ways to narrow the research topic if it becomes too broad.
-#+end_quote
-
-Verification:
-#+begin_quote
-1. Structural checks: The output must include:
-   - keyword list
-   - search queries
-   - research questions
-   - narrowing directions
-2. Quality checks: Research questions should
-   - be answerable through existing literature
-   - not be purely factual
-   - not require experiments
-   - be relevant to operating systems design
-3. Practical check: I should be able to
-   - paste at least one search query into Google Scholar
-   - find multiple relevant papers
-   within the first results page.
-#+end_quote
-
-* Step 3 — Create the Custom GPT (6 minutes)
-
-Ask for a GPT instruction block (system prompt) for this agent so that
-you can paste it directly into the GPT builder.
-
-Open ChatGPT and go to:
-
-GPTs → Create → Configure
-
-In the *Configure* box:
-1) Name your GPT
-paste the template below in the *Instructions* box
-and edit it using your specification. You can ask ChatGPT to fill the
-template it but you should check it, of course, before uploading it.
-
-#+begin_src text
-You are a task agent that helps the user complete a repeatable task.
+You are a task agent that helps the user complete a repeatable learning task.
 
 TASK GOAL:
-[Write the goal here.]
+Help the user [write the goal here].
 
 INPUTS:
 Ask the user for the following information:
-[List the required inputs.]
+- [input 1]
+- [input 2]
+- [input 3]
 
 OUTPUT:
 Produce the following result:
-[Describe the output.]
+- [output 1]
+- [output 2]
+- [output 3]
 
 RULES:
 1. Ask clarifying questions if information is missing.
@@ -190,152 +174,173 @@ OUTPUT FORMAT:
 Inputs received:
 Plan or result:
 Verification checklist:
-#+end_src
+#+end_quote
 
-** Example
+Example adaptation for Java:
 
-System prompt:
-#+begin_example
-You are a task agent that helps the user complete a repeatable task.
+#+begin_quote
+You are a task agent that helps the user practice Java through short drills.
 
-TASK GOAL: Generate a structured literature-search starting point for
-a research topic in Advanced Operating Systems. The task helps
-students turn a short topic description into a usable literature
-search plan including keywords, search queries, research questions,
-and possible focus directions.
+TASK GOAL:
+Help the user learn Java by generating short exercises on a chosen topic,
+reviewing the user's solution, critiquing it, and only then providing a model
+answer if needed.
 
 INPUTS:
 Ask the user for the following information:
-- Research topic title
-- Short description of the topic (1–5 sentences)
-- Academic level (undergraduate, graduate, or mixed)
-- Optional focus area (examples: kernel design, distributed systems, virtualization, security, performance, scheduling, memory management)
+- Java topic or keyword
+- Preferred difficulty level
+- Type of practice (code writing, debugging, prediction)
 
 OUTPUT:
 Produce the following result:
-A structured literature-search plan that includes:
-- Search keyword groups (core concepts, algorithms/mechanisms,
-  architecture, modern research directions)
-- 3–4 example academic search queries that can be used in Google
-  Scholar, ACM Digital Library, IEEE Xplore, or arXiv
-- 3–5 research questions suitable for a literature review
-- 3–5 possible directions to narrow the topic if it is too broad
+- One short Java exercise
+- Clear instructions for what the user should do
+- If the user submits a solution, critique it first
+- Only provide a model solution after critique or if the user asks
 
 RULES:
-1. Ask clarifying questions if information is missing.
-2. Do not invent facts or specific papers.
-3. Present results in short structured sections.
+1. Keep exercises short and focused.
+2. Use only the topic the user requests.
+3. Critique before giving the answer.
 4. Keep answers concise.
-5. Research questions must guide literature exploration and not
-   require original experiments.
-6. Focus on operating systems design, algorithms, and systems architecture.
 
 OUTPUT FORMAT:
-
 Inputs received:
-- Topic:
-- Description:
-- Level:
-- Focus (if provided):
-
 Plan or result:
-
-Search keywords:
-[Grouped keyword lists]
-
-Example search queries:
-[List of realistic queries]
-
-Research questions:
-[3–5 questions]
-
-Possible focus directions:
-[3–5 narrowing options]
-
 Verification checklist:
-- Do the research questions explore design, algorithms, or system trade-offs?
-- Can at least one search query return multiple academic papers?
-- Are the keywords specific enough for scholarly databases?
-- Are the questions answerable through existing literature?
-#+end_example
+#+end_quote
 
-* Step 4 — Test run #1 (4 minutes)
+* Step 6 — Add One Conversation Starter
 
-Run your GPT with a realistic prompt.
-
-Examples:
-
-"I have 40 minutes to study biology. Make a study plan."
-
-"Here are meeting notes: [paste text]. Extract action items."
-
-Copy the output into your notes.
-
-Questions to consider:
-
-- Did the GPT ask the right questions?
-- Did the output match your specification?
-- Was anything missing?
-
-* Step 5 — Test run #2 (4 minutes)
-
-Run the GPT again with a *harder or messier input*.
-
-Examples:
-
-- Missing information
-- A vague request
-- Conflicting instructions
-
-Observe what happens.
-
-Write one failure you observed.
+Add one starter that shows how the GPT should be used.
 
 Example:
+
+#+begin_quote
+I am learning about variables and types. Give me a short Java drill.
+#+end_quote
+
+Write your own:
+
 #+begin_quote
 
 #+end_quote
 
-* Step 6 — Improve the instructions (5 minutes)
+* Step 7 — Test the GPT
 
-Modify the GPT instructions to address the failure you observed.
-
-Examples of improvements:
-
-- Require clarifying questions when the goal is vague
-- Limit the length of the plan
-- Require the agent to state assumptions
-- Add a clearer output structure
-
-Write the change you made.
+Open a chat with your GPT and give it one realistic prompt.
 
 Example:
+
+#+begin_quote
+I am learning about variables and types right now.
+Give me a beginner Java drill. I want code writing practice.
+#+end_quote
+
+Write the first test prompt you used:
+
 #+begin_quote
 
 #+end_quote
 
-Run the GPT again quickly to see if the change improved the result.
+* Step 8 — Evaluate the Result
 
-* Step 7 — Share-out (≈6 minutes)
+Check whether the GPT actually did what you wanted.
 
-Be ready to briefly report:
+Use these questions:
 
-1. Your task
-2. One failure you observed
-3. One change you made to the instructions
-4. One verification check you added
+- Did it stay on the topic?
+- Did it ask for missing information when needed?
+- Was the output short and usable?
+- Did it follow the format you asked for?
+- Did it avoid giving too much too early?
 
-* Takeaway
+Record what worked:
 
-Agents fail where humans rely on:
-- vague language
-- unstated assumptions
-- missing inputs
-- lack of verification
+#+begin_quote
 
-Designing a reliable agent means turning a task into:
+#+end_quote
 
-1. Goal
-2. Inputs
-3. Outputs
-4. Verification
+Record what failed:
+
+#+begin_quote
+
+#+end_quote
+
+* Step 9 — Revise the Instructions Once
+
+Do not rebuild the whole GPT. Change one or two instructions only.
+
+Examples of useful revisions:
+
+- “Keep exercises under 10 lines of code.”
+- “Do not reveal the full answer until the user asks.”
+- “Ask at least one clarifying question if the task is vague.”
+- “Use only beginner-level Java syntax.”
+
+Write your revision here:
+
+#+begin_quote
+
+#+end_quote
+
+* Step 10 — Test Again
+
+Run a second prompt and see whether the change improved the GPT.
+
+Second test prompt:
+
+#+begin_quote
+
+#+end_quote
+
+What changed?
+
+#+begin_quote
+
+#+end_quote
+
+* Deliverable
+
+Submit the following:
+
+1. the name of your GPT
+2. the task it is designed to do
+3. the instruction text you used
+4. one test prompt
+5. a short note on what worked
+6. one revision you made after testing
+
+* Reflection Questions
+
+1. What hidden assumptions did you discover while writing the instructions?
+
+2. What part of the task was hardest to specify clearly?
+
+3. What did the GPT do well?
+
+4. What still required human judgment?
+
+5. Would this GPT actually help you study, or is it only a demo?
+
+* Sample Task Ideas
+
+- Java Drill Coach
+- Python Debug Helper
+- Statistics Quiz Coach
+- Research Question Refiner
+- Flashcard Generator
+- Proof Practice Partner
+- SQL Query Drill Coach
+- Reading Summary Critic
+
+* Verification Checklist
+
+- [ ] I chose one specific repeatable task.
+- [ ] I defined goal, inputs, outputs, and verification.
+- [ ] I created the GPT in the Configure tab.
+- [ ] I added instructions and a conversation starter.
+- [ ] I tested it at least once.
+- [ ] I revised the instructions at least once.
+- [ ] I reflected on what still required human judgment.
