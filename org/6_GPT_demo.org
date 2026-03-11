@@ -1,0 +1,202 @@
+#+TITLE:Building a Java Drill Coach 
+#+AUTHOR:Marcus Birkenkrahe & ChatGPT
+#+SUBTITLE:DSC 482 - Coding with AI - Lyon College Spring 2026
+#+STARTUP: overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+
+* 15-Minute Demo: Building a Simple Custom GPT (Java Drill Coach)
+
+*Goal:*  
+Create a simple Custom GPT that helps with practicing Java by generating
+short exercises and critiquing solutions before revealing the answer.
+
+This demo shows that a Custom GPT is essentially a reusable instruction
+wrapper for a repeatable task.
+
+* Step 1 — Open the GPT Builder
+
+1. Go to ChatGPT.
+2. Click *Explore GPTs*.
+3. Click *Create*.
+
+Explanation:
+
+#+begin_quote
+The idea is to create a GPT that helps practice Java. When given a topic,
+it should generate a short exercise. When a solution is submitted,
+it should critique the solution before revealing the answer.
+#+end_quote
+
+This identifies a *repeatable task*: practicing programming concepts.
+
+* Step 2 — Configure the GPT
+
+Switch to the *Configure* tab.
+
+Fill in:
+
+Name:
+#+begin_quote
+Java Drill Coach
+#+end_quote
+
+Description:
+#+begin_quote
+Generates short Java exercises, critiques solutions, and only reveals the
+answer after feedback.
+#+end_quote
+
+* Step 3 — Add the Instructions
+
+Paste the following into the *Instructions* box.
+
+#+begin_quote
+You are a task agent that helps the user practice Java through short drills.
+
+TASK GOAL:
+Help the user learn Java by generating short exercises on a chosen topic,
+reviewing the user's solution, critiquing it, and only then providing a
+model answer if needed.
+
+INPUTS:
+Ask the user for:
+- Java topic or keyword
+- Preferred difficulty level (beginner or intermediate)
+- Type of practice (code writing, debugging, prediction)
+
+OUTPUT:
+Produce:
+- One short Java exercise
+- Clear instructions for what the user should do
+- If the user submits a solution, critique it first
+- Identify what is correct and what needs improvement
+- Do not give the full solution immediately
+- Only show a model solution if the user asks or after critique
+
+RULES:
+1. Keep exercises short and focused.
+2. Use only the topic the user requests.
+3. Critique before giving the answer.
+4. Keep explanations concise.
+5. Prefer minimal example programs.
+
+OUTPUT FORMAT:
+
+Inputs received:
+Plan or result:
+Verification checklist:
+#+end_quote
+
+
+
+* Step 4 — Add a Conversation Starter
+
+Add this conversation starter:
+
+#+begin_quote
+I am learning about variables and types. Give me a short Java drill.
+#+end_quote
+
+Explanation:
+
+#+begin_quote
+Conversation starters provide an example of how the GPT should be used.
+#+end_quote
+
+
+
+* Step 5 — Run the Demo
+
+Start a new chat with the GPT and type:
+
+#+begin_quote
+I am learning about variables and types right now.
+Give me a beginner Java drill. I want code writing practice.
+#+end_quote
+
+Expected behavior:
+
+The GPT produces a short programming exercise that practices declaring
+variables, assigning values, or printing output.
+
+
+
+* Step 6 — Submit an Imperfect Solution
+
+Paste a quick incorrect solution:
+
+#+begin_src java
+public class Main {
+    public static void main(String[] args) {
+        int age = "20";
+        double price = 9;
+        System.out.println(age + price);
+    }
+}
+#+end_src
+
+Expected behavior:
+
+The GPT should:
+
+- critique the program
+- identify the type error
+- explain what is wrong
+- suggest improvements
+- avoid giving the full answer immediately
+
+
+
+* Step 7 — Ask for the Correct Version
+
+Now type:
+
+#+begin_quote
+Show me a corrected version.
+#+end_quote
+
+This demonstrates the full feedback loop:
+
+1. exercise
+2. attempt
+3. critique
+4. corrected solution
+
+
+
+* Key Takeaway
+
+#+begin_quote
+A Custom GPT is simply a reusable set of instructions for a specific task.
+Instead of rewriting prompts repeatedly, the workflow is encoded once.
+#+end_quote
+
+
+
+* Possible Follow-Up Questions
+
+1. What other repeatable learning tasks could benefit from a Custom GPT?
+2. How could this GPT be adapted for another programming language?
+3. What instructions might improve the quality of feedback?
+
+
+
+* Key Assumptions
+
+- The purpose of the demo is to illustrate the idea of a Custom GPT.
+- The task (Java practice drills) is intentionally simple.
+
+
+
+* What Could Fail
+
+- If instructions are vague, the GPT might produce explanations instead
+  of exercises.
+- If the submitted code is completely correct, the critique step may be brief.
+
+
+
+* What Still Requires Human Judgment
+
+- Choosing useful topics for practice.
+- Evaluating whether feedback is helpful for learning.

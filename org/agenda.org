@@ -1092,27 +1092,9 @@ Open the exercise for instructions: [[https://tinyurl.com/structured-prompts][ti
 
 - Deadline is Sunday, March 15 (11:59 pm)
 
-* Week 8 - Literature Review / Connecting Apps / Creating GPT agents
+* DONE Week 8 - Literature Review / Connecting Apps / Creating GPT agents
 
-- [ ] Preview & discussion: Literature Review (2nd sprint)
-- [ ] Connecting GMail and GDrive to ChatGPT.
-- [ ] Creating a GPT agent for ASCII diagram creation.
-- [ ] Use autonomous agents (try Gemini).
-
-** DONE Building a dashboard ([[https://chat.google.com/room/AAAAeuayDfs/nqvBTU4bhzA/nqvBTU4bhzA?cls=10][GChat]])
-
-Mock dashboard experiment: I played around with it some more and
-finally got a prompt that, I think, should work for you,
-too. Generation will take a few minutes so brew a tea and lean back:
-here is the link to the prompt. The dashboard is nicer than the one I
-showed you - more (made up) background data. Here is a preview - let
-me know if it works for you! If it does, try to add another dashboard
-element, for example You can also share the dashboard itself and
-everyone who is in our ChatGPT workspace will be able to see it - my
-edit attempt failed (a few days ago, I got it to work) but I don't
-have time to continue. This is Typescript code by the way - similar to
-JavaScript - with a little skill one could fix the code oneself (not
-me, I don't know these languages well enough).
+- [X] Preview & discussion: Literature Review (2nd sprint)
 
 ** Preview and discussion: Literature Review (2nd sprint) 45 min
 
@@ -1120,10 +1102,10 @@ Discuss with your neighbor, then come up with an answer
 
 1. What does "2nd sprint" mean to you?
    #+begin_quote
-   - A sprint is a period of 2-4 weeks in an agile Scrum project.
+   - A sprint is a period of 2-4 weeks in an *agile Scrum* project.
    - During the sprint, teams work on the backlog of all the things
-     they need to do to build a successful prototype for shipping.
-   - In the sprint review at the end of each sprint, the team presents
+     they need to do to build a successful *prototype* for shipping.
+   - In the sprint *review* at the end of each sprint, the team presents
      their prototype to the client and the other teams for review.
    - The main purpose of the review is to solicit comments and get
      input for the next sprint.
@@ -1138,55 +1120,83 @@ Discuss with your neighbor, then come up with an answer
 
 3. What counts as a good source?
    #+begin_quote
-   1. Recent (depending on quality/field) but not too recent (unchecked)
-   2. Citations (other publications referring to the source)
-   3. Authors' reputation (indirectly or directly)
-   4. Style and tone of the publication (journalistic/commercial)
-   5. Place of publication (science, commerce, independent)
-   6. Relevance for your topic (you can use it)
-   7. Realistically doable (you can understand it)
-   8. Structure of the publication (you can summarize it)
-   9. Evidence (references inside the source)
-   10. Purpose (bias of the source)
+   1. *Recent* (depending on quality/field) but not too recent (unchecked)
+   2. *Citations* (other publications referring to the source)
+   3. Authors' *reputation* (indirectly or directly)
+   4. *Style* and *tone* of the publication (journalistic/commercial)
+   5. *Place of publication* (science, commerce, independent)
+   6. *Relevance* for your topic (you can *use* it)
+   7. Realistically *doable* (you can *understand* it)
+   8. *Structure* of the publication (you can summarize it)
+   9. *Evidence* (references inside the source)
+   10. *Purpose* (*bias* of the source)
    #+end_quote
 4. How can you evaluate a source?
    #+begin_quote
-   1. Identify the author and place of publication.
-   2. Check when it was published or last updated.
-   3. Look for evidence: data, references, or links to other work.
-   4. Compare the claims with at least one or two other sources.
-   5. Ask what the purpose of the source is (inform, argue, sell,
+   1. *Identify* the author and place of publication.
+   2. Check *when* it was published or last updated.
+   3. Look for evidence: data, *references*, or links to other work.
+   4. *Compare* the claims with at least one or two other sources.
+   5. Ask what the *purpose* of the source is (inform, argue, sell,
       persuade).
    6. Check whether the claims are specific and supported, or vague
       and opinion-based.
-   7. Decide whether the source actually helps answer your research question.
+   7. Decide whether the source actually helps answer your research
+      question.
+   8. Read the first sentence
+   9. Check if authors have titles (expertise)
+   10. Check if the title is meaningful
+   11. Check if there are conclusions and if they are honest.
    #+end_quote
 5. How can you move from your proposal to a step-by-step plan?
    #+begin_quote
-   1. Restate your project goal in one clear sentence.
-   2. Identify the main inputs (information, tools, or data you need).
+   1. *Restate* your project goal in one clear sentence.
+   2. Identify the main *inputs* (information, tools, or data you need).
    3. Break the task into major stages (research, design, testing,
       evaluation).
-   4. Turn each stage into concrete actions you can perform.
-   5. Put the actions in a logical order.
-   6. Add simple checks to verify whether each step worked.
-   7. Write the plan so another person could follow it without
+   4. Turn each stage into *concrete actions* you can perform.
+   5. Put the actions in a *logical* order.
+   6. Add simple *checks* to verify whether each step worked.
+   7. Write the plan so *another* person could follow it without
       guessing.
    #+end_quote
 
 Now: Two questions from everyone on their project.
+
+1) Can I use videogames as my sources (yes)
+2) Should I reference data that I am using (yes)
+3) Can I use someone's opinion (yes, if it can be validated)
+4) Besides input for my agent, do I need any other sources? (Yes:
+   e.g. sources that did the same thing, or external evaluators
+   that can judget the quality of the output).
    
-** Exercise: Build a Tiny Custom GPT (Task Agent) - 25 min
+* Week 9
 
-Link: [[https://tinyurl.com/gpt-exercise][tinyurl.com/gpt-exercise]]
+- [ ] Verify building a dashboard
+- [ ] Demo & exercise Creating a GPT agent for an automatable task.
+- [ ] Connecting GMail and GDrive to ChatGPT.
+- [ ] Use autonomous agents (try Gemini).
 
-- This exercise is a direct bridge to your project.
-- It already produces the first three components every project needs:
-  1. Task specification (exact requirements/constraints)
-  2. Agent behavior (instructions)
-  3. Initial testing
-- These is the *first prototype* of the agent students are expected to
-  build.
+** VERIFY Building a dashboard ([[https://chat.google.com/room/AAAAeuayDfs/nqvBTU4bhzA/nqvBTU4bhzA?cls=10][GChat]])
+
+Mock dashboard experiment: I played around with it some more and
+finally got a prompt that, I think, should work for you,
+too. Generation will take a few minutes so brew a tea and lean back:
+here is the link to the prompt. The dashboard is nicer than the one I
+showed you - more (made up) background data. Here is a preview - let
+me know if it works for you! If it does, try to add another dashboard
+element, for example You can also share the dashboard itself and
+everyone who is in our ChatGPT workspace will be able to see it - my
+edit attempt failed (a few days ago, I got it to work) but I don't
+have time to continue. This is Typescript code by the way - similar to
+JavaScript - with a little skill one could fix the code oneself (not
+me, I don't know these languages well enough).
+
+** NEXT Exercise: Build a Tiny Custom GPT (Task Agent) - 25 min
+
+- Open the link: [[https://tinyurl.com/gpt-task-agent][tinyurl.com/gpt-task-agent]]
+- Open ~File > Save a copy in drive~
+- These is the *first prototype* of the agent you are expected to build.
 - *If you like, use a task from your project for this exercise.*
 
 ** TODO Gemini CLI ([[https://chat.google.com/room/AAAAeuayDfs/k2WfJ42phmY/k2WfJ42phmY?cls=10][GChat]])
@@ -1215,6 +1225,5 @@ the Gemini chatbot (=gemini.google.com=) open at the same time to ask
 how to use the agent. You can also ask inside the agent, but it's
 slow.)
 
-
-
   
+
