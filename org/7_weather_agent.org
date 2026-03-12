@@ -1,0 +1,94 @@
+#+TITLE:Building a Weather Data Agent in Google Sheets
+#+AUTHOR:Building a Weather Data Agent in Google Sheets
+#+SUBTITLE:Building a Weather Data Agent in Google Sheets
+#+STARTUP: overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+* Overview
+
+You will build a "Serverless Agent" that fetches CSV weather data from
+a live API and updates a Google Sheet automatically every morning.
+
+1) Get the data source (API).
+2) Create a Google Sheets app (JavaScript).
+3) Test the app (Run and check).
+4) Define a trigger event (Daily).
+
+* Prerequisites
+
+1. A Google Account.
+2. Access to [[https://www.visualcrossing.com/weather-api][a weather API]].
+
+* The Data Source (The "API")
+
+1. *Sign up* for a free account at [[https://www.visualcrossing.com/weather-api/][visualcrossing.com/weather-api/]]
+2. Choose =Query Builder= at the top.
+3. Choose city.
+4. Choose =Build API Query=.
+5. Choose =CSV= (Comma-Separated-Values).
+6. Copy =Weather API Query URL= to clipboard.
+
+* The Scripting Environment
+1. Open a new Google Sheet ([[https://sheets.google.com][sheets.google.com]])
+2. Rename the bottom tab to *Weather*.
+3. Open *Extensions* > *Apps Script*.
+
+* The "Agent" Code
+
+Paste the following code into the editor:
+https://tinyurl.com/csv-app-js
+
+#+BEGIN_SRC javascript
+  function pullCSVFromWeb() {
+      var csvUrl = "REPLACE_WITH_YOUR_URL";
+      var sheetName = "Weather";
+      var ss = SpreadsheetApp.getActiveSpreadsheet();
+      var sheet = ss.getSheetByName(sheetName);
+
+      if (!sheet) { sheet = ss.insertSheet(sheetName); }
+
+      try {
+        var response = UrlFetchApp.fetch(csvUrl);
+        var csvData = Utilities.parseCsv(response.getContentText());
+
+        sheet.clear();
+        sheet.getRange(1, 1, csvData.length, csvData[0].length).setValues(csvData);
+
+        // UI Polish
+        sheet.getRange(1, 1, 1, csvData[0].length).setFontWeight("bold").setBackground("#cfe2f3");
+        sheet.autoResizeColumns(1, csvData[0].length);
+        sheet.getRange("Z1").setValue("Last Sync: " + new Date());
+
+      } catch (e) {
+        Logger.log("Error: " + e.toString());
+      }
+  }
+#+END_SRC
+
+* Execution & Permissions (disable pop-up blocker)
+
+1. Click the *Save* icon.
+2. Click *Run*.
+3. If the popup is blocked, look at the browser address bar and click
+   the symbol at the far right to unblock for =script.google.com=.
+4. You may get a warning because Google doesn't know you as a
+   developer yet. It is safe to proceed with your own code.
+
+* Automation (Set it and Forget it)
+
+1. Click the *Clock Icon* (Triggers) on the left sidebar.
+2. Add a New Trigger:
+   - Function: =pullCSVFromWeb=
+   - Event Source: =Time-driven=
+   - Type: =Day Timer=
+   - Time: =6am to 7am=
+3. =Save.= The agent is now independent of your computer.
+
+* Summary
+
+- A serverless agent pulls weather data from a public API.
+- The data is fetched as CSV and written into a Google Sheet.
+- An Apps Script function retrieves and updates the sheet.
+- A daily trigger runs the script automatically.
+
+In short: an automated agent collects live data and updates the
+spreadsheet without manual work.

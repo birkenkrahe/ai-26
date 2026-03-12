@@ -1,0 +1,215 @@
+#+TITLE:From Spreadsheet to Software 
+#+AUTHOR:Marcus Birkenkrahe with ChatGPT
+#+SUBTITLE:DSC 482 Coding in an AI world Lyon College Spring 2026
+#+STARTUP: overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+* Objectives
+
+- [ ] Code along: Build a simple grading agent.
+- [ ] Exercise: Build your own spreadsheet agent.
+
+* Automating spreadsheets (or not)
+
+- Many spreadsheets are actually *programs with hidden logic*.
+
+- AI code generation makes it easy to convert them into structured
+  software workflows.
+
+- Why is this worth doing?
+  #+begin_quote
+  1. *Reliability:* Fewer accidental errors from broken formulas.
+  2. *Automation:* No more manual spreadsheet updates.
+  3. *Consistency*: Everybody uses the same logic and rules.
+  4. *Better error checking*: Agents can validate input & warn.
+  5. *Scalability*: Agent handles larger dataset and repetition.
+  6. *Integration*: Agent can connect to databases, dashboards.
+  #+end_quote
+
+- Why would you not want to do this?
+  #+begin_quote
+  1. *Less immediate control* (another layer of abstraction)
+  2. *Higher setup cost* (setting up the agent initially)
+  3. *Harder to modify casually* (may need help to change logic)
+  4. *Dependence on tools or systems*.
+  #+end_quote
+
+- The key question:
+  #+begin_quote
+  Does the workflow contain repeated logic or rules that go beyond
+  simple data entry (though this can also be simplified - see our
+  weather agent).
+  #+end_quote
+  
+* Example
+
+- We model this spreadsheet. What does "model" mean?
+  #+begin_quote
+  Modeling means describing the underlying system = data + logic that
+  the spreadsheet represents, to enable a process:
+  1) enter scores
+  2) apply weights
+  3) compute final grade
+  4) display result
+  #+end_quote
+
+- Which other system (besides spreadsheet) could also represent this?
+  #+begin_quote
+  Prose: Compute final course grades from homework, midterm, final
+  exam, and attendance using weights 40/25/25/10.
+  #+end_quote
+
+- Course Grade Calculator (*input*):
+  | Student | Homework | Midterm | Final | Attendance |
+  |---------+----------+---------+-------+------------|
+  | Alex    |       85 |      78 |    92 |         90 |
+  | Sam     |       90 |      88 |    84 |         95 |
+  | Jordan  |       72 |      75 |    80 |         85 |
+
+- Spreadsheet *rules*:
+  + Homework weight = 40%
+  + Midterm weight = 25%
+  + Final weight = 25%
+  + Attendance weight = 10%
+
+- Grade formula (*logic*):
+  #+begin_example python
+  final_grade = (
+     0.4 * homework +
+     0.25 * midterm +
+     0.25 * final +
+     0.1 * attendance
+  #+end_example
+
+- Spreadsheet column formula example (*output*):
+  #+begin_example
+  =0.4*B2 + 0.25*C2 + 0.25*D2 + 0.1*E2
+  #+end_example
+
+* Create the sheet
+
+1. Go to Google Sheets
+2. Click =Blank spreadsheet=
+3. Rename it at the top: =Grade Calculator Demo=
+
+* Import CSV data using an agent (script)
+
+- Open Extensions > App Script
+
+- Copy raw script from here and put it into the editor:
+
+  #+begin_src javascript
+    function importCsvFromUrl() {
+
+        const url = "PASTE_YOUR_RAW_CSV_URL_HERE";
+
+        const response = UrlFetchApp.fetch(url);
+        const csv = response.getContentText();
+        const data = Utilities.parseCsv(csv);
+
+        const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+        sheet.clear();
+
+        sheet.getRange(1,1,data.length,data[0].length).setValues(data);
+
+    }
+  #+end_src
+
+- Paste the raw CSV URL into the script:
+  https://tinyurl.com/raw-grades-csv
+
+- Check the sheet.  
+
+* Improving the spreadsheet with code
+
+- Use the following prompt in ChatGPT ([[https://tinyurl.com/grade-prompt][tinyurl.com/grade-prompt]])
+  
+  #+begin_src text :tangle ../data/grade-prompt.txt
+  I have a Google Sheet with the following columns:
+
+  Student, Homework, Midterm, Final, Attendance, Final Grade
+
+  Each row contains a student's scores.
+
+  The final grade rule is:
+
+  Final Grade =
+  0.4 * Homework +
+  0.25 * Midterm +
+  0.25 * Final +
+  0.1 * Attendance
+
+  Instead of using spreadsheet formulas, I want the logic
+  implemented in Google Apps Script.
+
+  Write a function called computeFinalGrades() that:
+
+  1. Reads all rows from the sheet
+  2. Skips the header row
+  3. Computes the final grade using the rule above
+  4. Writes the result into the "Final Grade" column
+
+  Assume the column order above and that the header is in row 1.
+
+  Return only the Apps Script code and keep it simple.
+  #+end_src
+
+- This prompt gives the AI:
+  1) The data schema (table structure)
+  2) The rule (Final Grade logic)
+  3) The desired behavior (function)
+  4) The target environment (Apps Script)
+
+- Make a copy of the spreadsheet (existing Apps Scripts will be
+  copied, too).
+
+- Delete the formulas in the =Final Grade= column.
+
+- Open =Extensions > Apps Script=
+
+- Rename the Apps Script project name to =Grade Calculator Script=.
+
+- Copy the code from ChatGPT below the =importCsvFromUrl()= function.
+
+  #+begin_src javascript
+    function computeFinalGrades() {
+        const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+        const data = sheet.getDataRange().getValues();
+
+        for (let i = 1; i < data.length; i++) {
+    	const homework = Number(data[i][1]);
+    	const midterm = Number(data[i][2]);
+    	const finalExam = Number(data[i][3]);
+    	const attendance = Number(data[i][4]);
+
+    	const finalGrade =
+    	      0.4 * homework +
+    	      0.25 * midterm +
+    	      0.25 * finalExam +
+    	      0.1 * attendance;
+
+    	sheet.getRange(i + 1, 6).setValue(finalGrade);
+        }
+    }
+  #+end_src
+
+- Save the project.
+
+- Select the function you want to run at the top: =computeFinalGrades=.
+
+- Run the script (you have to get past a bunch of permissions again).
+
+- Check the grade sheet.
+
+- The spreadsheet is no longer the program. It is just data storage,
+  and the workflow lives in the code, which operates on the data.
+
+* Summary
+
+- Spreadsheets often contain hidden program logic.
+- We model the grading sheet as data + rule + output.
+- Data is imported into the sheet using an Apps Script agent.
+- AI generates code that replaces spreadsheet formulas.
+- The script computes grades automatically.
+
+In short: the spreadsheet stores data, and the workflow logic runs in
+code.
