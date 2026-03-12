@@ -27,6 +27,9 @@ a live API and updates a Google Sheet automatically every morning.
 5. Choose =CSV= (Comma-Separated-Values).
 6. Copy =Weather API Query URL= to clipboard.
 
+Alternatively, get a free API from https://open-meteo.com - The
+following API will work for Batesville: [[https://tinyurl.com/batesville-api][tinyurl.com/batesville-api]]
+
 * The Scripting Environment
 1. Open a new Google Sheet ([[https://sheets.google.com][sheets.google.com]])
 2. Rename the bottom tab to *Weather*.
