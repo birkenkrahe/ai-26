@@ -1,0 +1,27 @@
+I have a Google Sheet with the following columns:
+
+Student, Homework, Midterm, Final, Attendance, Final Grade
+
+Each row contains a student's scores.
+
+The final grade rule is:
+
+Final Grade =
+0.4 * Homework +
+0.25 * Midterm +
+0.25 * Final +
+0.1 * Attendance
+
+Instead of using spreadsheet formulas, I want the logic
+implemented in Google Apps Script.
+
+Write a function called computeFinalGrades() that:
+
+1. Reads all rows from the sheet
+2. Skips the header row
+3. Computes the final grade using the rule above
+4. Writes the result into the "Final Grade" column
+
+Assume the column order above and that the header is in row 1.
+
+Return only the Apps Script code and keep it simple.
