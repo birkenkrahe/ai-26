@@ -1,5 +1,5 @@
 #+title: Coding in an AI World – When Coding Becomes Conversation
-#+subtitle: Syllabus (Beginner-Friendly, Agentic Workflows Focus)
+#+subtitle: DSC 482.01 Lyon College Spring 2026
 #+author: Marcus Birkenkrahe
 #+options: toc:2 num:1
 #+STARTUP: overview hideblocks indent entitiespretty:
@@ -8,6 +8,7 @@
 [[../img/cover.png]]
 * General Course Information
 
+- Course prefix/number/section: DSC 482.01
 - Meeting Times: Tuesday + Thursday 14:30-15:45 hrs
 - Meeting place: Derby Science Center Room 209 (computer lab)
 - Professor: Dr. Marcus Birkenkrahe
@@ -18,8 +19,6 @@
   with AI" (Penguin, 2024); Lanham, "AI Agents in Action" (Manning,
   2025); Lelek/Skowronski, "Vibe Engineering" (Manning, 2026);
   Kim/Yegge, "Vibe Coding"; Kneusel, "How AI Works" (NoStarch, 2025).
-  #+attr_html: :width 200px :float nil:
-  [[../img/mollick.png]]
 
 * Course Description
 
@@ -64,6 +63,33 @@ memory, and verification artifacts. Agent workflows are visualized
 using Mermaid, a free text-based diagram language rendered with tools
 such as Obsidian, VS Code, or a web browser, emphasizing transferable
 reasoning skills rather than platform-specific automation tools.
+
+* Use of AI-Assisted Programming Tools
+
+Students are expected to actively use and experiment with AI tools
+(such as large language models and AI-assisted programming
+environments) as part of their work in this course. Exploration,
+iteration, and comparison of different AI-generated approaches are
+encouraged.
+
+AI systems may be used for brainstorming ideas, drafting code,
+generating alternative solutions, debugging, and exploring design
+options. The goal is to treat AI as a collaborator in an experimental
+workflow rather than as a source of final answers.
+
+However, students remain responsible for the correctness,
+interpretation, and justification of all submitted work. Any code,
+analysis, or workflow produced with AI must be understood by the
+student. Students must be able to explain how it works, why it works,
+and how they verified that it works.
+
+Use of AI that bypasses understanding, hides authorship, or prevents
+the student from explaining their work violates the Honor Code and is
+not permitted.
+
+This policy is consistent with the course expectation that students
+learn to work with AI systems responsibly while maintaining human
+judgment and verification of results.
 
 * Grading System
 
@@ -142,4 +168,16 @@ Typical session plan:
 |   14 | Capstone design studio                   | Build sprint planning; milestones; testing; documentation; demo narrative                        | Working capstone prototype + README + test checklist                                  |
 |   15 | Capstone presentations                   | Demos; peer review; reliability discussion; “next steps” roadmap                                 | Final demo + reflection (what’s reliable, what isn’t, and why)                        |
 
+* Standard and course policies
+
+*Standard Lyon College Policies* are incorporated into this syllabus
+and can be found at: [[http://www.lyon.edu/standard-course-policies][lyon.edu/standard-course-policies]].
+
+The *Assignments and Honor Code* and the *Attendance Policy* are
+incorporated into this syllabus also and can be found at:
+[[https://tinyurl.com/LyonPolicy][tinyurl.com/LyonPolicy]].
+
+In addition to these rules, please read and observe my guide to Using
+AI to code (written in the Fall 2024, updated Fall 2025):
+[[https://tinyurl.com/Using-AI-to-code][tinyurl.com/Using-AI-to-code]] including the [[https://assets.speakcdn.com/assets/2433/generative_ai_guidelines_(combined_files).pdf][Lyon College AI Guidelines]].
 
