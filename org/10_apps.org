@@ -1,0 +1,255 @@
+#+STARTUP: overview hideblocks indent entitiespretty:
+1. *GMail*
+   - Good prompt:
+     #+begin_quote
+     Using my Gmail:
+
+     Goal: Identify emails that require action
+
+     Input: My last 10 unread emails
+
+     Output:
+     - Sender
+     - One-line summary
+     - Required action (if any)
+
+     Constraints:
+     - Ignore promotions and newsletters
+     - Be concise
+     - Do not invent missing details
+     #+end_quote
+   - Combo prompt (GMail + Google Calendar):
+     #+begin_quote
+     Using my Gmail and Google Calendar:
+
+     Goal: Create a weekly action plan
+
+     Step 1:
+     - Identify important emails requiring action
+
+     Step 2:
+     - Check my calendar for available time this week
+
+     Step 3:
+     - Suggest when to handle each email task
+
+     Output:
+     - List of tasks
+     - Suggested time slots
+
+     Constraints:
+     - Do not overlap with existing events
+     - Be concise and structured
+     #+end_quote
+
+2. *Google Drive*
+   - Good prompt:
+     #+begin_quote
+     Using my Google Drive:
+
+     Goal: Convert the selected document into structured notes
+
+     Output:
+     - Section headings (if identifiable)
+     - Bullet points under each section
+     - One key takeaway at the end
+
+     Constraints:
+     - Use only the document
+     - Do not add outside information
+     - Keep the bullets concise
+     #+end_quote
+   - Combo prompt (Google Drive + GMail):
+     #+begin_quote
+     Using my Google Drive and Gmail:
+
+     Goal: Share document insights
+
+     Step 1:
+     - Extract key points from the document
+
+     Step 2:
+     - Draft an email summarizing these points
+
+     Output:
+     - Subject line
+     - Email body
+
+     Constraints:
+     - Keep it under 150 words
+     - Do not invent information
+     #+end_quote
+
+3. *Google Calendar*
+   - Good prompt:
+     #+begin_quote
+     Using my Google Calendar for this week:
+
+     Goal: Identify assignments and quizzes
+
+     Output:
+     - Course name (if available)
+     - Title
+     - Due date
+
+     Constraints:
+     - Only include events that appear to be assignments or quizzes
+     - Ignore regular class meetings
+     - Use exact dates from the calendar
+     #+end_quote
+   - Combo prompt (Google Calendar + Google Drive):
+     #+begin_quote
+     Using my Google Calendar and Google Drive:
+
+     Goal: Create a study plan
+
+     Step 1:
+     - Identify upcoming assignments from my calendar
+
+     Step 2:
+     - Use related documents (if available) for context
+
+     Step 3:
+     - Suggest a structured study plan
+
+     Output:
+     - Tasks by day
+     - Suggested time blocks
+
+     Constraints:
+     - Do not overlap with existing events
+     - Be realistic and concise
+     #+end_quote
+
+4. *Zillow*
+   - Good prompt:
+     #+begin_quote
+     Using Zillow:
+
+     Goal: Help me choose a place to rent
+
+     Location: Batesville, AR
+
+     Criteria:
+     - Max rent: $1200
+     - At least 2 bedrooms
+
+     Output:
+     - 3 to 5 suitable options
+     - Price
+     - Bedrooms
+     - One advantage
+     - One disadvantage
+
+     Constraints:
+     - Base reasoning only on listing details
+     - Do not invent missing information
+     #+end_quote
+   - Combo prompt (Zillow + Google Calendar):
+     #+begin_quote
+     Using Zillow and my Google Calendar:
+
+     Goal: Plan apartment visits
+
+     Step 1:
+     - Find 3 suitable apartments
+
+     Step 2:
+     - Check my calendar for free time
+
+     Step 3:
+     - Suggest visit times
+
+     Output:
+     - Apartment list
+     - Suggested visit slots
+
+     Constraints:
+     - Do not overlap with existing events
+     - Be realistic about timing
+     #+end_quote
+
+5. *AccuWeather*
+   - Good prompt:
+     #+begin_quote
+     Using AccuWeather:
+
+     Goal: Plan outdoor work for the next 3 days
+
+     Location: Batesville, AR
+
+     Output:
+     - Daily forecast summary
+     - Best time blocks for outdoor activity
+     - Rain or storm risks
+
+     Constraints:
+     - Use forecast data only
+     - Be specific about dates and times
+     #+end_quote
+   - Combo prompt (AccuWeather + Google Calendar):
+     #+begin_quote
+     Using AccuWeather and my Google Calendar:
+
+     Goal: Schedule outdoor activities
+
+     Step 1:
+     - Get weather forecast for next 3 days
+
+     Step 2:
+     - Check my calendar for availability
+
+     Step 3:
+     - Suggest suitable outdoor time slots
+
+     Output:
+     - Weather summary
+     - Recommended time blocks
+     - Conflicts (if any)
+
+     Constraints:
+     - Avoid rain periods
+     - Do not overlap with events
+     #+end_quote
+
+6. *DataCamp*
+   - Good prompt:
+     #+begin_quote
+     Using DataCamp:
+
+     Goal: Recommend a short learning plan
+
+     Topic: Python for data analysis
+
+     Output:
+     - 3 recommended courses or modules
+     - Why each fits
+     - Suggested order
+
+     Constraints:
+     - Beginner-friendly
+     - Realistic for one week
+     #+end_quote
+   - Combo prompt (DataCamp + Google Calendar):
+     #+begin_quote
+     Using DataCamp and my Google Calendar:
+
+     Goal: Create a learning schedule
+
+     Step 1:
+     - Identify recommended courses
+
+     Step 2:
+     - Check my calendar for free time
+
+     Step 3:
+     - Allocate study sessions
+
+     Output:
+     - Course plan
+     - Scheduled study blocks
+
+     Constraints:
+     - Do not overlap with existing events
+     - Keep sessions realistic (1–2 hours)
+     #+end_quote

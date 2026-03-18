@@ -1092,7 +1092,7 @@ Open the exercise for instructions: [[https://tinyurl.com/structured-prompts][ti
 
 - Deadline is Sunday, March 15 (11:59 pm)
 
-* DONE Week 8 - Literature Review / Connecting Apps / Creating GPT agents
+* DONE Week 8 - Literature Review
 
 - [X] Preview & discussion: Literature Review (2nd sprint)
 
@@ -1170,14 +1170,14 @@ Now: Two questions from everyone on their project.
    e.g. sources that did the same thing, or external evaluators
    that can judget the quality of the output).
    
-* Week 9
+* DONE Week 9 - Creating custom GPT agents / AI vs. spreadsheets
 
-- [ ] Verify building a dashboard
-- [ ] Demo & exercise Creating a GPT agent for an automatable task.
-- [ ] Connecting GMail and GDrive to ChatGPT.
-- [ ] Use autonomous agents (try Gemini).
+- [X] Verify building a dashboard
+- [X] Demo & exercise Creating a GPT agent for an automatable task.
+- [ ] *Don't forget to upload the URL of your notebook to Canvas* (Mar 17)
+- [ ] Bonus assignment: Improve or extend your Custom GPT agent (May 8)
 
-** VERIFY Building a dashboard ([[https://chat.google.com/room/AAAAeuayDfs/nqvBTU4bhzA/nqvBTU4bhzA?cls=10][GChat]])
+** DONE Building a dashboard ([[https://chat.google.com/room/AAAAeuayDfs/nqvBTU4bhzA/nqvBTU4bhzA?cls=10][GChat]])
 
 Mock dashboard experiment: I played around with it some more and
 finally got a prompt that, I think, should work for you,
@@ -1192,12 +1192,110 @@ have time to continue. This is Typescript code by the way - similar to
 JavaScript - with a little skill one could fix the code oneself (not
 me, I don't know these languages well enough).
 
-** NEXT Exercise: Build a Tiny Custom GPT (Task Agent) - 25 min
+** DONE Exercise: Build a Tiny Custom GPT (Task Agent) - 45 min
 
 - Open the link: [[https://tinyurl.com/gpt-task-agent][tinyurl.com/gpt-task-agent]]
 - Open ~File > Save a copy in drive~
 - These is the *first prototype* of the agent you are expected to build.
 - *If you like, use a task from your project for this exercise.*
+- When done, upload the URL of the Colab file to Canvas.  
+
+** NEXT From Spreadsheet to Autonomous Agents
+
+1. [ ] Code along: Building an autonomous weather agent.
+2. [ ] Code along: Build a simple grading agent.
+3. [ ] Exercise: Build your own spreadsheet agent.
+
+* Week 10 - Connecting Apps to ChatGPT / Autonomous single agent with Gemini CLI 
+#+attr_html: :width 400px :float nil:
+#+caption: Bogdanov-Belsky (1895)
+[[../img/Mental_calculation_at_primary_school.jpg]]
+
+- [ ] Did your weather agent perform?
+- [ ] Key trends 2026 ([[https://youtu.be/cqLALf4bFPI?si=5etl6PQrnpU_7Tud][ByteByteAI and ByteByteGo]])
+- [ ] Connecting GMail and GDrive to ChatGPT.
+- [ ] Use autonomous agents (Gemini CLI).
+
+** Key trends 2026 ([[file:~/GitHub/admin/spring26/dsc482/pdf/AI_Trends_2026.pdf][slide deck]])
+#+attr_html: :width 400px :float nil:
+[[../img/trends.png]]
+
+*Five AI Trends Shaping 2026*
+
+Source: [[https://youtu.be/cqLALf4bFPI?si=lKsaWZqCSTuRN7CZ][ByteByteGo, 11 March 2026 (YouTube)]]
+
+*1. Reasoning Models*
+   - Early chatbots responded immediately. They generated text token
+     by token.
+   - This worked for writing but failed on multi-step tasks like math
+     or coding.
+   - Reasoning models pause and compute before answering.
+   - They break problems into smaller steps.
+   - Training is shifting from *Reinforcement Learning from Human
+     Feedback (RLHF)*.
+   - Toward *Reinforcement Learning from Verifiable Rewards (RLVR)*.
+   - RLVR uses automatic checks (tests, correct answers) instead of
+     human ratings.
+   - Models also adjust reasoning effort depending on task complexity.
+
+*2. Agents*
+   - Early models answered questions only.
+   - New models can *use tools*.
+   - Agents decide when to call tools and how to use them.
+   - Current agents handle short tasks well.
+   - Long workflows still fail due to context loss and accumulated
+     errors.
+   - Many agents run in cloud sandboxes with limited system access.
+   - The next step is *persistent local agents* running for hours or
+     days.
+   
+*3. Coding AI*
+   - Early tools provided simple autocomplete.
+   - They only saw a few lines around the cursor.
+   - New coding models understand entire repositories.
+   - They are trained on real codebases and documentation.
+   - They run in loops using tools: read files, search and edit code,
+     and run tests.
+   - Open-source coding models are improving quickly.
+   - Some can run on personal machines.
+
+*4. Open-Weight Models*
+   - Top models used to be closed behind APIs.
+   - Users could call them but not run them locally.
+   - Open-weight releases changed this.
+   - Developers can now run and fine-tune models.
+   - The focus is shifting to accessibility.
+   - New architectures improve efficiency.
+   - Self-hosting models is becoming practical.
+   
+*5. Multimodal AI*
+   - Early models processed text only.
+   - Modern models handle images, video, audio, and text.
+   - They can reason across modalities in one interaction.
+   - Image and video generation quality has improved significantly.
+   - Two emerging directions: 
+     1) *Physical AI* (robots in real environments)
+     2) *World models* (AI simulating physics and environments)
+
+*Overall Direction*: AI systems are becoming:
+- better at reasoning
+- capable of acting through tools
+- able to generate and maintain software
+- accessible through open models
+- integrated across multiple modalities
+
+** Important webinar - watch party Derby 209 - March 20, 12 pm
+#+attr_html: :width 400px :float nil:
+[[../img/vibeWriting.png]]
+
+*Important webinar*: Next Friday March 20, 12 pm, Stephen Ge (SDSU)
+speaks about Claude Code in the Data Science Workshop (Derby 209).
+
+To be prepared, check out his tutorial: [[https://gexijin.github.io/vibe/][gexijin.github.io/vibe/]]
+
+** Connecting Apps to ChatGPT
+
+
 
 ** TODO Gemini CLI ([[https://chat.google.com/room/AAAAeuayDfs/k2WfJ42phmY/k2WfJ42phmY?cls=10][GChat]])
 
@@ -1225,5 +1323,9 @@ the Gemini chatbot (=gemini.google.com=) open at the same time to ask
 how to use the agent. You can also ask inside the agent, but it's
 slow.)
 
-  
 
+* Week 11 - Review: Sprint 2 / Autonomous multi-agents 
+* Week 12 - ??
+* Week 13 - ??
+* Week 14 - Final project presentations
+* Week 15 - Final project presentations
