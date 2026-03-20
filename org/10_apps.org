@@ -1,4 +1,9 @@
-#+STARTUP: overview hideblocks indent entitiespretty:
+#+TITLE:Connecting Apps to ChatGPT
+#+AUTHOR:Marcus Birkenkrahe with ChatGPT
+#+SUBTITLE:DSC 482 Coding in an AI world, Lyon College Spring 2026
+#+STARTUP: overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+
 1. *GMail*
    - Good prompt:
      #+begin_quote
