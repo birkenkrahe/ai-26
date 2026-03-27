@@ -1,0 +1,157 @@
+#+TITLE:AI Python for Beginners
+#+AUTHOR:Marcus Birkenkrahe with ChatGPT
+#+SUBTITLE:Based on Andrew Ng @deeplearning.ai 2026
+#+STARTUP: overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+#+PROPERTY: header-args:python :session *Python* :results output :exports both :noweb yes
+* Source
+
+Andrew Ng, AI Python for Beginners, deeplearning.ai (2026).
+
+* Why AI Python for Beginners
+
+- Why AI?
+  #+begin_quote
+  The capabilities of generative AI to write code are
+  outstanding. These capabilities come from deep learning AI, AI that
+  is based on very large neural network type applications.
+  #+end_quote
+
+- Why Python?
+  #+begin_quote
+  Python is a general-purpose language and the most used language in
+  deep learning applications. Even if the underlying code is written
+  in C/C++, Python is the most likely, most versatile wrapper language
+  for production purposes. Helpful user community, many resources.
+
+  Python is everywhere in AI: Self-driving cars, chatbots, smart
+  agriculture, video games, web pages, are often wrapped in Python.
+  #+end_quote
+
+- Why AI Python?
+  #+begin_quote
+  Add the capability to write code well (enough) in an important
+  language like Python that is good (enough) to do most jobs, then you
+  need the skill to generate, and understand Python code by AI. This
+  is the currently most meaningful definition of "AI literacy", just
+  like "digital literacy" is the ability to understand digital
+  devices.
+  #+end_quote
+
+* Computer Programming
+
+- What is computer programming?
+  #+begin_quote
+  Getting the computer to do things for you by being able to speak its
+  very rigid, rule-based language. Example: An executive assistant
+  writes code to check if her boss, an executive, messes up his
+  calendar. When her code alerts her, she goes in to fix the calendar.
+
+  Formula: Programs = data (input) + rules (syntax) + logic (flow)
+  #+end_quote
+
+- What is programming now used for?
+  #+begin_quote
+  Hubble telescope, space travel, internet, GPS, speech recognition,
+  eye tracking, etc.
+  #+end_quote
+
+- What is an algorithm?
+  #+begin_quote
+  A perfect set of instructions that leaves nothing to chance. Since
+  that is not possible, we compromise and admit some errors but pay
+  the price of (infinite) incremental improvement through feedback.
+  #+end_quote
+
+- What does programming do for you?
+  #+begin_quote
+  It gives you an edge when:
+  + automating repetitive tasks
+  + analyzing lots of data
+  + building, improving, and using AI models
+
+  Example: Access the web -> scrape pages -> build a dashboard
+  #+end_quote
+
+- What does AI do for your computer?
+  #+begin_quote
+  Properly set up, your computer, when interfaced (API) with an AI
+  tool, can now use the AI to complete programming tasks on its own.
+
+  Example: Cleaning a folder full of messy, disorganized CSV
+  files. You make the request, the AI writes the script, and your
+  computer executes it.
+  #+end_quote
+
+* How Chatbots interact with Python (Demo)
+
+Load this Colab starter code, then =save a copy in Drive=.
+[[https://tinyurl.com/ai-python-ipynb][tinyurl.com/ai-python-ipynb]]
+
+- Prompt 0: https://tinyurl.com/gemini-instructions
+  #+begin_quote
+  System Instruction: From now on, follow these formatting rules for
+  all responses:
+  - For Headlines/Text: Provide only the raw Markdown (e.g., #
+    Headline or regular text). Do NOT include my prompt or any
+    introductory filler like "Here is your headline."
+  - For Code/Modifications: Always include my original prompt in a
+    comment or a text block immediately above the code block.
+  - Placement: Always assume I want these responses to be appended to
+    the end of the notebook.
+  - Interaction: Use the "Add to Notebook" format so I can click one
+    button to place it at the bottom.
+  #+end_quote
+
+- Whenever you need to restart the chat, enter =Clear chat= at the
+  prompt.
+
+- Prompt 1:
+  #+begin_quote
+  Generate a new headline `The first Python program`.
+  #+end_quote
+
+- Prompt:
+  #+begin_quote
+  Which program is traditionally written first by new programmers?
+  #+end_quote
+
+- Prompt:
+  #+begin_quote
+  Modify the code to say hello to me, not to the whole world. My name
+  is Marcus.
+  #+end_quote
+
+- Prompt:
+  #+begin_quote
+  Add another section called `Calculating something`.
+  #+end_quote
+
+- Prompt:
+  #+begin_quote
+  Write some code that computes how many days there are between the
+  fourth of July and my birthday (Dec 29).
+  #+end_quote
+
+- Prompt:
+  #+begin_quote
+  In the notebook, explain each line of this program to me briefly,
+  as if I had never written a line of Python.
+  #+end_quote
+
+- Prompt:
+  #+begin_quote
+  Tell me what I should build next to learn more Python.
+  #+end_quote
+
+* Home assignment
+
+Build a traceable learning workflow using AI + Python.
+
+1) Complete this AI Python lesson by building a "guess the number" game.
+2) Ask the AI about things you don't understand, until you understand
+   them well enough to explain them yourself.
+3) Make sure that your prompts and the responses appear in the
+   submitted notebook.
+4) Make sure the notebook is shared with Lyon College.
+5) Submit the notebook URL to Canvas.

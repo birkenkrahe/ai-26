@@ -1,0 +1,140 @@
+#+TITLE: Practice Exercise: Diagnosing Illness (Decision Trees)
+#+STARTUP: overview hideblocks indent entitiespretty: 
+* Instructions
+
+This practice exercise consists of four parts:
+1. Test the model on new patients using the diagnostic table
+2. Modify the production rules by adding a new attribute
+3. Draw the updated decision tree model
+4. Submit all deliverables as a ZIP file to Canvas
+
+* *Test the model on new patients*
+
+Use the provided decision tree to classify the following
+patients. Write the diagnosis for each patient by applying the
+production rules shown in the decision tree diagram:
+[[https://github.com/birkenkrahe/ml-25/blob/main/img/1_decision_tree.png][Decision tree diagram]]
+#+attr_html: :width 200px :float nil: 
+[[../img/1_decision_tree.png]]
+
+#+name: diagnostic_table
+#+caption: Predictive diagnosis
+| Patient | Swollen Glands | Fever | Diagnosis (using the model) |
+|---------+----------------+-------+-----------------------------|
+|      14 | Yes            | No    |                             |
+|      15 | No             | No    |                             |
+|      16 | No             | Yes   |                             |
+|      17 | Yes            | Yes   |                             |
+
+For each patient, follow the branches of the tree and write the final
+diagnosis in the last column.
+
+** Solution
+#+name: diagnostic_table_solution
+#+caption: Predictive diagnosis
+| Patient | Swollen Glands | Fever | Diagnosis (using the model) |
+|---------+----------------+-------+-----------------------------|
+| 14      | Yes            | No    | Strep throat                |
+| 15      | No             | No    | Allergy                     |
+| 16      | No             | Yes   | Cold                        |
+| 17      | Yes            | Yes   | Strep throat                |
+
+* *Modify the production rules*
+
+To improve the diagnostic model, add a new attribute:
+*duration of symptoms*.
+
+Use the following categories:
+- *short* = fewer than 3 days
+- *long* = 3 days or more
+
+Use this attribute to refine each diagnosis as either:
+- *acute* (short duration)
+- *chronic* (long duration)
+
+Original production rules:
+#+begin_example
+IF swollen glands = YES
+THEN diagnosis = strep throat
+
+IF swollen glands = NO AND fever = YES
+THEN diagnosis = cold
+
+IF swollen glands = NO AND fever = NO
+THEN diagnosis = allergy
+#+end_example
+
+Your task:
+Write a complete new set of production rules that incorporates the
+*duration* attribute.
+
+Requirements:
+- Every original rule must be expanded to include duration
+- Each final rule must include all relevant conditions
+- Each diagnosis must be labeled as either *acute* or *chronic*
+
+Hint:
+Each original rule will split into two rules:
+- one for short duration (acute)
+- one for long duration (chronic)
+
+Example (fully specified rule):
+#+begin_example
+IF swollen glands = YES AND duration = short
+THEN diagnosis = acute strep throat
+#+end_example
+
+Now write all remaining rules in the same format.
+
+Updated production rules (6):
+#+begin_quote
+
+#+end_quote
+
+** Solution
+
+Updated production rules:
+#+begin_quote
+IF swollen glands = YES AND duration = short
+THEN diagnosis = acute strep throat
+
+IF swollen glands = YES AND duration = long
+THEN diagnosis = chronic strep throat
+
+IF swollen glands = NO AND fever = YES AND duration = short
+THEN diagnosis = acute cold
+
+IF swollen glands = NO AND fever = YES AND duration = long
+THEN diagnosis = chronic cold
+
+IF swollen glands = NO AND fever = NO AND duration = short
+THEN diagnosis = acute allergy
+
+IF swollen glands = NO AND fever = NO AND duration = long
+THEN diagnosis = chronic allergy
+#+end_quote
+
+* *Draw the new decision tree model*
+
+** Solution
+
+A correct updated tree should follow this logic:
+
+#+begin_example
+Swollen glands?
+├── Yes
+│   └── Duration?
+│       ├── Short -> Acute strep throat
+│       └── Long  -> Chronic strep throat
+└── No
+    └── Fever?
+        ├── Yes
+        │   └── Duration?
+        │       ├── Short -> Acute cold
+        │       └── Long  -> Chronic cold
+        └── No
+            └── Duration?
+                ├── Short -> Acute allergy
+                └── Long  -> Chronic allergy
+#+end_example
+
