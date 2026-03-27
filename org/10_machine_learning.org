@@ -78,6 +78,14 @@ Remember:
   not useful.
   #+end_quote
 
+ML is not, but overlaps with:
+- Data processing 
+- Data analysis
+- Artificial Intelligence
+
+#+attr_html: :width 600px :float nil:
+[[../img/ml_diagram.png]]
+  
 -----
 
 * Machine learning applications and techniques
@@ -449,6 +457,7 @@ Colaboratory.
 4. Demo: How chatbots interact with Python
 5. Home assignment: Build a 'guess a number' game.
 
+See separate practice file AI_Python.org   
 -----
 
 * The Machine Learning Workflow
