@@ -1301,12 +1301,11 @@ Source: [[https://youtu.be/cqLALf4bFPI?si=lKsaWZqCSTuRN7CZ][ByteByteGo, 11 March
 - ChatGPT will then perform tasks on these apps for you.
 - We are going to connect to a few apps and run examples.
 
-
 * Week 10 - Review: Sprint 2 / AI Python / Introduction to Machine Learning
 
 - [ ] New DataCamp course assigned (deadline May 8)
-- [ ] AI Python lesson and home assignment
 - [ ] Introduction to Machine Learning
+- [ ] AI Python lesson and home assignment
 
 ** New DataCamp course "Understanding Machine Learning"
 
@@ -1316,6 +1315,19 @@ Source: [[https://youtu.be/cqLALf4bFPI?si=lKsaWZqCSTuRN7CZ][ByteByteGo, 11 March
 - Assigned for completion by end of term (max 2 hrs)
 - Start doing it now, and not on May 7th!
 
+** Introduction to machine learning
+
+- What is machine learning?
+- Simple example: Spam filter
+- Extended example: Does money make people happy?
+- Extended example: Diagnosing illness
+- Fitting a linear model to data and making predictions
+
+** Diagnosis decision tree exercise
+
+A manual machine learning example and exercise.
+
+  
 ** AI Python lesson (and home assignment)
 
 - Even if AI can write code, you still need to learn how to program.
