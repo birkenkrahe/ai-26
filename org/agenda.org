@@ -1301,10 +1301,11 @@ Source: [[https://youtu.be/cqLALf4bFPI?si=lKsaWZqCSTuRN7CZ][ByteByteGo, 11 March
 - ChatGPT will then perform tasks on these apps for you.
 - We are going to connect to a few apps and run examples.
 
-* Week 10 - Review: Sprint 2 / AI Python / Introduction to Machine Learning
+* DONE Week 10 - Review: Sprint 2 / AI Python / Introduction to Machine Learning
 
-- [ ] New DataCamp course assigned (deadline May 8)
-- [ ] Introduction to Machine Learning
+- [X] New DataCamp course assigned (deadline May 8)
+- [X] Introduction to Machine Learning (deadline Apr 2)
+- [X] Introduction to Machine Learning (lecture & practice)
 - [ ] AI Python lesson and home assignment
 
 ** New DataCamp course "Understanding Machine Learning"
@@ -1323,11 +1324,101 @@ Source: [[https://youtu.be/cqLALf4bFPI?si=lKsaWZqCSTuRN7CZ][ByteByteGo, 11 March
 - Extended example: Diagnosing illness
 - Fitting a linear model to data and making predictions
 
+* Week 11 - customGPT tutor / Decision trees / AI Python
+
+- [ ] Review of the 2nd sprint review on Thursday (be prepared)
+- [ ] Summary of last session
+- [ ] Popquiz: Basics of machine learning (bonus)
+- [ ] Diagnostic decision tree exercise (bonus)
+- [ ] AI-assisted Python (with home assignment)
+
+** Summary Paragraph: Last session (from the session transcript)
+
+This session introduced machine learning as a reversal of traditional
+programming: instead of encoding rules manually, systems learn rules
+(models) from data and known outputs. The class emphasized that
+machine learning is fundamentally an optimization process, where
+models are trained to minimize error relative to observed data. Key
+distinctions were made between supervised learning (labeled data),
+unsupervised learning (pattern discovery without labels), and
+reinforcement learning (feedback-based improvement). Through examples
+such as spam filtering, medical diagnosis, and stock prediction, the
+session highlighted the importance of data quality, labeling (ground
+truth), and measurable metrics. The discussion also connected machine
+learning to programming paradigms, contrasting interactive languages
+(e.g., Python) with compiled ones, and positioning AI-assisted coding
+as a practical next step in applying these concepts.
+
+** 10 Review Questions (Machine Learning Session)
+
+1. What is the key difference between traditional programming and
+   machine learning?
+   #+begin_quote
+   Traditional programming uses data + rules → output, while machine
+   learning uses data + known outputs → learns rules (a model).
+   #+end_quote
+
+2. What does it mean that machine learning is “not explicitly
+   programmed”?
+   #+begin_quote
+   The system learns behavior from data instead of following
+   hand-coded rules.
+   #+end_quote
+
+3. What role does *data* play in machine learning systems?
+   #+begin_quote
+   Data provides the input and, in supervised learning, the labeled
+   outputs used to train models.
+   #+end_quote
+
+4. What is a “model” in machine learning?
+   #+begin_quote
+   A model is a set of learned rules derived from data and previous
+   outputs.
+   #+end_quote
+
+5. What is supervised learning?
+   #+begin_quote
+   Learning from labeled data where both inputs and correct outputs
+   are known.
+   #+end_quote
+
+6. What is unsupervised learning?
+   #+begin_quote
+   Learning patterns or structure (e.g., clusters) from data without
+   labeled outputs.
+   #+end_quote
+
+7. What is reinforcement learning?
+   #+begin_quote
+   Learning through feedback (reward or penalty) based on the
+   correctness of outputs.
+   #+end_quote
+
+8. Why is machine learning described as an optimization problem?
+   #+begin_quote
+   Because it minimizes a measurable error between predictions and
+   actual outcomes.
+   #+end_quote
+
+9. What is an example of a supervised learning task discussed in
+   class?
+   #+begin_quote
+   Predicting stock prices using regression (line of best fit).
+   #+end_quote
+
+10. Why is “ground truth” important in machine learning?
+    #+begin_quote
+    Because incorrect or inconsistent labels lead to unreliable
+    models.
+    #+end_quote
+
 ** Diagnosis decision tree exercise
 
-A manual machine learning example and exercise.
+- A manual machine learning example and exercise
+- Understand the mechanics of a decision tree ML algorithm
+- Expand a model based on a new set of predictors
 
-  
 ** AI Python lesson (and home assignment)
 
 - Even if AI can write code, you still need to learn how to program.

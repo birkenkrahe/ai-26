@@ -17,7 +17,7 @@ Rules (written by programmer) + Data → Output
 Example: program after coding
 #+begin_example C
 if (email contains "win money") -> spam
-else -> not spam
+else -> not spam ("ham")
 #+end_example
 
 Machine learning reverses this relationship[fn:3]:
@@ -29,7 +29,7 @@ Rules + New Data → Output
 Example: model after training[fn:4]
 #+begin_example C
 if (learned_score(email) > threshold) -> spam
-else -> not spam
+else -> not spam ("ham")
 #+end_example
 
 Applications:
@@ -133,7 +133,8 @@ ML is not, but overlaps with:
 
 -----
 
-* Simple Example: Spam filter
+
+* NEXT Simple Example: Spam filter
 
 A spam filter using traditional programming:
 #+begin_quote
