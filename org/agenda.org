@@ -1071,7 +1071,7 @@ As a table, with more detail:
 - Test prompts and observe failures
 - Refine based on evidence
 
-*You work in pairs:*  
+*You work in pairs:*
 - Run the prompts
 - Rewrite the prompt
 - Run your revised version
@@ -1109,10 +1109,10 @@ Discuss with your neighbor, then come up with an answer
    - The main purpose of the review is to solicit comments and get
      input for the next sprint.
    #+end_quote
-   
+
 2. Has your project confidence index changed?
    #+begin_quote
-   - If it went up from where it was 3 weeks ago, you can relax. 
+   - If it went up from where it was 3 weeks ago, you can relax.
    - If it went down from where it was 3 weeks ago, you have to make
    changes so that you bring it back to at least a 5 (50%) or better.
    #+end_quote
@@ -1168,7 +1168,7 @@ Now: Two questions from everyone on their project.
 4) Besides input for my agent, do I need any other sources? (Yes:
    e.g. sources that did the same thing, or external evaluators
    that can judget the quality of the output).
-   
+
 * DONE Week 8 - Creating custom GPT agents / AI vs. spreadsheets
 
 - [X] Verify building a dashboard
@@ -1197,7 +1197,7 @@ me, I don't know these languages well enough).
 - Open ~File > Save a copy in drive~
 - These is the *first prototype* of the agent you are expected to build.
 - *If you like, use a task from your project for this exercise.*
-- When done, upload the URL of the Colab file to Canvas.  
+- When done, upload the URL of the Colab file to Canvas.
 
 ** NEXT From Spreadsheet to Autonomous Agents
 
@@ -1236,57 +1236,57 @@ To be prepared, check out his tutorial: [[https://gexijin.github.io/vibe/][gexij
 Source: [[https://youtu.be/cqLALf4bFPI?si=lKsaWZqCSTuRN7CZ][ByteByteGo, 11 March 2026 (YouTube)]]
 
 *1. Reasoning Models*
-   - Early chatbots responded immediately. They generated text token
-     by token.
-   - This worked for writing but failed on multi-step tasks like math
-     or coding.
-   - Reasoning models pause and compute before answering.
-   - They break problems into smaller steps.
-   - Training is shifting from *Reinforcement Learning from Human
-     Feedback (RLHF)*.
-   - Toward *Reinforcement Learning from Verifiable Rewards (RLVR)*.
-   - RLVR uses automatic checks (tests, correct answers) instead of
-     human ratings.
-   - Models also adjust reasoning effort depending on task complexity.
+- Early chatbots responded immediately. They generated text token
+  by token.
+- This worked for writing but failed on multi-step tasks like math
+  or coding.
+- Reasoning models pause and compute before answering.
+- They break problems into smaller steps.
+- Training is shifting from *Reinforcement Learning from Human
+  Feedback (RLHF)*.
+- Toward *Reinforcement Learning from Verifiable Rewards (RLVR)*.
+- RLVR uses automatic checks (tests, correct answers) instead of
+  human ratings.
+- Models also adjust reasoning effort depending on task complexity.
 
 *2. Agents*
-   - Early models answered questions only.
-   - New models can *use tools*.
-   - Agents decide when to call tools and how to use them.
-   - Current agents handle short tasks well.
-   - Long workflows still fail due to context loss and accumulated
-     errors.
-   - Many agents run in cloud sandboxes with limited system access.
-   - The next step is *persistent local agents* running for hours or
-     days.
-   
+- Early models answered questions only.
+- New models can *use tools*.
+- Agents decide when to call tools and how to use them.
+- Current agents handle short tasks well.
+- Long workflows still fail due to context loss and accumulated
+  errors.
+- Many agents run in cloud sandboxes with limited system access.
+- The next step is *persistent local agents* running for hours or
+  days.
+
 *3. Coding AI*
-   - Early tools provided simple autocomplete.
-   - They only saw a few lines around the cursor.
-   - New coding models understand entire repositories.
-   - They are trained on real codebases and documentation.
-   - They run in loops using tools: read files, search and edit code,
-     and run tests.
-   - Open-source coding models are improving quickly.
-   - Some can run on personal machines.
+- Early tools provided simple autocomplete.
+- They only saw a few lines around the cursor.
+- New coding models understand entire repositories.
+- They are trained on real codebases and documentation.
+- They run in loops using tools: read files, search and edit code,
+  and run tests.
+- Open-source coding models are improving quickly.
+- Some can run on personal machines.
 
 *4. Open-Weight Models*
-   - Top models used to be closed behind APIs.
-   - Users could call them but not run them locally.
-   - Open-weight releases changed this.
-   - Developers can now run and fine-tune models.
-   - The focus is shifting to accessibility.
-   - New architectures improve efficiency.
-   - Self-hosting models is becoming practical.
-   
+- Top models used to be closed behind APIs.
+- Users could call them but not run them locally.
+- Open-weight releases changed this.
+- Developers can now run and fine-tune models.
+- The focus is shifting to accessibility.
+- New architectures improve efficiency.
+- Self-hosting models is becoming practical.
+
 *5. Multimodal AI*
-   - Early models processed text only.
-   - Modern models handle images, video, audio, and text.
-   - They can reason across modalities in one interaction.
-   - Image and video generation quality has improved significantly.
-   - Two emerging directions: 
-     1) *Physical AI* (robots in real environments)
-     2) *World models* (AI simulating physics and environments)
+- Early models processed text only.
+- Modern models handle images, video, audio, and text.
+- They can reason across modalities in one interaction.
+- Image and video generation quality has improved significantly.
+- Two emerging directions:
+  1) *Physical AI* (robots in real environments)
+  2) *World models* (AI simulating physics and environments)
 
 *Overall Direction*: AI systems are becoming:
 - better at reasoning
@@ -1326,13 +1326,14 @@ Source: [[https://youtu.be/cqLALf4bFPI?si=lKsaWZqCSTuRN7CZ][ByteByteGo, 11 March
 
 * Week 11 - customGPT tutor / Decision trees / AI Python
 
-- [ ] Review of the 2nd sprint review on Thursday (be prepared)
-- [ ] Summary of last session
-- [ ] Popquiz: Basics of machine learning (bonus)
-- [ ] Diagnostic decision tree exercise (bonus)
+- [X] QuizRunner submission: check sharing permissions & resubmit!
+- [X] Review of the 2nd sprint review on Thursday (be prepared)
+- [X] Summary of last session (prose)
+- [X] Popquiz: Basics of machine learning (bonus)
+- [X] Diagnostic decision tree exercise (bonus)
 - [ ] AI-assisted Python (with home assignment)
 
-** Summary Paragraph: Last session (from the session transcript)
+** DONE Summary Paragraph: Last session (from the session transcript)
 
 This session introduced machine learning as a reversal of traditional
 programming: instead of encoding rules manually, systems learn rules
@@ -1349,7 +1350,7 @@ learning to programming paradigms, contrasting interactive languages
 (e.g., Python) with compiled ones, and positioning AI-assisted coding
 as a practical next step in applying these concepts.
 
-** 10 Review Questions (Machine Learning Session)
+** DONE 10 Review Questions (Machine Learning Session)
 
 1. What is the key difference between traditional programming and
    machine learning?
@@ -1404,25 +1405,255 @@ as a practical next step in applying these concepts.
 9. What is an example of a supervised learning task discussed in
    class?
    #+begin_quote
-   Predicting stock prices using regression (line of best fit).
+   - Predicting stock prices using regression (line of best fit).
+   - Predicting disease/illness based symptoms
+   - Autopilot predicting best path of a car/plane
    #+end_quote
 
 10. Why is “ground truth” important in machine learning?
     #+begin_quote
     Because incorrect or inconsistent labels lead to unreliable
-    models.
+    models. Example from class: people "data" are notoriously
+    unreliable because it is hard to establish a ground truth.
     #+end_quote
 
-** Diagnosis decision tree exercise
+** DONE Diagnosis decision tree exercise
 
 - A manual machine learning example and exercise
 - Understand the mechanics of a decision tree ML algorithm
 - Expand a model based on a new set of predictors
+
+
+** 2nd sprint review - Literature review (can you describe it?)
+
+You should have grade & comment (written by ChatGPT with my input).
+
+What do you think a 100% submission should look like?
+
+*** *By the end of this sprint, you had to:*
+
+1. Show that you understand *existing* tools, research, or products
+   related to your topic.
+2. Describe *clearly* how your project will function *step by step*.
+3. Define what information goes *in*, what comes *out*, and how you will
+   know it *works*.
+4. Show where *human judgment* remains necessary.
+5. Know which specific task you're *helping* with
+6. Know who your *user* is
+7. Know what *improvement* your project will provide
+8. Know what is explicitly *not included*
+9. Explain how exactly you used *AI* in this sprint
+10. Explain what what (if anything) your AI *benefit* was.
+
+** 3rd sprint review - Results (can you make it work?)
+
+*Show that your agent actually works and where it breaks:*
+
+- Deliver a minimal working prototype
+- Must execute the full loop at least once
+- Show at least three runs: normal, failure, edge case
+- Each run includes: input, output, what worked/failed
+- Provide an iteration log (what worked or what did not)
+- Current system diagram (reflecting actual behavior)
+
+*Deadline: May 1*
+
+
+* Week 12 - Learning Python with AI / Linear Regression
+
+- [ ] Review: Take 10 minutes to answer the questions on chapter 1: *At
+  the end, add your personal view of the values of these features.*
+   
+- [ ] Review: Take 10 minutes to answer the questions on chapter 2: *At
+  the end, add your personal view of the values of these features.*
+
+- [ ] AI-assisted Python: First steps and a simple home assignment
+  (until Thursday).
+
+** Review Questions: Practical AI with Google Gemini (Chapter 1)
+
+1. How does the course distinguish Gemini from a standard search
+   engine?
+   #+begin_quote
+   While a search engine finds information, Gemini is viewed as a
+   creative and productive partner that can help you analyze,
+   strategize, give feedback, and co-create.
+   #+end_quote
+
+2. What are the three core capabilities of Gemini as described in the
+   introduction?
+   #+begin_quote
+   1. Reading and synthesizing massive amounts of information
+   2. Writing almost anything (from code to marketing strategies)
+   3. Reasoning to solve complex problems.
+   #+end_quote
+
+3. What is "AI Workslop," and why is it a risk for professionals?
+   #+begin_quote
+   It refers to AI-generated output that looks professional but lacks
+   substance. It is a risk because it can lead to an erosion of trust
+   and actually increase your workload through necessary fixing.
+   #+end_quote
+
+4. According to the course, what is the "Email Test" for AI output?
+   #+begin_quote
+   Before sending AI-generated work, ask yourself: "If someone sent
+   this output to me via email, would I think of it as a valuable work
+   or as generic AI output?"
+   #+end_quote
+
+   How relevant is this "test"?
+
+5. How should you categorize tasks when deciding how to use Gemini?
+   #+begin_quote
+   Into Repetitive Tasks (e.g., summarizing meeting notes or messy
+   PDFs) and High-Value Tasks (e.g., creating a new strategy or
+   preparing for a critical presentation).
+   #+end_quote
+
+6. In High-Value Tasks, what is the primary role of AI?
+   #+begin_quote
+   To augment your work rather than replace it. This includes asking
+   the AI to spot logical errors, provide feedback, or simulate a
+   client's counter-arguments.
+   #+end_quote
+
+7. What are the three key components of a structured, effective
+   prompt?
+   #+begin_quote
+   Role (defining who the AI should act as), Context (background info
+   and constraints), and Task (the specific action to be performed).
+   #+end_quote
+
+   Example: What did I do in this prompt?
+   #+attr_html: :width 400px :float nil:
+   [[../img/climate.png]]
+
+   Here is Gemini's response:
+   #+attr_html: :width 400px :float nil:
+   [[../img/climate2.png]]
+
+8. Why is "Context" considered so powerful in Gemini prompts?
+   #+begin_quote
+   Context anchors the AI's reasoning. It moves the AI away from
+   generic responses and allows it to tailor its expertise to your
+   specific audience, goals, and data.
+   #+end_quote
+
+9. What is "Gemini Canvas" and how does it change the workflow?
+   #+begin_quote
+   It is a dedicated side-by-side interface for co-creating content,
+   allowing you to edit and iterate on specific parts of a document
+   without losing the chat history.
+   #+end_quote
+
+10. What are the Gemini Canvas workflow steps?
+    #+begin_quote
+    The workflow follows a cycle of Prompt (initial request), Review
+    (reading the output), Identify (finding specific parts to change),
+    Refine (highlighting and asking for targeted updates), and Repeat
+    until the output meets your standard.
+    #+end_quote
+
+
+** DataCamp Review: Advanced Gemini Features (chapter 2)
+
+1. What is "Gemini Deep Research" and how does it differ from a
+   standard AI query?
+   #+begin_quote
+   It is an advanced reasoning feature that autonomously searches the
+   web and synthesizes multiple sources. Unlike a standard query, it
+   performs multi-step planning and cross-references information to
+   create a comprehensive report.
+   #+end_quote
+
+   Is this really useful?
+   #+begin_quote
+   "It's 5:00 p.m., and you found out that you have a high-stakes
+   meeting tomorrow morning on a topic you barely know, and you don't
+   have time to open 50 tabs and read all night. Here, you can
+   leverage Gemini Deep Research. Think of it as a skilled junior
+   analyst. It creates a multi-step research plan. It reads through
+   dense sources, including long PDFs and technical articles, analyzes
+   the data, and writes a comprehensive, fully cited report for you."
+   #+end_quote
+
+2. What are the three stages of the Deep Research workflow?
+   #+begin_quote
+   The workflow consists of
+   1. Research (searching for data)
+   2. Plan (organizing the gathered information)
+   3. Report (drafting the final comprehensive summary).
+   #+end_quote
+
+3. When delegating to Deep Research, why is it important to define
+   "Sources" or "Search Parameters"?
+   #+begin_quote
+   This ensures the AI prioritizes high-quality, relevant data and
+   avoids generic or irrelevant web results, making the final output
+   much more specialized and accurate.
+   #+end_quote
+
+4. Describe "Gemini Live." What is its primary use case for task
+   management?
+   #+begin_quote
+   Gemini Live is a mobile conversational voice interface. Its primary
+   use case is hands-free brainstorming or "thinking out loud" to plan
+   tasks and refine ideas while on the move.
+   #+end_quote
+
+5. What is the main difference between "Voice Mode" and "Camera Mode"
+   in Gemini Live?
+   #+begin_quote
+   Voice Mode is for purely verbal, back-and-forth conversation, while
+   Camera Mode allows Gemini to "see" and reason about the physical
+   world through your phone's lens.
+   #+end_quote
+
+6. What are "Gemini Gems" and what problem do they solve for
+   repetitive workflows?
+   #+begin_quote
+   Gems are custom AI assistants with pre-loaded instructions. They
+   solve the problem of "prompt fatigue" by removing the need to
+   re-type roles and context for tasks you perform frequently.
+   #+end_quote
+
+7. When building a Gem, why are "System Instructions" critical for
+   reliability?
+   #+begin_quote
+   They act as the permanent guardrails for the AI, ensuring the Gem
+   maintains a consistent tone, follows a specific logic, and uses the
+   correct format every time it is activated.
+   #+end_quote
+
+8. What is "Nano Banana" (Imagen 3) and what are its primary strengths
+   in content creation?
+   #+begin_quote
+   It is Google’s high-fidelity image generation model. Its strengths
+   include extreme photorealism, the ability to render complex text
+   within images, and better adherence to detailed prompts.
+   #+end_quote
+
+9. How does "Veo" complement the creative workflow alongside image
+   generation tools?
+   #+begin_quote
+   Veo is a generative video model. It allows users to take static
+   concepts or images and turn them into cinematic, high-quality video
+   content for marketing, social media, or presentations.
+   #+end_quote
+
+10. Why is the "Refinement" phase (polishing instructions) necessary
+    after creating your first Gem?
+    #+begin_quote
+    Initial instructions may have ambiguities that lead to
+    inconsistent results. Polishing instructions after testing ensures
+    the Gem handles edge cases and delivers the exact output quality
+    required.
+    #+end_quote
+
 
 ** AI Python lesson (and home assignment)
 
 - Even if AI can write code, you still need to learn how to program.
 - You can write and run a Python notebook with Gemini.
 - We will start a notebook and you will finish it at home.
-
-
