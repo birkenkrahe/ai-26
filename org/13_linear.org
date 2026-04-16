@@ -1,0 +1,417 @@
+#+TITLE: Example: Linear Model
+#+AUTHOR: Marcus Birkenkrahe
+#+STARTUP: overview hideblocks indent entitiespretty:
+-----
+* Preparation
+
+- Open the colab notebook and code along:
+  [[https://tinyurl.com/linear-regression-practice][tinyurl.com/linear-regression-practice]]
+
+- Make a copy of this file which you can edit.
+
+- Change to Gemini 3 Flash, ane enter the Gemini instructions as the
+  first prompt: [[https://tinyurl.com/gemini-instructions][tinyurl.com/gemini-instructions]].
+
+* The Machine Learning Workflow
+
+A typical workflow consists of the following steps:
+
+1. Define the problem
+2. Collect data
+3. Prepare data
+4. Choose a model
+5. Train the model
+6. Evaluate the model
+7. Use the model for prediction
+
+This process is iterative. At any stage, it may be necessary to
+revisit earlier steps.
+
+* Common Issues
+#+attr_html: :width 400px :float nil:
+#+caption: Overfitting the training data
+[[../img/overfitting.png]]
+
+- Overfitting: model learns noise instead of pattern
+- Underfitting: model is too simple to capture structure
+
+-----
+
+* AI Demo
+
+Gemini prompt:
+#+begin_quote
+Create an image that demonstrates overfitting and underfitting.
+#+end_quote
+
+Response:
+#+begin_quote
+I'll create a visualization that compares underfitting, a balanced
+fit, and overfitting using a polynomial regression example. This will
+help illustrate how model complexity affects the fit to data points.
+
+I have created the visualization for you. It shows three scenarios:
+
+1. Underfitting (Degree 1): The model is too simple (a straight line)
+   and fails to capture the curvature of the data.
+2. Balanced (Degree 4): The model captures the underlying pattern of
+   the true cosine function well.
+3. Overfitting (Degree 15): The model is too complex and captures the
+   noise in the individual data points rather than the general trend.
+
+#+end_quote
+
+#+begin_src python :file plot.png :results file graphics output :exports both :session *Python* :python python3
+  import numpy as np
+  import matplotlib.pyplot as plt
+  from sklearn.pipeline import Pipeline
+  from sklearn.preprocessing import PolynomialFeatures
+  from sklearn.linear_model import LinearRegression
+
+  # Generate synthetic data
+  np.random.seed(0)
+  n_samples = 30
+  degrees = [1, 4, 15]
+
+  def true_fun(X):
+      return np.cos(1.5 * np.pi * X)
+
+  X = np.sort(np.random.rand(n_samples))
+  y = true_fun(X) + np.random.randn(n_samples) * 0.1
+
+  plt.figure(figsize=(14, 5))
+  for i in range(len(degrees)):
+      ax = plt.subplot(1, len(degrees), i + 1)
+      plt.setp(ax, xticks=(), yticks=())
+
+      polynomial_features = PolynomialFeatures(degree=degrees[i], include_bias=False)
+      linear_regression = LinearRegression()
+      pipeline = Pipeline([("polynomial_features", polynomial_features), ("linear_regression", linear_regression)])
+      pipeline.fit(X[:, np.newaxis], y)
+
+      X_test = np.linspace(0, 1, 100)
+      plt.plot(X_test, pipeline.predict(X_test[:, np.newaxis]), label="Model")
+      plt.plot(X_test, true_fun(X_test), label="True function")
+      plt.scatter(X, y, edgecolor='b', s=20, label="Samples")
+      plt.xlabel("x")
+      plt.ylabel("y")
+      plt.xlim((0, 1))
+      plt.ylim((-2, 2))
+      plt.legend(loc="best")
+
+      titles = ["Underfitting (Degree 1)", "Balanced (Degree 4)", "Overfitting (Degree 15)"]
+      plt.title(titles[i])
+
+  plt.tight_layout()
+  plt.savefig("plot.png")
+#+end_src
+
+#+RESULTS:
+[[file:plot.png]]
+
+-----
+
+* Fitting a linear model to data
+
+We want to predict how many hours of studying will give us which test
+score based on historical data.
+
+- Data visualization without modeling
+  #+begin_src python :file ../img/hours_score.png :results file graphics output :exports both :session *Python* :python python3
+    # import graphics and numerical libraries
+    import matplotlib.pyplot as plt
+    import numpy as np
+    # generate the data
+    hours = np.array([1, 2, 3, 4, 5])
+    score = np.array([50, 55, 65, 70, 80])
+    # plot the data
+    plt.scatter(hours,score)
+    plt.xlabel("Hours studied")
+    plt.ylabel("Score")
+    plt.savefig("hours_score.png")
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/hours_score.png]]
+
+- We can now fit a linear model to the data:
+
+  #+begin_src python :results output :exports both :session *Python* :python python3
+    from sklearn.linear_model import LinearRegression
+
+    # Reshape the x data in 2d format
+    hours = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)
+
+    # Model
+    model = LinearRegression()
+    model.fit(hours, score)
+
+    # Output
+    print("Slope:", model.coef_[0])
+    print("Intercept:", model.intercept_)
+  #+end_src
+
+  #+RESULTS:
+  : Slope: 7.500000000000001
+  : Intercept: 41.5
+
+- Code explanation:
+  1) We import the numerical math library, ~numpy~, and alias it as ~np~,
+     and we import the ~LinearRegression~ class from the machine
+     learning library ~scikit-learn~.
+  2) We create two arrays, =hours= and =score=.
+  3) Many ML libraries expect the input feature matrix =X= in 2D form.
+     ~reshape~ changes the ~shape~ of the array without changing the data:
+     #+begin_src python :results output :exports both :session *Python* :python python3
+       print(np.array([1, 2, 3, 4, 5])) # 1D array with shape (5,)
+       print(np.array([1, 2, 3, 4, 5]).reshape(-1,1)) # 2D array: 5 rows, 1 column
+     #+end_src
+
+     #+RESULTS:
+     : [1 2 3 4 5]
+     : [[1]
+     :  [2]
+     :  [3]
+     :  [4]
+     :  [5]]
+
+  4) An empty =model= instance is created by ~LinearRegression()~ as the
+     default constructor.
+  5) =model.fit(hours, score)= trains the model: =X= is the input (=hours=),
+     and =y= is the output (=score=). The method solves an optimization
+     problem: it finds the values of $\beta_0$ and $\beta_1$ that minimize
+     the sum of squared residuals (the sum of error squared):
+     $$ \sum_{i=1}^{n} \left(y_i - (\beta_0 + \beta_1 x_i)\right)^2 $$
+  6) After ~.fit()~, ~model.coef_~ ($\beta_1$) and ~model.intercept_~
+     ($\beta_0$) are available. They define the learned function:
+     =prediction = intercept + slope * x=.
+  7) Numeric example: =hours[2] = 3= and =score[2] = 65=. For x=3, the
+     model predicts
+     $$ \hat{y} = 41.5 + 7.5 \cdot 3 = 64.0 $$
+     so the residual is
+     $$ y - \hat{y} = 65 - 64 = 1.0 $$
+     There are five such data equations but only two unknown parameters,
+     so this is an *overdetermined system*.
+  8) The prediction answers the question: If I study =x= hours, what
+     score does the model predict?
+  9) Each data point acts like a *constraint*. Since there are more
+     constraints than unknowns, they usually cannot all be satisfied
+     exactly, so we find the line that is closest overall in the
+     least-squares sense.
+  10) There are many different possible loss functions, not just least
+      squares. Which is best depends on the problem distribution.
+
+-----
+
+* Making Predictions
+#+attr_html: :width 400px :float nil:
+[[../img/linear_regression.png]]
+
+- The trained model can be used to make predictions:
+  #+begin_src python :results output :exports both :session *Python* :python python3
+    print(model.predict([[6]]))
+  #+end_src
+
+  #+RESULTS:
+  : [86.5]
+
+- This returns the predicted score for 6 hours of study.
+
+- Code explanation:
+  1) After training, the model has learned parameters $\beta_0$
+     (intercept) and $\beta_1$ (slope).
+  2) The method ~model.predict(X_new)~ uses these parameters to compute
+     predicted outputs for new input data.
+  3) Internally, it applies the learned function:
+     $$ \hat{y} = \beta_0 + \beta_1 x $$
+     to each input value.
+  4) The argument to ~predict~ must have the same *shape* as the training
+     input =X=, i.e., a 2D array of shape =(n_samples, n_features)=.
+  5) Since we trained with one feature (=hours=), the model expects input
+     of shape =(?, 1)=.
+  6) The input =[[6]]= is therefore:
+     - one sample (outer list)
+     - one feature (inner list)
+     so its shape is =(1, 1)=.
+  7) Using =[6]= instead would create a 1D array with shape =(1,)=,
+     which is not accepted by ~scikit-learn~ for prediction.
+  8) The call ~model.predict([[6]])~ returns an array:
+     #+begin_src python
+       array([86.5])
+     #+end_src
+     because predictions are always returned as a sequence (even for a
+     single input).
+  9) Interpretation: for =x = 6= hours, the model predicts a score of
+     $\hat{y} = 86.5$.
+
+-----
+
+* Visualizing the Model (Optional)
+
+#+begin_src python :file ../img/plot.png :results file graphics output :exports both :session *Python* :python python3
+  import matplotlib.pyplot as plt
+
+  plt.scatter(hours, score)
+  plt.plot(hours, model.predict(hours))
+  plt.xlabel("Hours studied")
+  plt.ylabel("Score")
+  plt.savefig("grade.png")
+#+end_src
+
+#+RESULTS:
+[[file:../img/plot.png]]
+
+The line represents the learned relationship between input X (=hours=)
+and output Y (=score=).
+
+-----
+
+* PRACTICE Fitting a linear model
+
+Use the following data:
+
+#+begin_src python :results none :exports both :session *Python* :python python3
+  import numpy as np
+
+  temp = np.array([60, 65, 70, 75, 80]).reshape(-1, 1)
+  sales = np.array([30, 45, 50, 65, 80])
+#+end_src
+
+Tasks:
+1. Fit a linear model
+2. Predict the value at 85$^\circ$F
+3. Plot the data and fitted line
+4. In one complete sentence at the end, explain what the fitted line
+   tells us about the relationship between temperature and ice cream
+   sales.
+
+Use Gemini in Colab to complete these tasks:
+- Create code cell and click on ~generate~
+- In the Gemini console, change to ~Gemini 3 Flash~
+
+** Solution
+
+- Sample prompt:
+  #+begin_quote
+  "Can you complete the tasks for me? Comment amply in the code to
+  help me understand what is going on."
+  #+end_quote
+
+- Response:
+  #+begin_quote
+  "I have generated the code to perform the tasks: fit a linear model,
+  predict sales at 85°F, and visualize the data and the fitted
+  line. The fitted line shows that as the temperature increases, ice
+  cream sales also tend to increase, indicating a positive linear
+  relationship between the two variables."
+  #+end_quote
+
+- Code with comments:
+  #+begin_src python :file ../img/linear_regression2.png :results file graphics output :exports both :session *Python* :python python3
+    import numpy as np
+    from sklearn.linear_model import LinearRegression
+    import matplotlib.pyplot as plt
+
+    # --- Task 1: Fit a linear model ---
+
+    # Re-using the data from the previous cell
+    # temp = np.array([60, 65, 70, 75, 80]).reshape(-1, 1)
+    # sales = np.array([30, 45, 50, 65, 80])
+
+    # Create a Linear Regression model instance
+    model_sales = LinearRegression()
+
+    # Fit the model to the 'temp' (independent variable) and 'sales' (dependent variable) data
+    # The .fit() method learns the relationship (slope and intercept) between the input and output
+    model_sales.fit(temp, sales)
+
+    # Print the learned parameters (slope and intercept) for understanding the model
+    print("Slope (coefficient):", model_sales.coef_[0])
+    print("Intercept:", model_sales.intercept_)
+
+    # --- Task 2: Predict the value at 85°F ---
+
+    # Create a numpy array for the temperature at which to make a prediction (85°F)
+    # It needs to be reshaped to a 2D array as expected by the predict method
+    temp_to_predict = np.array([[85]])
+
+    # Use the trained model to predict the sales for 85°F
+    predicted_sales_85 = model_sales.predict(temp_to_predict)
+    print(f"Predicted sales at 85°F: {predicted_sales_85[0]:.2f}")
+
+    # --- Task 3 & 4: Plot the data and fitted line ---
+
+    # Create a scatter plot of the original data points
+    plt.scatter(temp, sales, color='blue', label='Actual Sales Data')
+
+    # Plot the regression line
+    # To get the line, predict sales for the range of existing temperatures
+    plt.plot(temp, model_sales.predict(temp), color='red', label='Fitted Regression Line')
+
+    # Add labels and title for clarity
+    plt.xlabel("Temperature (°F)")
+    plt.ylabel("Ice Cream Sales")
+    plt.title("Ice Cream Sales vs. Temperature with Linear Regression")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig("linear_regression2.png")
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/linear_regression2.png]]
+
+- Answer to the question:
+  #+begin_quote
+  The prediction at 85^\circ F represents the model’s estimate of how
+  many ice cream units will be sold at that temperature, based on the
+  linear pattern learned from the data.
+  #+end_quote
+
+-----
+
+* Key Points
+
+- Machine learning learns patterns from data
+- A model is a function that maps inputs (X) to outputs (y)
+- Models are learned by minimizing error on training data
+- Predictions are estimates, not exact values
+- The workflow is iterative
+- Models should generalize to new data
+- Overfitting and underfitting affect model performance
+
+-----
+
+* Next Topic
+
+In this lecture, we learned how to predict numerical values using a
+linear model.
+
+#+begin_quote
+We moved from data → model → prediction.
+#+end_quote
+
+Next, we will study a different kind of prediction:
+
+#+begin_quote
+How can we decide between categories instead of predicting numbers?
+#+end_quote
+
+We will introduce *classification*:
+
+- Predicting labels such as pass/fail or spam/not spam
+- Understanding how models make decisions
+- Using similarity between data points (k-nearest neighbors)
+
+#+begin_quote
+Instead of asking “What value?”, we will ask “Which class?”
+#+end_quote
+
+We will also see how changing model parameters affects decisions,
+introducing the idea of model complexity.
+
+* Sources
+
+All images: A. Geron, Hands-on Machine Learning with scikit-learn,
+Keras, and TensorFlow, 3e (O'Reilly, 2026).
+
+Examples and code developed in collaboration with ChatGPT.
