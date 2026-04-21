@@ -1,5 +1,5 @@
 #+TITLE:Coding in an AI World - Agenda notebook
-n#+AUTHOR:Marcus Birkenkrahe (pledged)
+#+AUTHOR:Marcus Birkenkrahe (pledged)
 #+SUBTITLE:DSC 482 - Lyon College - Spring 2026
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+OPTIONS: toc:nil num:nil ^:nil:
@@ -1324,7 +1324,7 @@ Source: [[https://youtu.be/cqLALf4bFPI?si=lKsaWZqCSTuRN7CZ][ByteByteGo, 11 March
 - Extended example: Diagnosing illness
 - Fitting a linear model to data and making predictions
 
-* CANCELLED Week 11 - customGPT tutor / Decision trees / AI Python
+* DONE Week 11 - customGPT tutor / Decision trees / AI Python
 
 - [X] QuizRunner submission: check sharing permissions & resubmit!
 - [X] Review of the 2nd sprint review on Thursday (be prepared)
@@ -1458,25 +1458,34 @@ What do you think a 100% submission should look like?
 
 *Deadline: May 1*
 
-* Week 12 - DataCamp Reviews / Learning Python with AI
+* DONE Week 12 - DataCamp Reviews / Learning Python with AI
 
 - [X] Review: Take 10 minutes to answer the questions on chapter 1: *At
   the end, add your personal view of the values of these features.*
-   
+
 - [X] *AI-assisted Python*: First steps and a simple home assignment
   (complete this by Thursday next week, *April 23rd*).
 
-- [ ] Review: Take 10 minutes to answer the questions on chapter 2: *At
-  the end, add your personal view of the values of these features.*
+- [ ] +Review: Take 10 minutes to answer the questions on chapter 2: *At
+  the end, add your personal view of the values of these features.*+
+
+- [X] Final presentations: 3rd review deadline *April 28* (Tue): Who
+  will present on May 1st? (Need 3 volunteers to start us off).
 
 - [ ] Machine learning with Python: Linear Regression!
 
 ** Review questions (on DataCamp "Practical AI" chapters 2+3)
 
 - Could the issue of accents (or other cultural distractions) be
-  overcome by using AI for delivery? 
+  overcome by using AI for delivery?
 
-- What is Google's position in the AI space? Why are they there?
+- What is Google's position in the AI space? Why are they in that
+  position?
+
+- Notice anything in this image?
+  #+attr_html: :width 400px :float nil:
+  #+caption: Alphabet finance overview
+  [[../img/image.png]]
 
 - Did you try some of these tools while or after listening to the
   lecture? What did you find out (or why did you not do this)?
@@ -1486,13 +1495,8 @@ What do you think a 100% submission should look like?
 - What's your (critical) view of the different tools
   1) Gemini Live ("prioritize my day")
   2) Gemini Gem ("perfect notes")
-  3) Nano Banana ("can't wait for human designers")
-  4) Veo ("generate some visual magic")
-
-- Notice anything in this image?  
-  #+attr_html: :width 400px :float nil:
-  #+caption: Alphabet finance overview
-  [[../img/image.png]]
+  3) Nano Banana ("can't wait for human *designers*")
+  4) Veo ("generate some visual magic" - "fake reality")
 
 - Regarding the workspace tools - what could be a problem here?
 
@@ -1585,7 +1589,7 @@ What do you think a 100% submission should look like?
     until the output meets your standard.
     #+end_quote
 
-** IN PROGRESS AI Python lesson (and home assignment)
+** AI Python lesson (and home assignment)
 
 - Even if AI can write code, you still need to learn how to program.
 - You can write and run a Python notebook with Gemini.
@@ -1733,3 +1737,109 @@ earlier. This is OK. Let's work with that for now.
 Instead: lowest common denominator music (film score style/muzak):
 [[file:../video/Above_the_Timberline.mp4]]
 
+* Week 13 - Linear Regression & Classification (supervised learning)
+
+- [ ] Finish AI-assisted Python learning by Thursday 2.30 pm
+- [ ] Schedule your presentations between Apr 30 and May 7
+- [ ] AI-assisted lecture and practice: Python Basics
+
+** Review - what do you remember of the last session?
+** Summary of the last session (ChatGPT)
+
+#+begin_quote
+The lecture contrasts chat-based AI interaction with notebook-based,
+agent-like workflows. It argues that meaningful AI use requires
+persistent state (memory), executable artifacts, and human-controlled
+verification. Through a Python exercise in Colab, students experience
+both the power and limitations of AI-assisted coding: AI generates
+code quickly but introduces errors, ambiguity, and overload. The
+pedagogical focus shifts from getting answers to managing, correcting,
+and structuring AI output. Markdown and notebooks function as the
+interface and memory layer, turning conversation into reproducible
+workflows. The lecture also critically evaluates AI tools, emphasizing
+that human judgment, messiness, and prioritization cannot be fully
+replicated by AI systems.
+#+end_quote
+
+
+
+** AI-assisted lecture and practice: Python Basics
+
+- Open in Colab: [[https://tinyurl.com/first-python-ipynb][tinyurl.com/first-python-ipynb]]
+- Code along with prompts and practice exercises
+- Start with this Gemini prompt:
+  #+begin_quote
+  Do you understand my instructions for you? 
+  #+end_quote
+- Gemini should mirror the =Instructions for Gemini= back to you.
+
+** NEXT My reflection on the guess-the-number game assignment
+
+- Trying to get Gemini to remain at the explanatory level of a 5th
+  grader proved to be very exhausting (see my example here:
+  [[https://tinyurl.com/gemini-code-monster][tinyurl.com/gemini-code-monster]])
+
+- At one point, Gemini repeated the same prompt and code several
+  times. It regularly went back to techie language. Its ability to
+  read the notebook so far and respond to it is very limited.
+
+- One problem is that the model cannot handle *heuristic* - building the
+  game up step by step - though it know what the steps are:
+
+  1. Picking a Secret Number
+  2. Getting User Input
+  3. Comparing the Guess
+  4. Adding Loops for Multiple Guesses
+  5. Refining the logic
+
+- Another problem: It proved too hard to constrain the model to a
+  "beginner's task" mode. When asking to improve the game, it added
+  exception handling for example.
+
+- Though it said it could and would, it did not clean up its own
+  messes (extraneous headlines). In its final reflection, it claims:
+  #+begin_quote
+  Ultimately, this collaborative approach between human-led prompts
+  and AI-driven execution demonstrates an effective model for teaching
+  foundational Python. It combines the precision of computer science
+  with the clarity of narrative education, fostering a learning
+  environment that is both technically sound and engaging for
+  beginners.
+  #+end_quote
+
+  I beg to differ. Gemini does not know itself and it does not know
+  what it does not know or can do. It is not a proper agent. I will
+  try OpenAI's Codex and Anthropic's Claude Code next.
+
+- By contrast, I started a new notebook for the "guess-the-number"
+  game, to avoid context drift, and I used the most advanced available
+  model, Gemini 3.1 Pro: [[https://tinyurl.com/super-fun-guessing-game][tinyurl.com/super-fun-guessing-game]].
+
+** TODO Review: Python Basics (20 + 10 min)
+
+- Open the test in this colab notebook:
+  [[https://tinyurl.com/python-debug-quiz-ipynb][tinyurl.com/python-debug-quiz-ipynb]]
+
+- Run each code block to display the error message.
+
+- Not all code produces an error message (3, 6) - but there's still a
+  mistake which you must figure out.
+
+- Try to figure it out yourself first.
+
+- If you can't, have Gemini =Explain error=.
+
+- Add a textblock with the explanation.
+
+- Copy the wrong code in a new code block.
+
+- Fix the code in the new code block.
+
+- After 20 minutes, we'll discuss the results.
+
+- When we're done, upload the URL to your notebook.
+
+
+* Week 14 -
+
+* Week 15 - Presentations
