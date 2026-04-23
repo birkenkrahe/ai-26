@@ -1,0 +1,367 @@
+#+STARTUP: overview hideblocks indent entitiespretty:
+#+OPTIONS: toc:nil num:nil ^:nil:
+* Objectives
+
+1. Start Gemini CLI from bash (shell)
+2. Understand how Gemini remembers things
+3. Establish and move into a working directory
+4. Initialize prompt logging
+5. Create and test a Python guessing game
+6. Quit, resume, list, delete sessions
+7. Alter or remove Gemini's memory file
+
+* Start Gemini CLI from bash (shell)
+
+- From your home directory, start Gemini CLI from bash.
+
+  #+begin_src bash
+    cd ~
+    pwd
+    gemini
+  #+end_src
+
+- Many agent tools produce verbose, streaming output by default. Deal
+  with it for now!
+
+* Choose between agent commands ~/~ and natural language prompts
+
+If you type ~/~ at the gemini prompt, a selection of agent tools
+appear. Choose ~/directory~. This brings up two more choices, ~add~ or
+~show~.
+
+* Check Gemini's persistent memory file
+
+- At the bottom of the page, you see "1 GEMINI.md file" and "1 MCP server".
+
+  + The =GEMINI.md= file is Gemini's persistent memory file
+
+  + The "MCP server" is an interface between the agent and the
+    computer (MCP = Model Context Protocol), a sort of API.
+
+- Ask to see the contents of the memory file:
+  #+begin_quote
+  Show me the contents of my GEMINI.md file
+  #+end_quote
+
+  The agent might ask you to choose between several. You want to see
+  the file in your home directory in =/.gemini/memory/[username]/=. Mine
+  shows:
+  #+begin_example
+   1 ## Gemini Added Memories
+   2 - Append every user prompt to 'prompts.txt' in the current workspace.
+  #+end_example
+
+  If this is your first Gemini CLI session, it should be empty.
+
+* Have the agent create the working directory and move into it
+
+- Type inside Gemini CLI:
+
+  #+begin_quote
+  Create a directory agent/gemini, then change into that directory and
+  confirm the current working directory.
+  #+end_quote
+
+- Gemini shows the command chain and asks for execution.
+  #+begin_example ch
+  mkdir -p agent/gemini && cd agent/gemini && pwd                                         │
+  │ Allow execution of: 'mkdir, cd, pwd'?
+  #+end_example
+
+* Initialize prompt logging in the current working directory
+
+- Gemini console:
+  #+begin_quote
+  Create a file named prompts.txt in this directory. From now on,
+  after each prompt I give, append the exact prompt text to
+  prompts.txt. Always append, never overwrite.
+  #+end_quote
+
+- You see that the =GEMINI.md= file was updated with the new memory.
+
+- Verify that the file exists:
+  #+begin_quote
+  Show the contents of prompts.txt.
+  #+end_quote
+
+- You're missing the earlier prompt on making a directory, and you
+  might not want to miss that. Add it to =prompts.txt= explicitly:
+  #+begin_quote
+  Add the recent prompt on creating the agent/gemini directory to
+  prompts.txt, and then show me the contents of prompts.txt
+  #+end_quote
+
+* Create and run a guessing game
+
+- At the Gemini prompt, type:
+  #+begin_quote
+  Create a simple Python guess-the-number game, save it to game.py in
+  the current directory, and run it.
+  #+end_quote
+
+- Approve file creation and execution when prompted.
+
+* *Test the game.*
+
+- You are likely told that you can now run the file =game.py= with
+  =python3= in a terminal (which requires you to =/quit= Gemini).
+
+- Instead ask:
+  #+begin_quote
+  Can you run the game.py file here?
+  #+end_quote
+
+- Now a =Shell= box appears that shows the bash command and allows you
+  to enter a number. Run the game manually.
+
+- Use Gemini to test the program for "edge cases", such as wrong
+  input:
+  #+begin_quote
+  Test game.py with some edge cases, and then report back with the
+  results.
+  #+end_quote
+
+- The following table is produced:
+  #+attr_html: :width 600px :float nil:
+  [[../img/gemini_test.png]]
+
+- Let's see what we created:
+  #+begin_quote
+  Show the contents of prompts.txt again.
+  Show the contents of the current working directory.
+  Show the GEMINI.md file
+  #+end_quote
+
+- Add another memory:
+  #+begin_quote
+  From now on, when I ask you to create a Python file, test it for
+  edge cases and produce a report.
+  #+end_quote
+
+- Test this memory with a new instruction: tinyurl.com/gemini-python-test
+  #+begin_quote
+  Write a small Python program that:
+
+  - Accepts a list with numbers, None, NaN, and invalid strings
+  - Cleans it to floats (invalid → NaN)
+  - Computes a moving average (configurable window)
+
+  Handle edge cases explicitly:
+  - empty input
+  - window <= 0
+  - window > data length
+  - all values invalid
+
+  Include a few test cases demonstrating these.
+
+  Plot original vs moving average using matplotlib and save to
+  "output.png" (no interactive display).
+
+  Keep the code minimal and readable. Use only standard Python + matplotlib.
+  #+end_quote
+
+- Had to install ~matplotlib~:
+  #+attr_html: :width 400px :float nil:
+  [[../img/gemini-py-test.png]]
+
+* Quit, resume, list and delete sessions
+
+  Type:
+
+  #+begin_quote
+  /quit
+  #+end_quote
+
+- *Resume the session from bash.*
+
+  #+begin_src bash
+    gemini -r
+  #+end_src
+
+- *Inspect available commands.*
+
+  Type:
+
+  #+begin_quote
+  /help
+  #+end_quote
+
+- *End a session permanently.*
+
+  Type:
+
+  #+begin_quote
+  /resume
+  #+end_quote
+  #+attr_html: :width 600px :float nil:
+  [[../img/gemini-resume.png]]
+
+  Then delete a session (interactive):
+  #+begin_quote
+  Press x on a selected session
+  #+end_quote
+
+  Or from bash (must delete from the last session backwards):
+  #+begin_src bash
+    gemini --list-sessions
+    gemini --delete-session <id>
+  #+end_src
+
+- *Start a new session cleanly.*
+
+  #+begin_src bash
+    gemini
+  #+end_src
+
+
+* Key teaching points
+
+#+begin_quote
+- The agent can operate the shell, but only when instructed explicitly.
+- “Create a program” ≠ “create files and run it.”
+- The agent requires permissions for each action (human-in-the-loop).
+- Files are persistent state; prompts are not unless logged.
+#+end_quote
+
+* Lab Exercise (30 min): Build and Stress-Test a Terminal Agent Tool
+
+*Objective*
+
+#+begin_quote
+Extend the demo workflow by designing a *slightly more complex tool*, and explicitly testing where the agent fails.
+#+end_quote
+
+---
+
+*Task Overview*
+
+You will use Gemini CLI to:
+
+1. Design a small terminal-based tool (not the guessing game)
+2. Implement it via the agent
+3. Test it systematically
+4. Identify and fix at least one failure
+
+---
+
+*Step 1 — Define your tool (5 min)*
+
+Pick *one* of the following (or propose your own):
+
+- A number guessing game with difficulty levels
+- A simple calculator (supports +, -, *, /)
+- A unit converter (e.g., Celsius ↔ Fahrenheit)
+- A “password checker” (checks length, digits, etc.)
+
+Write down (in a text file or notebook):
+
+#+begin_quote
+Goal:
+Input:
+Output:
+One rule/constraint:
+One possible failure:
+#+end_quote
+
+---
+
+*Step 2 — Initialize workspace (3 min)*
+
+Start Gemini CLI and let the agent create everything:
+
+#+begin_quote
+Use the terminal to create a directory agent/lab1, change into it, and confirm the working directory.
+#+end_quote
+
+Then:
+
+#+begin_quote
+Create a file called prompts.txt and append every prompt I give in this session to it.
+#+end_quote
+
+---
+
+*Step 3 — Build the tool (10 min)*
+
+Prompt:
+
+#+begin_quote
+Create a Python program for the following specification:
+
+[PASTE YOUR Goal/Input/Output/Rule HERE]
+
+Save it to a file and run it.
+#+end_quote
+
+If it does not run:
+
+#+begin_quote
+Fix the program and run it again.
+#+end_quote
+
+---
+
+*Step 4 — Test and break it (7 min)*
+
+Run at least *three tests*:
+
+1. Normal case (expected input)
+2. Edge case (boundary value)
+3. Invalid input (wrong type or format)
+
+For each, note:
+
+#+begin_quote
+Input:
+What happened:
+Was this correct?
+#+end_quote
+
+If something fails:
+
+#+begin_quote
+Fix the issue and rerun the program.
+#+end_quote
+
+---
+
+*Step 5 — Inspect prompt log (3 min)*
+
+Display your prompt log:
+
+#+begin_quote
+Show the contents of prompts.txt.
+#+end_quote
+
+Check:
+
+- Are all prompts recorded?
+- Is anything missing?
+
+---
+
+*Deliverable (end of lab)*
+
+You should have:
+
+1. A working Python file
+2. A prompts.txt file
+3. A short written note (3–5 lines):
+
+#+begin_quote
+- What did the agent get wrong first?
+- What did you forget to specify?
+- What did you change to fix it?
+#+end_quote
+
+---
+
+*Constraints*
+
+#+begin_quote
+- Do not edit the Python file manually.
+- All changes must go through the agent.
+- You must test at least one failure case.
+#+end_quote
+
+
