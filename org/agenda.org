@@ -1737,13 +1737,23 @@ earlier. This is OK. Let's work with that for now.
 Instead: lowest common denominator music (film score style/muzak):
 [[file:../video/Above_the_Timberline.mp4]]
 
-* Week 13 - Linear Regression & Classification (supervised learning)
+* Week 13 - AI-assisted Python II / Understanding Codex
 
-- [ ] Finish AI-assisted Python learning by Thursday 2.30 pm
-- [ ] Schedule your presentations between Apr 30 and May 7
-- [ ] AI-assisted lecture and practice: Python Basics
+- [X] Finish AI-assisted Python learning by Thursday 2.30 pm
+- [X] Schedule your presentations between Apr 30 and May 7
+- [X] AI-assisted lecture and practice: Python Basics
+- [ ] Understanding Codex
+- [ ] Using Codex
 
 ** Review - what do you remember of the last session?
+
+- Coding in a Colab notebook with Gemini as tutor
+- Using Python (easy, AI/ML language, Jupyter understands it)
+- Could be useful to ask for 5th grader language (simpler)
+- Severe danger of information load (AI needs to be tamed)
+- AI will guess without asking you first (hallucation)
+- Gemini + Colab is a proper agent (takes control)
+
 ** Summary of the last session (ChatGPT)
 
 #+begin_quote
@@ -1761,8 +1771,6 @@ that human judgment, messiness, and prioritization cannot be fully
 replicated by AI systems.
 #+end_quote
 
-
-
 ** AI-assisted lecture and practice: Python Basics
 
 - Open in Colab: [[https://tinyurl.com/first-python-ipynb][tinyurl.com/first-python-ipynb]]
@@ -1772,6 +1780,7 @@ replicated by AI systems.
   Do you understand my instructions for you? 
   #+end_quote
 - Gemini should mirror the =Instructions for Gemini= back to you.
+
 
 ** NEXT My reflection on the guess-the-number game assignment
 
@@ -1839,7 +1848,6 @@ replicated by AI systems.
 
 - When we're done, upload the URL to your notebook.
 
-
-* Week 14 -
+* Week 14 - Using Codex / Presentations
 
 * Week 15 - Presentations
