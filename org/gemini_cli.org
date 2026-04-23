@@ -164,10 +164,14 @@ appear. Choose ~/directory~. This brings up two more choices, ~add~ or
   #+attr_html: :width 400px :float nil:
   [[../img/gemini-py-test.png]]
 
+- You cannot view the output inside the terminal but only in the
+  editor (or download it):
+  #+attr_html: :width 600px :float nil: 
+  [[../img/gemini_output.png]]
+
 * Quit, resume, list and delete sessions
 
-  Type:
-
+- Type:
   #+begin_quote
   /quit
   #+end_quote
@@ -181,7 +185,6 @@ appear. Choose ~/directory~. This brings up two more choices, ~add~ or
 - *Inspect available commands.*
 
   Type:
-
   #+begin_quote
   /help
   #+end_quote
@@ -189,7 +192,6 @@ appear. Choose ~/directory~. This brings up two more choices, ~add~ or
 - *End a session permanently.*
 
   Type:
-
   #+begin_quote
   /resume
   #+end_quote
@@ -213,7 +215,6 @@ appear. Choose ~/directory~. This brings up two more choices, ~add~ or
     gemini
   #+end_src
 
-
 * Key teaching points
 
 #+begin_quote
@@ -222,146 +223,4 @@ appear. Choose ~/directory~. This brings up two more choices, ~add~ or
 - The agent requires permissions for each action (human-in-the-loop).
 - Files are persistent state; prompts are not unless logged.
 #+end_quote
-
-* Lab Exercise (30 min): Build and Stress-Test a Terminal Agent Tool
-
-*Objective*
-
-#+begin_quote
-Extend the demo workflow by designing a *slightly more complex tool*, and explicitly testing where the agent fails.
-#+end_quote
-
----
-
-*Task Overview*
-
-You will use Gemini CLI to:
-
-1. Design a small terminal-based tool (not the guessing game)
-2. Implement it via the agent
-3. Test it systematically
-4. Identify and fix at least one failure
-
----
-
-*Step 1 — Define your tool (5 min)*
-
-Pick *one* of the following (or propose your own):
-
-- A number guessing game with difficulty levels
-- A simple calculator (supports +, -, *, /)
-- A unit converter (e.g., Celsius ↔ Fahrenheit)
-- A “password checker” (checks length, digits, etc.)
-
-Write down (in a text file or notebook):
-
-#+begin_quote
-Goal:
-Input:
-Output:
-One rule/constraint:
-One possible failure:
-#+end_quote
-
----
-
-*Step 2 — Initialize workspace (3 min)*
-
-Start Gemini CLI and let the agent create everything:
-
-#+begin_quote
-Use the terminal to create a directory agent/lab1, change into it, and confirm the working directory.
-#+end_quote
-
-Then:
-
-#+begin_quote
-Create a file called prompts.txt and append every prompt I give in this session to it.
-#+end_quote
-
----
-
-*Step 3 — Build the tool (10 min)*
-
-Prompt:
-
-#+begin_quote
-Create a Python program for the following specification:
-
-[PASTE YOUR Goal/Input/Output/Rule HERE]
-
-Save it to a file and run it.
-#+end_quote
-
-If it does not run:
-
-#+begin_quote
-Fix the program and run it again.
-#+end_quote
-
----
-
-*Step 4 — Test and break it (7 min)*
-
-Run at least *three tests*:
-
-1. Normal case (expected input)
-2. Edge case (boundary value)
-3. Invalid input (wrong type or format)
-
-For each, note:
-
-#+begin_quote
-Input:
-What happened:
-Was this correct?
-#+end_quote
-
-If something fails:
-
-#+begin_quote
-Fix the issue and rerun the program.
-#+end_quote
-
----
-
-*Step 5 — Inspect prompt log (3 min)*
-
-Display your prompt log:
-
-#+begin_quote
-Show the contents of prompts.txt.
-#+end_quote
-
-Check:
-
-- Are all prompts recorded?
-- Is anything missing?
-
----
-
-*Deliverable (end of lab)*
-
-You should have:
-
-1. A working Python file
-2. A prompts.txt file
-3. A short written note (3–5 lines):
-
-#+begin_quote
-- What did the agent get wrong first?
-- What did you forget to specify?
-- What did you change to fix it?
-#+end_quote
-
----
-
-*Constraints*
-
-#+begin_quote
-- Do not edit the Python file manually.
-- All changes must go through the agent.
-- You must test at least one failure case.
-#+end_quote
-
 
